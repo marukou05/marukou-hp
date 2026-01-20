@@ -15,6 +15,11 @@
             line-height: 2.0;
             font-size: 19px; 
         }
+
+        /* 共通メニューのスタイル */
+        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; }
+        .top-nav a:hover { color: var(--gold); }
         
         .container { max-width: 900px; margin: 0 auto; padding: 60px 20px 150px; }
         
@@ -44,7 +49,6 @@
         .daiko-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; list-style: none; padding: 0; margin-top: 35px; }
         .daiko-list li { background: var(--bg); color: var(--navy); padding: 12px 28px; border-radius: 35px; font-weight: bold; font-size: 1.2rem; border: 1px solid rgba(0,43,85,0.1); }
 
-        /* 修正箇所：ボタンを確実にcontact.htmlに飛ばす設定 */
         .cta { text-align: center; margin-top: 120px; }
         .btn { 
             display: inline-block; 
@@ -58,6 +62,7 @@
             box-shadow: 0 4px 20px rgba(145,123,86,0.4); 
             transition: 0.3s; 
             cursor: pointer;
+            font-family: sans-serif;
         }
         .btn:hover { background: var(--navy); transform: translateY(-3px); }
 
@@ -66,10 +71,19 @@
             .section-title { font-size: 2.0rem; }
             .pain-point-box { padding: 30px 20px; }
             .btn { width: 90%; padding: 20px 0; font-size: 1.4rem; }
+            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
+
+<nav class="top-nav">
+    <a href="index.html">ホーム</a>
+    <a href="service.html">事業内容</a>
+    <a href="news.html">お知らせ</a>
+    <a href="contact.html">お問い合わせ</a>
+</nav>
+
 <div class="container">
     <div style="text-align: center;">
         <h1 style="color:var(--navy); font-size:2.8rem; margin-bottom: 25px;">丸幸にできること</h1>
@@ -158,3 +172,4 @@
     </div>
 </div>
 </body>
+</html>

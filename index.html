@@ -18,15 +18,15 @@
         }
         * { box-sizing: border-box; }
         body { margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; color: var(--text); line-height: 1.8; background: var(--gray); overflow-x: hidden; }
-   <nav style="background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid #002147;">
-    <a href="index.html" style="margin: 0 15px; text-decoration: none; color: #002147; font-weight: bold;">ホーム</a>
-    <a href="service.html" style="margin: 0 15px; text-decoration: none; color: #002147; font-weight: bold;">事業内容</a>
-    <a href="news.html" style="margin: 0 15px; text-decoration: none; color: #002147; font-weight: bold;">お知らせ</a>
-    <a href="contact.html" style="margin: 0 15px; text-decoration: none; color: #002147; font-weight: bold;">お問い合わせ</a>
-</nav>     
-        header { background: var(--white); border-bottom: 2px solid var(--navy); padding: 8px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .header-inner { max-width: 950px; margin: 0 auto; padding: 0 20px; }
-        .logo-text { margin: 0; color: var(--navy); font-size: 1.15rem; font-family: 'Noto Serif JP', serif; letter-spacing: 1px; }
+        
+        /* ナビゲーションメニュー */
+        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; }
+        .top-nav a:hover { color: var(--gold); }
+
+        header { background: var(--white); padding: 20px 0; border-bottom: 1px solid var(--accent-border); }
+        .header-inner { max-width: 950px; margin: 0 auto; padding: 0 20px; text-align: center; }
+        .logo-text { margin: 0; color: var(--navy); font-size: 1.5rem; font-family: 'Noto Serif JP', serif; letter-spacing: 2px; }
 
         .hero { 
             background: linear-gradient(rgba(0,33,71,0.6), rgba(0,33,71,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000'); 
@@ -72,15 +72,22 @@
             .info-table th, .info-table td { display: block; width: 100%; padding: 10px 5px; border-bottom: none; }
             .info-table th { padding-bottom: 0; color: var(--gold); }
             .info-table tr { border-bottom: 1px solid #eee; padding-bottom: 10px; display: block; }
+            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <nav class="top-nav">
+        <a href="index.html">ホーム</a>
+        <a href="service.html">事業内容</a>
+        <a href="news.html">お知らせ</a>
+        <a href="contact.html">お問い合わせ</a>
+    </nav>
+
     <header>
         <div class="header-inner">
-            <h1 class="logo-text">株式会社丸幸 </h1>
-<title>東京のファクタリング・経営代行なら株式会社丸幸 全業種対応可能</title>
+            <h1 class="logo-text">株式会社丸幸</h1>
         </div>
     </header>
 
@@ -199,6 +206,3 @@
 
 </body>
 </html>
-
-
-

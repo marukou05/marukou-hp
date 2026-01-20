@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お問い合わせ | 株式会社丸幸</title>
+<style>
+    :root { 
+        --navy: #002b55; 
+        --bg-beige: #f5f2eb; 
+        --white: #ffffff; 
+        --gold: #917b56;
+        --line-green: #06C755;
+    }
+    
+    html, body { 
+        height: auto; min-height: 100vh;
+        background-color: var(--bg-beige); 
+        margin: 0; padding: 0; 
+        font-family: "YuMincho", "Hiragino Mincho ProN", serif;
+        color: #333; line-height: 1.8;
+    }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+
+    .section-title { 
+        text-align: center; color: var(--navy); font-size: 1.8rem; margin-bottom: 35px;
+        position: relative; padding-bottom: 15px;
+    }
+    .section-title::after {
+        content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+        width: 40px; height: 2px; background: var(--gold);
+    }
+
+    .card-white {
+        background: var(--white); border-radius: 12px; padding: 45px 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.03); border: 1px solid #e0dcd0;
+        text-align: center;
+    }
+
+    /* form.run ボタン */
+    .btn-formrun {
+        display: inline-block; width: 100%; max-width: 400px;
+        background: var(--navy); color: #fff !important; text-decoration: none;
+        padding: 20px; border-radius: 8px; font-weight: bold; font-size: 1.2rem;
+        margin: 30px 0; box-shadow: 0 4px 15px rgba(0,43,85,0.2); transition: 0.3s;
+    }
+    .btn-formrun:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    /* LINE ボタン */
+    .line-btn {
+        display: flex; align-items: center; justify-content: center;
+        background: var(--line-green); color: #fff !important; text-decoration: none;
+        padding: 15px; border-radius: 50px; font-weight: bold; font-size: 1.1rem;
+        margin: 0 auto 25px; max-width: 350px; box-shadow: 0 4px 12px rgba(6,199,85,0.2);
+    }
+
+    /* 電話・メールエリア */
+    .tel-area { margin-top: 20px; }
+    .tel-number { 
+        font-size: 2rem; font-weight: bold; color: var(--navy); text-decoration: none; 
+        display: block; font-family: sans-serif; margin: 10px 0;
+    }
+    .mail-link { display: block; color: var(--gold); text-decoration: none; font-weight: bold; }
+
+    footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #888; }
+    
+    .back-home { margin-top: 30px; }
+    .back-home a { color: #888; text-decoration: none; font-size: 0.9rem; }
+
+    @media (max-width: 600px) {
+        .tel-number { font-size: 1.6rem; }
+        .card-white { padding: 35px 20px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <section id="contact">
+        <h2 class="section-title">お問い合わせ</h2>
+        <div class="card-white">
+            <p style="font-weight: bold; color: var(--navy); font-size: 1.1rem; margin-top: 0;">
+                その不安、一人で抱え込まずに丸幸へお預けください。
+            </p>
+            <p>相談は無料です。企業様の「傘」として、最適な一手をご提案します。</p>
+            
+            <a href="https://form.run/@info-aLDJbEsoObCfrqrJlifq" target="_blank" class="btn-formrun">
+                無料相談フォームを開く
+            </a>
+            
+            <div style="margin-top: 35px; border-top: 1px solid #eee; padding-top: 25px;">
+                <p style="font-weight: bold; color: var(--navy); margin-bottom: 20px; text-align: center;">LINE・お電話はこちら</p>
+                
+                <a href="https://line.me/R/ti/p/@719ncqnx" target="_blank" class="line-btn">
+                    LINEで無料相談・査定
+                </a>
+                
+                <div class="tel-area">
+                    <span style="font-size: 0.8rem; color: #666;">平日 9:00〜18:00 受付</span><br>
+                    <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
+                    <a href="mailto:info@marukouinc.com" class="mail-link">✉ info@marukouinc.com</a>
+                </div>
+            </div>
+
+            <div class="back-home">
+                <a href="index.html">← ホームへ戻る</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お知らせ | 株式会社丸幸【公式】</title>
 <style>
     :root { 
         --main-navy: #002b55; 
@@ -20,7 +21,12 @@
         line-height: 1.6;
     }
 
-    .container { max-width: 850px; margin: 0 auto; padding: 20px; }
+    /* 共通メニューのスタイル */
+    .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--main-navy); position: sticky; top: 0; z-index: 1100; }
+    .top-nav a { margin: 0 15px; text-decoration: none; color: var(--main-navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; }
+    .top-nav a:hover { color: var(--accent-gold); }
+
+    .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
 
     .news-section {
         background: var(--card-white);
@@ -120,10 +126,18 @@
         .news-title {
             font-size: 1.05rem;
         }
+        .top-nav a { margin: 0 5px; font-size: 0.8rem; }
     }
 </style>
 </head>
 <body>
+
+<nav class="top-nav">
+    <a href="index.html">ホーム</a>
+    <a href="service.html">事業内容</a>
+    <a href="news.html">お知らせ</a>
+    <a href="contact.html">お問い合わせ</a>
+</nav>
 
 <div class="container">
     <section class="news-section">

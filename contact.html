@@ -21,6 +21,11 @@
         color: #333; line-height: 1.8;
     }
 
+    /* 共通メニューのスタイル */
+    .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
+    .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; }
+    .top-nav a:hover { color: var(--gold); }
+
     .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 
     .section-title { 
@@ -44,6 +49,7 @@
         background: var(--navy); color: #fff !important; text-decoration: none;
         padding: 20px; border-radius: 8px; font-weight: bold; font-size: 1.2rem;
         margin: 30px 0; box-shadow: 0 4px 15px rgba(0,43,85,0.2); transition: 0.3s;
+        font-family: sans-serif;
     }
     .btn-formrun:hover { opacity: 0.9; transform: translateY(-2px); }
 
@@ -53,6 +59,7 @@
         background: var(--line-green); color: #fff !important; text-decoration: none;
         padding: 15px; border-radius: 50px; font-weight: bold; font-size: 1.1rem;
         margin: 0 auto 25px; max-width: 350px; box-shadow: 0 4px 12px rgba(6,199,85,0.2);
+        font-family: sans-serif;
     }
 
     /* 電話・メールエリア */
@@ -65,16 +72,21 @@
 
     footer { text-align: center; padding: 40px 0; font-size: 0.8rem; color: #888; }
     
-    .back-home { margin-top: 30px; }
-    .back-home a { color: #888; text-decoration: none; font-size: 0.9rem; }
-
     @media (max-width: 600px) {
         .tel-number { font-size: 1.6rem; }
         .card-white { padding: 35px 20px; }
+        .top-nav a { margin: 0 5px; font-size: 0.8rem; }
     }
 </style>
 </head>
 <body>
+
+<nav class="top-nav">
+    <a href="index.html">ホーム</a>
+    <a href="service.html">事業内容</a>
+    <a href="news.html">お知らせ</a>
+    <a href="contact.html">お問い合わせ</a>
+</nav>
 
 <div class="container">
     <section id="contact">
@@ -101,10 +113,6 @@
                     <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
                     <a href="mailto:info@marukouinc.com" class="mail-link">✉ info@marukouinc.com</a>
                 </div>
-            </div>
-
-            <div class="back-home">
-                <a href="index.html">← ホームへ戻る</a>
             </div>
         </div>
     </section>

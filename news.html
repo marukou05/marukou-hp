@@ -29,7 +29,7 @@
             line-height: 1.6;
         }
 
-        /* 共通メニューのスタイル */
+        /* 共通メニュー */
         .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--main-navy); position: sticky; top: 0; z-index: 1100; }
         .top-nav a { margin: 0 15px; text-decoration: none; color: var(--main-navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
         .top-nav a:hover { color: var(--accent-gold); }
@@ -125,22 +125,9 @@
         }
 
         @media (max-width: 600px) {
-            .news-item {
-                flex-direction: column;
-            }
-            .news-meta {
-                min-width: auto;
-                flex-direction: row;
-                align-items: center;
-                margin-bottom: 12px;
-                gap: 15px;
-            }
-            .news-content {
-                padding-left: 0;
-            }
-            .news-title {
-                font-size: 1.05rem;
-            }
+            .news-item { flex-direction: column; }
+            .news-meta { min-width: auto; flex-direction: row; align-items: center; margin-bottom: 12px; gap: 15px; }
+            .news-content { padding-left: 0; }
             .top-nav a { margin: 0 5px; font-size: 0.8rem; }
         }
     </style>
@@ -164,13 +151,13 @@
         <ul class="news-list">
             <li class="news-item">
                 <div class="news-meta">
-                    <span class="news-date">2026.01.21</span>
+                    <span class="news-date">2026.01.12</span>
                     <span class="news-label" style="background: #e67e22;">ブログ更新</span>
                 </div>
                 <div class="news-content">
-                    <a href="blog01.html" class="news-title">【ブログ更新】ファクタリングで得られる「4つの隠れた利益」</a>
+                    <a href="blog01.html" class="news-title">【丸幸の約束】スピードより「対話」を大切にする理由</a>
                     <p class="news-text">
-                        ファクタリングの手数料を「単なるコスト」ではなく「戦略的な投資」として捉える考え方について解説記事を公開しました。
+                        私たちがなぜスピード競争以上に、お客様との「対話」を重視するのか。丸幸が大切にしている経営者様への想いを綴りました。
                     </p>
                 </div>
             </li>
@@ -203,6 +190,10 @@
         </ul>
     </section>
 </div>
+
+<footer>
+    <p>&copy; Marukou Inc. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>

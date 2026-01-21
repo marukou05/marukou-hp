@@ -7,7 +7,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-18XGHDNQB3');
-    </script>   
+    </script>    
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +31,7 @@
 
         /* 共通メニューのスタイル */
         .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--main-navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--main-navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--main-navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
         .top-nav a:hover { color: var(--accent-gold); }
 
         .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
@@ -109,6 +109,12 @@
             color: var(--main-navy);
             margin-bottom: 8px;
             display: block;
+            text-decoration: none;
+        }
+        
+        a.news-title:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
         }
 
         .news-text {
@@ -127,6 +133,7 @@
                 flex-direction: row;
                 align-items: center;
                 margin-bottom: 12px;
+                gap: 15px;
             }
             .news-content {
                 padding-left: 0;
@@ -144,6 +151,7 @@
     <a href="index.html">ホーム</a>
     <a href="service.html">事業内容</a>
     <a href="news.html">お知らせ</a>
+    <a href="blog.html">ブログ</a>
     <a href="contact.html">お問い合わせ</a>
 </nav>
 
@@ -154,6 +162,19 @@
         </div>
 
         <ul class="news-list">
+            <li class="news-item">
+                <div class="news-meta">
+                    <span class="news-date">2026.01.21</span>
+                    <span class="news-label" style="background: #e67e22;">ブログ更新</span>
+                </div>
+                <div class="news-content">
+                    <a href="blog01.html" class="news-title">【ブログ更新】ファクタリングで得られる「4つの隠れた利益」</a>
+                    <p class="news-text">
+                        ファクタリングの手数料を「単なるコスト」ではなく「戦略的な投資」として捉える考え方について解説記事を公開しました。
+                    </p>
+                </div>
+            </li>
+
             <li class="news-item">
                 <div class="news-meta">
                     <span class="news-date">2026.01.11</span>

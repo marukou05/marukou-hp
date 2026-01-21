@@ -10,28 +10,65 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログ一覧 | 株式会社丸幸【公式】</title>
+    <title>ブログ | 株式会社丸幸【公式】</title>
     <style>
-        :root { --navy: #002b55; --bg: #f5f2eb; --gold: #917b56; --white: #ffffff; }
-        body { background-color: var(--bg); margin: 0; padding: 0; font-family: "YuMincho", "Hiragino Mincho ProN", serif; color: #333; line-height: 1.8; }
+        :root { 
+            --navy: #002b55; 
+            --bg-beige: #f5f2eb; 
+            --white: #ffffff; 
+            --gold: #917b56; 
+        }
         
+        body { 
+            background-color: var(--bg-beige); 
+            margin: 0; padding: 0; 
+            font-family: "YuMincho", "Hiragino Mincho ProN", serif;
+            color: #333; line-height: 1.8;
+        }
+
+        /* 共通メニュー */
         .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
         .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
         .top-nav a:hover { color: var(--gold); }
 
-        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
-        .page-title { text-align: center; color: var(--navy); font-size: 2rem; margin-bottom: 50px; position: relative; padding-bottom: 15px; }
-        .page-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 50px; height: 2px; background: var(--gold); }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
 
+        .section-title { 
+            text-align: center; color: var(--navy); font-size: 2rem; margin-bottom: 40px;
+            position: relative; padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 40px; height: 2px; background: var(--gold);
+        }
+
+        /* ブログリスト */
         .blog-list { list-style: none; padding: 0; }
-        .blog-item { background: #fff; margin-bottom: 20px; border-radius: 12px; border: 1px solid #e0dcd0; transition: 0.3s; }
-        .blog-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-        .blog-link { display: block; padding: 30px; text-decoration: none; color: inherit; }
+        .blog-item { 
+            background: var(--white); border-radius: 12px; margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e0dcd0;
+            transition: transform 0.3s;
+        }
+        .blog-item:hover { transform: translateY(-3px); }
         
-        .blog-date { color: #888; font-size: 0.9rem; font-family: sans-serif; display: block; margin-bottom: 10px; }
-        .blog-item-title { color: var(--navy); font-size: 1.25rem; font-weight: bold; margin: 0; line-height: 1.4; }
+        .blog-link { 
+            display: block; padding: 30px; text-decoration: none; color: inherit;
+        }
 
-        @media (max-width: 600px) { .top-nav a { margin: 0 5px; font-size: 0.8rem; } }
+        .blog-date { 
+            font-size: 0.9rem; color: #888; font-family: sans-serif; margin-bottom: 10px; display: block;
+        }
+
+        .blog-item-title { 
+            margin: 0; font-size: 1.3rem; color: var(--navy); line-height: 1.4;
+        }
+
+        footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #888; }
+
+        @media (max-width: 600px) {
+            .blog-item-title { font-size: 1.1rem; }
+            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
+        }
     </style>
 </head>
 <body>
@@ -45,17 +82,22 @@
 </nav>
 
 <div class="container">
-    <h1 class="page-title">ブログ・コラム</h1>
-
+    <h1 class="section-title">丸幸ブログ</h1>
+    
     <ul class="blog-list">
         <li class="blog-item">
             <a href="blog01.html" class="blog-link">
-                <span class="blog-date">2026.01.21</span>
-                <h2 class="blog-item-title">手数料は高い？それとも安い？ファクタリングで得られる「4つの隠れた利益」</h2>
+                <span class="blog-date">2026.01.12</span>
+                <h2 class="blog-item-title">【丸幸の約束】スピードより「対話」を大切にする理由</h2>
             </a>
         </li>
-    </ul>
+        
+        </ul>
 </div>
+
+<footer>
+    <p>&copy; Marukou Inc. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>

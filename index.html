@@ -9,7 +9,7 @@
       gtag('config', 'G-18XGHDNQB3');
     </script>
 
-<meta name="google-site-verification" content="64ca6db3c258d13a" />
+    <meta name="google-site-verification" content="64ca6db3c258d13a" />
     
     <link rel="canonical" href="https://www.marukouinc.com/">
     <meta charset="UTF-8">
@@ -31,7 +31,7 @@
         
         /* ナビゲーションメニュー */
         .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; display: inline-block; }
         .top-nav a:hover { color: var(--gold); }
 
         header { background: var(--white); padding: 20px 0; border-bottom: 1px solid var(--accent-border); }
@@ -50,6 +50,16 @@
 
         .card-white { background: white; padding: 35px; border-radius: 12px; border: 1px solid var(--accent-border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 40px; }
 
+        /* お知らせ・ブログセクション */
+        .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+        .news-box { background: #fff; padding: 25px; border-radius: 12px; border: 1px solid var(--accent-border); }
+        .news-box h3 { font-size: 1.1rem; color: var(--navy); margin-top: 0; border-left: 4px solid var(--gold); padding-left: 10px; }
+        .news-list { list-style: none; padding: 0; margin: 0; }
+        .news-item { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .news-item a { text-decoration: none; color: var(--text); }
+        .news-item a:hover { color: var(--gold); }
+        .news-date { color: #888; margin-right: 10px; font-family: sans-serif; }
+
         .service-section { background: var(--white); border-radius: 12px; padding: 40px 30px; margin-bottom: 30px; border: 1px solid var(--accent-border); text-align: left; }
         .service-section h3 { color: var(--navy); font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; flex-wrap: wrap; font-family: 'Noto Serif JP', serif; }
         .fee-badge { background: var(--navy); color: white; padding: 2px 12px; border-radius: 4px; font-size: 1.1rem; font-weight: bold; margin-left: 10px; }
@@ -57,16 +67,6 @@
         .strength-list { list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; gap: 10px; }
         .strength-tag { background: #fdfaf5; border: 1px solid var(--gold); color: var(--navy); padding: 5px 15px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; }
         .partner-tag { background: var(--navy); color: white; border: 1px solid var(--navy); padding: 5px 15px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; }
-
-        .step-guide { margin-top: 25px; border-left: 2px solid var(--gold); padding-left: 20px; margin-left: 5px; }
-        .step-node { position: relative; margin-bottom: 25px; }
-        .step-node::before { content: ""; position: absolute; left: -26px; top: 8px; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
-        .step-label { font-weight: bold; color: var(--navy); display: block; margin-bottom: 5px; }
-        .completion-box { background: #fdfaf5; border: 1px dashed var(--gold); padding: 12px; margin-top: 8px; border-radius: 6px; font-size: 0.9rem; }
-
-        .info-table { width: 100%; border-collapse: collapse; }
-        .info-table th { width: 30%; padding: 15px; border-bottom: 1px solid #eee; color: var(--navy); text-align: left; vertical-align: top; font-size: 0.9rem; }
-        .info-table td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; text-align: left; }
 
         .btn-formrun { background: var(--navy); color: white !important; padding: 18px; text-decoration: none; border-radius: 8px; font-weight: bold; display: block; width: 100%; max-width: 350px; margin: 20px auto; font-size: 1.1rem; text-align: center; }
         .line-btn { display: flex; align-items: center; justify-content: center; background: var(--line-green); color: white !important; text-decoration: none; padding: 15px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; margin: 20px auto; max-width: 320px; text-align: center; line-height: 1.3; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -78,10 +78,7 @@
         footer { background: #111; color: white; padding: 40px 20px; font-size: 13px; text-align: center; }
 
         @media (max-width: 600px) {
-            .section-title { font-size: 1.5rem; }
-            .info-table th, .info-table td { display: block; width: 100%; padding: 10px 5px; border-bottom: none; }
-            .info-table th { padding-bottom: 0; color: var(--gold); }
-            .info-table tr { border-bottom: 1px solid #eee; padding-bottom: 10px; display: block; }
+            .news-grid { grid-template-columns: 1fr; }
             .top-nav a { margin: 0 5px; font-size: 0.8rem; }
         }
     </style>
@@ -92,6 +89,7 @@
         <a href="index.html">ホーム</a>
         <a href="service.html">事業内容</a>
         <a href="news.html">お知らせ</a>
+        <a href="blog.html">ブログ</a>
         <a href="contact.html">お問い合わせ</a>
     </nav>
 
@@ -110,104 +108,66 @@
 
     <div class="container">
         
+        <div class="news-grid">
+            <div class="news-box">
+                <h3>お知らせ</h3>
+                <ul class="news-list">
+                    <li class="news-item"><span class="news-date">2026.01.21</span><a href="news.html">公式サイトをリニューアルしました</a></li>
+                </ul>
+            </div>
+            <div class="news-box">
+                <h3>最新ブログ</h3>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <span class="news-date">2026.01.21</span>
+                        <a href="blog01.html">手数料は高い？安い？ファクタリングの「4つの隠れた利益」</a>
+                    </li>
+                </ul>
+                <div style="text-align: right; margin-top: 10px;">
+                    <a href="blog.html" style="font-size: 0.8rem; color: var(--gold); text-decoration: none; font-weight: bold;">→ ブログ一覧を見る</a>
+                </div>
+            </div>
+        </div>
+
         <section id="about">
             <h2 class="section-title">丸幸について</h2>
             <div class="card-white" style="text-align: center;">
-                <p style="font-size: 1.2rem; color: var(--navy); font-weight: bold; margin-bottom: 15px; text-align: center;">「雨の日に、傘を貸せる会社でありたい」</p>
+                <p style="font-size: 1.2rem; color: var(--navy); font-weight: bold; margin-bottom: 15px;">「雨の日に、傘を貸せる会社でありたい」</p>
                 <div style="max-width: 700px; margin: 0 auto; font-size: 0.95rem;">
                     <p>株式会社丸幸は、日本橋兜町に拠点を構え、全国の企業様へ貢献しております。お金の悩みは孤独な闘いです。私たちは貴社を守る「傘」となり、共に明日を切り拓くパートナーでありたいと考えています。</p>
                 </div>
-                <div style="margin-top: 25px; font-size: 0.8rem; color: #888; border: 1px solid #ccc; display: inline-block; padding: 5px 12px; border-radius: 50px;">東京都中央区日本橋兜町 ｜ 株式会社丸幸</div>
             </div>
         </section>
 
         <section id="services">
             <h2 class="section-title">丸幸が選ばれる理由</h2>
-            
-            <div style="background: linear-gradient(135deg, var(--navy), #003a7a); color: white; padding: 30px; border-radius: 12px; margin-bottom: 40px; text-align: center; box-shadow: 0 4px 15px rgba(0,33,71,0.2);">
-                <p style="margin-bottom: 0; font-weight: bold; font-size: 1.1rem; letter-spacing: 1px;">「どこにも相談できない」その不安を、丸幸が払拭します。</p>
-                <p style="font-size: 0.95rem; margin-top: 12px; opacity: 0.95; line-height: 1.6;">
-                    銀行融資を断られた、他社でも難しいと言われた…。<br>
-                    そんな時こそ私たちの出番です。現状を否定せず、どう道を切り拓くか、<br>
-                    一緒に悩み、困難を共に乗り越えます。
-                </p>
-            </div>
-
             <div class="service-section">
                 <h3>2社間ファクタリング <span class="fee-badge">手数料 5% 〜</span></h3>
                 <p>独自の審査基準により、決算内容だけでは見えない貴社のポテンシャルを正当に評価。他社で断られたケースも柔軟に対応します。</p>
-                
                 <ul class="strength-list">
                     <li class="partner-tag">赤字・債務超過でも前向きに検討</li>
                     <li class="partner-tag">税金滞納やリスケ中でも相談可能</li>
-                    <li class="strength-tag">他社利用中（登記あり）も買取可能</li>
-                    <li class="strength-tag">債権譲渡登記の留保相談OK</li>
-                </ul>
-
-                <div class="step-guide">
-                    <div class="step-node"><span class="step-label">1. お申し込み・審査（最短当日回答）</span></div>
-                    <div class="step-node"><span class="step-label">2. ご契約・お振り込み</span></div>
-                    <div class="step-node">
-                        <span class="step-label">3. お支払い・完了</span>
-                        <div class="completion-box">入金後の精算についても、社長様の状況を汲み取り誠実に対応します。</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-section">
-                <h3>3社間ファクタリング <span class="fee-badge">手数料 3% 〜</span></h3>
-                <p>圧倒的なスピードと信頼性。取引先様との良好な関係を維持できるよう、プロの視点で手続きをサポートします。</p>
-                
-                <ul class="strength-list">
-                    <li class="partner-tag">創業1年未満のベンチャーも対応</li>
-                    <li class="strength-tag">複雑な債権関係も解決策を提示</li>
-                    <li class="strength-tag">銀行融資をお断りされた方も相談可</li>
+                    <li class="strength-tag">他社利用中も買取可能</li>
                 </ul>
             </div>
 
             <div style="background: white; border: 2px solid var(--navy); color: var(--navy); padding: 35px; border-radius: 12px; text-align: left; margin-bottom: 40px;">
                 <h3 style="margin-top:0; font-family:'Noto Serif JP'; font-size:1.3rem;">経営代行・バックオフィス支援</h3>
-                <p style="font-size: 0.95rem; margin-bottom:15px;">孤独な経営判断を支えるのは、正確な数字です。バックオフィスを預かることで、前を向くための時間を作ります。</p>
-                <div style="background: #f9f9f9; padding: 15px; border-radius: 6px; font-size: 0.9rem; border-left: 4px solid var(--gold);">
-                    <strong>「どんなことでも」伴走します：</strong> 事務作業の代行だけでなく、資金繰りの改善や体制の立て直しなど、一人にさせない支援をお約束します。
-                </div>
-            </div>
-        </section>
-
-        <section id="profile">
-            <h2 class="section-title">会社概要</h2>
-            <div class="card-white">
-                <table class="info-table">
-                    <tr><th>会社名</th><td>株式会社丸幸</td></tr>
-                    <tr><th>設立</th><td>2025年11月21日</td></tr>
-                    <tr><th>資本金</th><td>１０００万円</td></tr>
-                    <tr><th>所在地</th><td>〒103-0026 東京都中央区日本橋兜町９－５ 兜町平和ダイヤビル１００６号室</td></tr>
-                    <tr><th>事業内容</th><td>ファクタリング事業、経営コンサルティング、経理代行</td></tr>
-                </table>
+                <p>孤独な経営判断を支えるのは、正確な数字です。バックオフィスを預かることで、前を向くための時間を作ります。</p>
             </div>
         </section>
 
         <section id="contact">
             <h2 class="section-title">お問い合わせ</h2>
             <div class="card-white" style="text-align: center;">
-                <p style="font-weight: bold; color: var(--navy); font-size: 1.1rem;">その不安、一人で抱え込まずに丸幸へお預けください。</p>
-                <p>相談は無料です。企業様の「傘」として、最適な一手をご提案します。</p>
-                
+                <p style="font-weight: bold; color: var(--navy);">その不安、一人で抱え込まずに丸幸へお預けください。</p>
                 <a href="https://form.run/@info-aLDJbEsoObCfrqrJlifq" target="_blank" class="btn-formrun">無料相談フォームを開く</a>
-                
-                <div style="margin-top: 35px; border-top: 1px solid #eee; padding-top: 25px;">
-                    <p style="font-weight: bold; color: var(--navy); margin-bottom: 15px; text-align: center;">LINE・お電話はこちら</p>
-                    <a href="https://line.me/R/ti/p/@719ncqnx" target="_blank" class="line-btn">LINEで無料相談・査定</a>
-                    
-                    <div class="tel-area">
-                        <span style="font-size: 0.8rem; color: #666;">平日 9:00〜18:00 受付</span><br>
-                        <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
-                        <a href="mailto:info@marukouinc.com" class="mail-link">✉ info@marukouinc.com</a>
-                    </div>
+                <a href="https://line.me/R/ti/p/@719ncqnx" target="_blank" class="line-btn">LINEで無料相談・査定</a>
+                <div class="tel-area">
+                    <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
                 </div>
             </div>
         </section>
-
     </div>
 
     <footer>
@@ -216,6 +176,3 @@
 
 </body>
 </html>
-
-
-

@@ -50,16 +50,17 @@
 
         .card-white { background: white; padding: 35px; border-radius: 12px; border: 1px solid var(--accent-border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 40px; }
 
-        /* お知らせ・ブログセクション */
-        .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
-        .news-box { background: #fff; padding: 25px; border-radius: 12px; border: 1px solid var(--accent-border); }
-        .news-box h3 { font-size: 1.1rem; color: var(--navy); margin-top: 0; border-left: 4px solid var(--gold); padding-left: 10px; }
-        .news-list { list-style: none; padding: 0; margin: 0; }
-        .news-item { padding: 10px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-        .news-item a { text-decoration: none; color: var(--text); }
-        .news-item a:hover { color: var(--gold); }
-        .news-date { color: #888; margin-right: 10px; font-family: sans-serif; }
+        /* お知らせ & ブログエリア */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 40px; }
+        .info-box { background: #fff; padding: 20px; border-radius: 12px; border: 1px solid var(--accent-border); }
+        .info-box h3 { font-size: 1rem; color: var(--navy); margin-top: 0; border-left: 4px solid var(--gold); padding-left: 10px; margin-bottom: 15px; }
+        .info-list { list-style: none; padding: 0; margin: 0; font-size: 0.85rem; }
+        .info-item { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .info-item a { text-decoration: none; color: var(--text); }
+        .info-item a:hover { color: var(--gold); }
+        .info-date { color: #888; margin-right: 8px; }
 
+        /* サービス詳細エリア */
         .service-section { background: var(--white); border-radius: 12px; padding: 40px 30px; margin-bottom: 30px; border: 1px solid var(--accent-border); text-align: left; }
         .service-section h3 { color: var(--navy); font-size: 1.3rem; margin-top: 0; display: flex; align-items: center; flex-wrap: wrap; font-family: 'Noto Serif JP', serif; }
         .fee-badge { background: var(--navy); color: white; padding: 2px 12px; border-radius: 4px; font-size: 1.1rem; font-weight: bold; margin-left: 10px; }
@@ -68,17 +69,21 @@
         .strength-tag { background: #fdfaf5; border: 1px solid var(--gold); color: var(--navy); padding: 5px 15px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; }
         .partner-tag { background: var(--navy); color: white; border: 1px solid var(--navy); padding: 5px 15px; border-radius: 4px; font-size: 0.9rem; font-weight: bold; }
 
+        .step-guide { margin-top: 25px; border-left: 2px solid var(--gold); padding-left: 20px; margin-left: 5px; }
+        .step-node { position: relative; margin-bottom: 25px; }
+        .step-node::before { content: ""; position: absolute; left: -26px; top: 8px; width: 10px; height: 10px; background: var(--gold); border-radius: 50%; }
+        .step-label { font-weight: bold; color: var(--navy); display: block; margin-bottom: 5px; }
+
         .btn-formrun { background: var(--navy); color: white !important; padding: 18px; text-decoration: none; border-radius: 8px; font-weight: bold; display: block; width: 100%; max-width: 350px; margin: 20px auto; font-size: 1.1rem; text-align: center; }
         .line-btn { display: flex; align-items: center; justify-content: center; background: var(--line-green); color: white !important; text-decoration: none; padding: 15px; border-radius: 50px; font-weight: bold; font-size: 1.1rem; margin: 20px auto; max-width: 320px; text-align: center; line-height: 1.3; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         
         .tel-area { margin-top: 25px; text-align: center; }
         .tel-number { font-size: clamp(1.5rem, 7vw, 2.2rem); font-weight: bold; color: var(--navy); text-decoration: none; display: inline-block; margin: 10px 0; font-family: sans-serif; white-space: nowrap; }
-        .mail-link { font-size: clamp(0.9rem, 4vw, 1.1rem); color: var(--navy); text-decoration: none; font-weight: bold; display: block; word-break: break-all; margin-top: 5px; }
 
         footer { background: #111; color: white; padding: 40px 20px; font-size: 13px; text-align: center; }
 
         @media (max-width: 600px) {
-            .news-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
             .top-nav a { margin: 0 5px; font-size: 0.8rem; }
         }
     </style>
@@ -108,24 +113,18 @@
 
     <div class="container">
         
-        <div class="news-grid">
-            <div class="news-box">
+        <div class="info-grid">
+            <div class="info-box">
                 <h3>お知らせ</h3>
-                <ul class="news-list">
-                    <li class="news-item"><span class="news-date">2026.01.21</span><a href="news.html">公式サイトをリニューアルしました</a></li>
+                <ul class="info-list">
+                    <li class="info-item"><span class="info-date">2026.01.21</span><a href="news.html">公式サイトをリニューアルしました</a></li>
                 </ul>
             </div>
-            <div class="news-box">
+            <div class="info-box">
                 <h3>最新ブログ</h3>
-                <ul class="news-list">
-                    <li class="news-item">
-                        <span class="news-date">2026.01.21</span>
-                        <a href="blog01.html">手数料は高い？安い？ファクタリングの「4つの隠れた利益」</a>
-                    </li>
+                <ul class="info-list">
+                    <li class="info-item"><span class="info-date">2026.01.21</span><a href="blog01.html">ファクタリング「4つの隠れた利益」</a></li>
                 </ul>
-                <div style="text-align: right; margin-top: 10px;">
-                    <a href="blog.html" style="font-size: 0.8rem; color: var(--gold); text-decoration: none; font-weight: bold;">→ ブログ一覧を見る</a>
-                </div>
             </div>
         </div>
 
@@ -141,6 +140,7 @@
 
         <section id="services">
             <h2 class="section-title">丸幸が選ばれる理由</h2>
+            
             <div class="service-section">
                 <h3>2社間ファクタリング <span class="fee-badge">手数料 5% 〜</span></h3>
                 <p>独自の審査基準により、決算内容だけでは見えない貴社のポテンシャルを正当に評価。他社で断られたケースも柔軟に対応します。</p>
@@ -149,6 +149,11 @@
                     <li class="partner-tag">税金滞納やリスケ中でも相談可能</li>
                     <li class="strength-tag">他社利用中も買取可能</li>
                 </ul>
+                <div class="step-guide">
+                    <div class="step-node"><span class="step-label">1. お申し込み・審査（最短当日回答）</span></div>
+                    <div class="step-node"><span class="step-label">2. ご契約・お振り込み</span></div>
+                    <div class="step-node"><span class="step-label">3. お支払い・完了</span></div>
+                </div>
             </div>
 
             <div style="background: white; border: 2px solid var(--navy); color: var(--navy); padding: 35px; border-radius: 12px; text-align: left; margin-bottom: 40px;">

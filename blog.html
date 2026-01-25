@@ -7,66 +7,97 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-18XGHDNQB3');
-    </script>
+    </script>    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ブログ | 株式会社丸幸【公式】</title>
     <style>
         :root { 
-            --navy: #002b55; 
+            --main-navy: #002b55; 
             --bg-beige: #f5f2eb; 
-            --white: #ffffff; 
-            --gold: #917b56; 
+            --card-white: #ffffff; 
+            --accent-gold: #917b56;
+            --text-gray: #4a4a4a;
         }
         
         body { 
             background-color: var(--bg-beige); 
             margin: 0; padding: 0; 
             font-family: "YuMincho", "Hiragino Mincho ProN", serif;
-            color: #333; line-height: 1.8;
+            color: var(--text-gray);
+            line-height: 1.8;
         }
 
         /* 共通メニュー */
-        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
-        .top-nav a:hover { color: var(--gold); }
+        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--main-navy); position: sticky; top: 0; z-index: 1100; }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--main-navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
+        .top-nav a:hover { color: var(--accent-gold); }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
 
-        .section-title { 
-            text-align: center; color: var(--navy); font-size: 2rem; margin-bottom: 40px;
-            position: relative; padding-bottom: 15px;
-        }
-        .section-title::after {
-            content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 40px; height: 2px; background: var(--gold);
+        .blog-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        /* ブログリスト */
-        .blog-list { list-style: none; padding: 0; }
-        .blog-item { 
-            background: var(--white); border-radius: 12px; margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e0dcd0;
-            transition: transform 0.3s;
-        }
-        .blog-item:hover { transform: translateY(-3px); }
-        
-        .blog-link { 
-            display: block; padding: 30px; text-decoration: none; color: inherit;
+        .blog-header h1 {
+            font-size: 2rem;
+            color: var(--main-navy);
+            letter-spacing: 3px;
         }
 
-        .blog-date { 
-            font-size: 0.9rem; color: #888; font-family: sans-serif; margin-bottom: 10px; display: block;
+        /* ブログカード */
+        .blog-card {
+            background: var(--card-white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid #e0dcd0;
+            transition: transform 0.3s ease;
         }
 
-        .blog-item-title { 
-            margin: 0; font-size: 1.3rem; color: var(--navy); line-height: 1.4;
+        .blog-card:hover {
+            transform: translateY(-5px);
         }
 
-        footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #888; }
+        .blog-date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }
+
+        .blog-title-link {
+            text-decoration: none;
+            color: var(--main-navy);
+        }
+
+        .blog-card-title {
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--accent-gold);
+        }
 
         @media (max-width: 600px) {
-            .blog-item-title { font-size: 1.1rem; }
+            .blog-card { padding: 25px; }
+            .blog-card-title { font-size: 1.25rem; }
             .top-nav a { margin: 0 5px; font-size: 0.8rem; }
         }
     </style>
@@ -82,27 +113,41 @@
 </nav>
 
 <div class="container">
-    <h1 class="section-title">丸幸ブログ</h1>
-    
-    <ul class="blog-list">
-        <li class="blog-item">
-            <a href="blog02.html" class="blog-link">
-                <span class="blog-date">2026.01.21</span>
-                <h2 class="blog-item-title">手数料は高い？安い？ファクタリングで得られる「4つの隠れた利益」</h2>
-            </a>
-        </li>
+    <header class="blog-header">
+        <h1>ブログ</h1>
+    </header>
 
-        <li class="blog-item">
-            <a href="blog01.html" class="blog-link">
-                <span class="blog-date">2026.01.12</span>
-                <h2 class="blog-item-title">【丸幸の約束】スピードより「対話」を大切にする理由</h2>
-            </a>
-        </li>
-    </ul>
+    <div class="blog-card">
+        <div class="blog-date">2026.01.23</div>
+        <a href="blog03.html" class="blog-title-link">
+            <h2 class="blog-card-title">クリニック・医療法人の社保滞納・分納時の資金繰り解決策</h2>
+        </a>
+        <p class="blog-excerpt">社会保険料の滞納や分納中でも、診療報酬（レセプト）を活用した資金調達は可能です。匿名性を守る2社間契約と、将来の3社間移行プランについて、日本橋兜町の丸幸が誠実に解説します。</p>
+        <a href="blog03.html" class="read-more">記事を読む →</a>
+    </div>
+
+    <div class="blog-card">
+        <div class="blog-date">2026.01.21</div>
+        <a href="blog02.html" class="blog-title-link">
+            <h2 class="blog-card-title">手数料は高い？安い？ファクタリングで得られる「4つの隠れた利益」</h2>
+        </a>
+        <p class="blog-excerpt">ファクタリングの手数料を「単なるコスト」ではなく「戦略的な経費」として捉えることで、会社をどう成長させられるか。意外と知られていない4つのメリットを解説しました。</p>
+        <a href="blog02.html" class="read-more">記事を読む →</a>
+    </div>
+
+    <div class="blog-card">
+        <div class="blog-date">2026.01.12</div>
+        <a href="blog01.html" class="blog-title-link">
+            <h2 class="blog-card-title">【丸幸の約束】スピードより「対話」を大切にする理由</h2>
+        </a>
+        <p class="blog-excerpt">私たちがなぜスピード競争以上に、お客様との「対話」を重視するのか。丸幸が大切にしている経営者様への想いと、兜町という場所への誇りを綴りました。</p>
+        <a href="blog01.html" class="read-more">記事を読む →</a>
+    </div>
+
 </div>
 
 <footer>
-    <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    <p style="text-align: center; padding: 40px 0; color: #888; font-size: 0.8rem;">&copy; Marukou Inc. All Rights Reserved.</p>
 </footer>
 
 </body>

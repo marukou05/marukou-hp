@@ -8,128 +8,33 @@
       gtag('js', new Date());
       gtag('config', 'G-18XGHDNQB3');
     </script>    
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お知らせ | 株式会社丸幸【公式】</title>
+    <title>お知らせ｜株式会社丸幸 - 日本橋兜町の資金繰り支援</title>
     <style>
-        :root { 
-            --main-navy: #002b55; 
-            --bg-beige: #f5f2eb; 
-            --card-white: #ffffff; 
-            --accent-gold: #917b56;
-            --text-gray: #4a4a4a;
-        }
+        :root { --navy: #002b55; --bg: #f5f2eb; --gold: #917b56; --white: #ffffff; --text: #333; }
+        body { background-color: var(--bg); margin: 0; padding: 0; font-family: "Noto Sans JP", sans-serif; color: var(--text); line-height: 1.8; }
+        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; display: inline-block; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        h1 { color: var(--navy); text-align: center; margin-bottom: 50px; font-size: 2rem; border-bottom: 2px solid var(--gold); display: inline-block; width: 100%; padding-bottom: 10px; }
         
-        body { 
-            background-color: var(--bg-beige); 
-            margin: 0; padding: 0; 
-            font-family: "YuMincho", "Hiragino Mincho ProN", serif;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        /* 共通メニュー */
-        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--main-navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--main-navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
-        .top-nav a:hover { color: var(--accent-gold); }
-
-        .container { max-width: 850px; margin: 0 auto; padding: 60px 20px; }
-
-        .news-section {
-            background: var(--card-white);
-            border-radius: 12px;
-            padding: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            border: 1px solid #e0dcd0;
-        }
-
-        .news-header {
-            border-bottom: 2px solid var(--main-navy);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .news-header h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: var(--main-navy);
-            letter-spacing: 2px;
-        }
-
-        .news-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .news-item {
-            display: flex;
-            padding: 25px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .news-item:last-child {
-            border-bottom: none;
-        }
-
-        .news-meta {
-            min-width: 150px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .news-date {
-            font-size: 0.9rem;
-            color: #888;
-            font-family: "Helvetica Neue", Arial, sans-serif;
-        }
-
-        .news-label {
-            display: inline-block;
-            width: fit-content;
-            padding: 3px 14px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: #fff;
-            background: var(--accent-gold);
-            letter-spacing: 1px;
-        }
-
-        .news-content {
-            flex: 1;
-            padding-left: 20px;
-        }
-
-        .news-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: var(--main-navy);
-            margin-bottom: 8px;
-            display: block;
-            text-decoration: none;
-        }
+        .news-list { list-style: none; padding: 0; }
+        .news-item { background: #fff; padding: 25px; border-radius: 8px; border: 1px solid #e0dcd0; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
         
-        a.news-title:hover {
-            color: var(--accent-gold);
-            text-decoration: underline;
-        }
+        .news-meta { display: flex; align-items: center; gap: 15px; }
+        .news-date { color: #888; font-size: 0.9rem; font-weight: bold; }
+        .news-label { font-size: 0.75rem; padding: 3px 10px; border-radius: 4px; color: #fff; font-weight: bold; }
+        
+        /* ラベルの色分け */
+        .label-blog { background: #e67e22; } /* オレンジ：ブログ */
+        .label-info { background: var(--navy); } /* ネイビー：重要なお知らせ */
+        
+        .news-title { font-size: 1.15rem; font-weight: bold; color: var(--navy); text-decoration: none; }
+        .news-title:hover { text-decoration: underline; }
+        .news-excerpt { font-size: 0.95rem; color: #666; margin: 5px 0 0 0; }
 
-        .news-text {
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            margin: 0;
-            line-height: 1.7;
-        }
-
-        @media (max-width: 600px) {
-            .news-item { flex-direction: column; }
-            .news-meta { min-width: auto; flex-direction: row; align-items: center; margin-bottom: 12px; gap: 15px; }
-            .news-content { padding-left: 0; }
-            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
-        }
+        footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #888; border-top: 1px solid #e0dcd0; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -143,69 +48,40 @@
 </nav>
 
 <div class="container">
-    <section class="news-section">
-        <div class="news-header">
-            <h2>おしらせ</h2>
-        </div>
+    <h1>お知らせ</h1>
+    
+    <ul class="news-list">
+        <li class="news-item">
+            <div class="news-meta">
+                <span class="news-date">2026.01.29</span>
+                <span class="news-label label-blog">ブログ更新</span>
+            </div>
+            <a href="blog04.html" class="news-title">【実例公開】30万円の資金確保から月120万円の売上を作った手法を掲載しました</a>
+            <p class="news-excerpt">卸売・製造業の現場で役立つ、投資回収シミュレーションについて詳しく解説しています。</p>
+        </li>
 
-        <ul class="news-list">
-            <li class="news-item">
-                <div class="news-meta">
-                    <span class="news-date">2026.01.23</span>
-                    <span class="news-label" style="background: #e67e22;">ブログ更新</span>
-                </div>
-                <div class="news-content">
-                    <a href="blog03.html" class="news-title">【医療法人・クリニック向け】社保滞納・分納時の資金繰り改善について</a>
-                    <p class="news-text">
-                        診療報酬（レセプト）を活用した、医療機関特有の悩みに寄り添う資金調達術を公開しました。匿名性を守る2社間契約と、将来を見据えた3社間移行プランについて解説しています。
-                    </p>
-                </div>
-            </li>
+        <li class="news-item">
+            <div class="news-meta">
+                <span class="news-date">2026.01.25</span>
+                <span class="news-label label-blog">ブログ更新</span>
+            </div>
+            <a href="blog03.html" class="news-title">クリニック・歯科医院向け：診療報酬（レセプト）の早期活用に関する記事を公開</a>
+            <p class="news-excerpt">医療機関特有のキャッシュフロー課題を解決するための手法をご紹介しています。</p>
+        </li>
 
-            <li class="news-item">
-                <div class="news-meta">
-                    <span class="news-date">2026.01.21</span>
-                    <span class="news-label" style="background: #e67e22;">ブログ更新</span>
-                </div>
-                <div class="news-content">
-                    <a href="blog02.html" class="news-title">手数料は高い？安い？ファクタリングで得られる「4つの隠れた利益」</a>
-                    <p class="news-text">
-                        ファクタリングの手数料を「単なるコスト」ではなく「戦略的な経費」として捉えることで、会社をどう成長させられるかを解説しました。
-                    </p>
-                </div>
-            </li>
-
-            <li class="news-item">
-                <div class="news-meta">
-                    <span class="news-date">2026.01.11</span>
-                    <span class="news-label">ご案内</span>
-                </div>
-                <div class="news-content">
-                    <span class="news-title">公式サイトリニューアルのお知らせ</span>
-                    <p class="news-text">
-                        より使いやすく、弊社の想いが伝わるよう公式サイトを刷新いたしました。
-                    </p>
-                </div>
-            </li>
-
-            <li class="news-item">
-                <div class="news-meta">
-                    <span class="news-date">2025.11.14</span>
-                    <span class="news-label">重要</span>
-                </div>
-                <div class="news-content">
-                    <span class="news-title">株式会社丸幸 設立のお知らせ</span>
-                    <p class="news-text">
-                        日本橋兜町にて株式会社丸幸を設立いたしました。誠心誠意努めてまいります。
-                    </p>
-                </div>
-            </li>
-        </ul>
-    </section>
+        <li class="news-item">
+            <div class="news-meta">
+                <span class="news-date">2026.01.10</span>
+                <span class="news-label label-info">お知らせ</span>
+            </div>
+            <span class="news-title">株式会社丸幸 公式ホームページをリニューアルいたしました</span>
+            <p class="news-excerpt">日本橋兜町の事務所にて、より深く、温かい対話を通じた支援体制を強化してまいります。</p>
+        </li>
+    </ul>
 </div>
 
 <footer>
-    <p style="text-align: center; padding: 40px 0; color: #888; font-size: 0.8rem;">&copy; Marukou Inc. All Rights Reserved.</p>
+    <p>&copy; Marukou Inc. All Rights Reserved.</p>
 </footer>
 
 </body>

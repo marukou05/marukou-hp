@@ -26,13 +26,10 @@
             color: #333; line-height: 1.8;
         }
 
-        /* 共通メニュー */
         .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
         .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
-        .top-nav a:hover { color: var(--gold); }
 
         .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-
         .section-title { 
             text-align: center; color: var(--navy); font-size: 2rem; margin-bottom: 40px;
             position: relative; padding-bottom: 15px;
@@ -42,7 +39,6 @@
             width: 40px; height: 2px; background: var(--gold);
         }
 
-        /* ブログリスト */
         .blog-list { list-style: none; padding: 0; }
         .blog-item { 
             background: var(--white); border-radius: 12px; margin-bottom: 25px;
@@ -50,30 +46,12 @@
             transition: transform 0.3s;
         }
         .blog-item:hover { transform: translateY(-3px); }
-        
-        .blog-link { 
-            display: block; padding: 35px; text-decoration: none; color: inherit;
-        }
-
-        .blog-date { 
-            font-size: 0.9rem; color: #888; font-family: sans-serif; margin-bottom: 10px; display: block;
-        }
-
-        .blog-item-title { 
-            margin: 0 0 15px 0; font-size: 1.4rem; color: var(--navy); line-height: 1.5;
-        }
-
-        .blog-excerpt {
-            font-size: 0.95rem; color: #666; margin: 0; line-height: 1.7;
-        }
+        .blog-link { display: block; padding: 35px; text-decoration: none; color: inherit; }
+        .blog-date { font-size: 0.9rem; color: #888; font-family: sans-serif; margin-bottom: 10px; display: block; }
+        .blog-item-title { margin: 0 0 15px 0; font-size: 1.4rem; color: var(--navy); line-height: 1.5; }
+        .blog-excerpt { font-size: 0.95rem; color: #666; margin: 0; line-height: 1.7; }
 
         footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #888; }
-
-        @media (max-width: 600px) {
-            .blog-item-title { font-size: 1.15rem; }
-            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
-            .blog-link { padding: 25px; }
-        }
     </style>
 </head>
 <body>
@@ -95,6 +73,14 @@
                 <span class="blog-date">2026.01.29</span>
                 <h2 class="blog-item-title">【実例】30万円の仕入れ資金を確保し、月120万円の売上を創出する手法</h2>
                 <p class="blog-excerpt">「利益は出るのに、動かすお金が足りない」。そんな現場で、わずか3ヶ月でコストを回収し、4ヶ月目から純利益を積み上げた卸売・製造業の成功事例を解説します。</p>
+            </a>
+        </li>
+
+        <li class="blog-item">
+            <a href="blog03.html" class="blog-link">
+                <span class="blog-date">2026.01.25</span>
+                <h2 class="blog-item-title">クリニック・歯科医院の「診療報酬」を賢く活用。機材導入や急な支払いに備える</h2>
+                <p class="blog-excerpt">入金が数ヶ月先になる診療報酬（レセプト）を早期に資金化。地域医療を支える先生方のための、誠実な資金繰りサポートについて解説します。</p>
             </a>
         </li>
 

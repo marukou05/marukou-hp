@@ -14,7 +14,6 @@
     <style>
         :root { 
             --navy: #002b55; 
-            --bg: #fdfcf9; /* 背景をより白に近く */
             --gold: #917b56; 
             --white: #ffffff; 
             --text: #333; 
@@ -24,7 +23,6 @@
 
         html, body { 
             margin: 0; padding: 0; 
-            background: var(--bg); 
             font-family: "YuMincho", "Hiragino Mincho ProN", serif; 
             color: var(--text); 
             line-height: 2.0;
@@ -32,50 +30,49 @@
         }
 
         /* 共通メニュー */
-        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
+        .top-nav { background: rgba(255,255,255,0.9); padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; backdrop-filter: blur(5px); }
         .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
-        
-        /* 背景画像レイヤー（兜町＆打ち合わせ） */
-        .page-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            /* 背景を非常に薄く表示 (opacity 0.15) */
-            background: 
-                linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-                url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=2000'); /* クラシックなビル街（兜町イメージ） */
-            background-size: cover;
+
+        /* 背景画像設定：兜町と打ち合わせ風景をミックス */
+        body {
+            background-image: 
+                linear-gradient(rgba(245, 242, 235, 0.75), rgba(245, 242, 235, 0.75)), /* この数値を下げると画像が濃くなります */
+                url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=2000'), /* 日本のビジネス街（兜町風） */
+                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000'); /* 打ち合わせ風景 */
+            background-attachment: fixed;
             background-position: center;
+            background-size: cover;
+            background-blend-mode: lighten;
         }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px 150px; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px 150px; position: relative; }
         
         .section-title { text-align: center; color: var(--navy); font-size: 2.4rem; margin: 80px 0 40px; position: relative; padding-bottom: 20px; }
         .section-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: var(--gold); }
         
-        .intro-text { text-align: center; font-size: 1.5rem; font-weight: bold; color: var(--navy); margin-bottom: 60px; }
+        .intro-text { text-align: center; font-size: 1.5rem; font-weight: bold; color: var(--navy); margin-bottom: 60px; text-shadow: 1px 1px 2px rgba(255,255,255,0.8); }
 
-        /* 各ボックスの不透明度を上げて文字を読みやすく */
-        .pain-point-box { background: rgba(255,255,255,1); border-left: 10px solid var(--gold); padding: 45px; margin-bottom: 50px; border-radius: 0 12px 12px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        /* 各コンテンツボックスは白背景で可読性を確保 */
+        .pain-point-box { background: rgba(255,255,255,0.92); border-left: 10px solid var(--gold); padding: 45px; margin-bottom: 50px; border-radius: 0 12px 12px 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .pain-point-box h3 { color: var(--navy); margin-top: 0; font-size: 1.7rem; margin-bottom: 20px; }
         .solution-tag { background: var(--navy); color: #fff; padding: 6px 18px; border-radius: 4px; font-size: 0.95rem; margin-bottom: 20px; display: inline-block; letter-spacing: 0.1em; }
         
         .check-list { list-style: none; padding: 0; margin-bottom: 30px; }
-        .check-list li { position: relative; padding-left: 40px; margin-bottom: 18px; font-size: 1.2rem; color: #444; }
+        .check-list li { position: relative; padding-left: 40px; margin-bottom: 18px; font-size: 1.2rem; color: #333; }
         .check-list li::before { content: "✕"; position: absolute; left: 0; color: #d9534f; font-weight: bold; }
         
         .marukou-ans { position: relative; padding-left: 40px; margin-top: 25px; font-weight: bold; color: var(--gold); border-top: 1px dashed #ddd; padding-top: 25px; font-size: 1.3rem; }
         .marukou-ans::before { content: "◯"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
 
         .comparison-area { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 60px 0; }
-        .comp-card { background: #fff; border-radius: 12px; padding: 45px 35px; border: 1px solid #e0dcd0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .comp-card.navy { background: var(--navy); color: #fff; }
+        .comp-card { background: rgba(255,255,255,0.95); border-radius: 12px; padding: 45px 35px; border: 1px solid #e0dcd0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .comp-card.navy { background: rgba(0,43,85,0.95); color: #fff; border: none; }
         .comp-card h4 { font-size: 1.6rem; margin-top: 0; }
         .comp-card p { font-size: 1.2rem; }
 
-        .daiko-simple { background: #fff; padding: 50px 40px; border-radius: 12px; border: 1px solid #e0dcd0; margin-top: 40px; text-align: center; }
+        .daiko-simple { background: rgba(255,255,255,0.95); padding: 50px 40px; border-radius: 12px; border: 1px solid #e0dcd0; margin-top: 40px; text-align: center; }
         .daiko-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; list-style: none; padding: 0; margin-top: 35px; }
-        .daiko-list li { background: #f9f7f2; color: var(--navy); padding: 12px 28px; border-radius: 35px; font-weight: bold; font-size: 1.2rem; border: 1px solid rgba(0,43,85,0.1); }
+        .daiko-list li { background: #fdfcf9; color: var(--navy); padding: 12px 28px; border-radius: 35px; font-weight: bold; font-size: 1.2rem; border: 1px solid rgba(0,43,85,0.1); }
 
         .cta { text-align: center; margin-top: 120px; }
         .btn { 
@@ -92,6 +89,7 @@
             cursor: pointer;
             font-family: sans-serif;
         }
+        .btn:hover { background: var(--navy); transform: translateY(-3px); }
 
         @media (max-width: 768px) { 
             .comparison-area { grid-template-columns: 1fr; } 
@@ -99,12 +97,11 @@
             .pain-point-box { padding: 30px 20px; }
             .btn { width: 90%; padding: 20px 0; font-size: 1.4rem; }
             .top-nav a { margin: 0 5px; font-size: 0.8rem; }
+            body { background-attachment: scroll; }
         }
     </style>
 </head>
 <body>
-
-<div class="page-bg"></div>
 
 <nav class="top-nav">
     <a href="index.html">ホーム</a>
@@ -116,7 +113,7 @@
 
 <div class="container">
     <div style="text-align: center;">
-        <h1 style="color:var(--navy); font-size:2.8rem; margin-bottom: 25px;">丸幸にできること</h1>
+        <h1 style="color:var(--navy); font-size:2.8rem; margin-bottom: 25px; text-shadow: 2px 2px 4px #fff;">丸幸にできること</h1>
         <p class="intro-text">日本全国の経営者様が抱える、<br>資金のお悩みを解決へと導きます。</p>
     </div>
 
@@ -177,7 +174,7 @@
     </div>
 
     <h2 class="section-title">経営代行</h2>
-    <p style="text-align: center; font-size: 1.3rem; font-weight: bold; color: var(--navy);">経理・財務をプロに任せ、社長は「攻め」の経営に専念を。</p>
+    <p style="text-align: center; font-size: 1.3rem; font-weight: bold; color: var(--navy); text-shadow: 0 0 10px #fff;">経理・財務をプロに任せ、社長は「攻め」の経営に専念を。</p>
     
     <div class="daiko-simple">
         <ul class="daiko-list">
@@ -189,9 +186,9 @@
     </div>
 
     <div class="cta">
-        <p style="font-weight:bold; font-size: 1.4rem; margin-bottom: 35px;">全国対応・全業種対応。まずは無料相談から。</p>
+        <p style="font-weight:bold; font-size: 1.4rem; margin-bottom: 35px; text-shadow: 1px 1px 2px #fff;">全国対応・全業種対応。まずは無料相談から。</p>
       <div class="cta-direct" style="text-align: center; margin: 60px 0;">
-        <p style="font-weight: bold; color: var(--navy); margin-bottom: 25px;">
+        <p style="font-weight: bold; color: var(--navy); margin-bottom: 25px; text-shadow: 1px 1px 2px #fff;">
             まずは、あなたの状況をお聞かせください。<br>
             最短30分で査定結果をお伝えします。
         </p>

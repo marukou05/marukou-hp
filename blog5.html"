@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-18XGHDNQB3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-18XGHDNQB3');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資金を回し、運を拓く――穴八幡宮「一陽来復」の教えと経営者の習慣 | 株式会社丸幸</title>
+    <style>
+        :root { 
+            --navy: #002b55; 
+            --gold: #917b56; 
+            --bg: #fdfcf9; 
+            --text: #333; 
+        }
+        
+        body { 
+            margin: 0; padding: 0; 
+            font-family: "YuMincho", "Hiragino Mincho ProN", serif; 
+            color: var(--text); 
+            line-height: 2.0;
+            background: var(--bg);
+        }
+
+        .page-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
+                        url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover; background-position: center;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        
+        .blog-card { 
+            background: #fff; padding: 50px; border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+        }
+
+        .date { font-family: sans-serif; color: var(--gold); font-weight: bold; }
+        h1 { color: var(--navy); font-size: 2.2rem; margin: 15px 0 40px; line-height: 1.4; border-bottom: 2px solid var(--gold); padding-bottom: 20px; }
+        
+        h2 { color: var(--navy); font-size: 1.6rem; margin-top: 50px; border-left: 6px solid var(--gold); padding-left: 15px; }
+        h3 { color: var(--navy); font-size: 1.3rem; margin-top: 30px; }
+
+        .point-box { background: #f9f7f2; padding: 25px; border-radius: 8px; margin-bottom: 20px; }
+        .point-title { font-weight: bold; color: var(--gold); display: block; margin-bottom: 10px; font-size: 1.1rem; }
+
+        .daily-habit { border: 1px dashed var(--gold); padding: 30px; border-radius: 8px; margin-top: 40px; }
+        .daily-habit h3 { margin-top: 0; text-align: center; }
+
+        .cta-section { text-align: center; margin-top: 60px; padding-top: 40px; border-top: 1px solid #eee; }
+        .btn { 
+            display: inline-block; padding: 18px 50px; background: var(--navy); color: #fff !important; 
+            text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; 
+        }
+
+        @media (max-width: 768px) { 
+            h1 { font-size: 1.6rem; }
+            .blog-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-bg"></div>
+
+<div class="container">
+    <article class="blog-card">
+        <span class="date">2026.02.04</span>
+        <h1>資金を回し、運を拓く――<br>穴八幡宮「一陽来復」の教えと、経営者が今すぐできる開運習慣</h1>
+
+        <p>昨日、穴八幡宮へ参拝し、無事に「一陽来復」の御守を授かってまいりました。神社と放生寺（お寺）の両方を巡り、心新たに身の引き締まる思いです。</p>
+
+        <h2>1. なぜ経営者は「穴八幡宮」へ通うのか？</h2>
+        <p>特に資金繰りに向き合う経営者の間で、穴八幡宮が絶大な信頼を寄せられるのには理由があります。</p>
+
+        <div class="point-box">
+            <span class="point-title">唯一無二の「金銀融通」</span>
+            「一陽来復（いちようらいふく）」は、冬が終わって春が来る、つまり「どん底からV字回復する」象徴。単にお金が入るだけでなく、お金が「融通（スムーズに循環）」することを祈願します。
+            「金銀融通」という言葉には、自分だけが潤うのではなく、お金を世の中に循環させ、社会全体を豊かにするという思想があります。
+        </div>
+
+        <div class="point-box">
+            <span class="point-title">神社とお寺、神仏両方の守護を得る</span>
+            隣接する「放生寺」の御守（一陽来福）と合わせて授かることで、神様と仏様の両方のパワーを味方につける。これは「あらゆる手段を尽くして事業を守る」という経営姿勢の表れでもあります。
+        </div>
+
+        <div class="point-box">
+            <span class="point-title">「24時ちょうど」の経営的儀式</span>
+            冬至・大晦日・節分のいずれかの深夜0時ちょうどに、恵方に向けて高い位置に貼る。この「一刻も違わず、正しい方向へ」という厳しいルールを守るプロセスが、必要な決断力と規律を再確認させてくれるのです。
+        </div>
+
+        <h2>2. 参拝に行けなかった方、遠方の経営者様へ</h2>
+        <p>「仕事が忙しくて行列に並ぶ時間がない」「遠くて物理的に行けない」という方もご安心ください。一陽来復の精神は、特定の日だけに縛られるものではありません。</p>
+
+        <h3>「気づいた時」が運気の切り替わり</h3>
+        <p>「行きたかったけれど行けなかった」と気づき、今自分にできることを探そうとしたその瞬間が、あなたにとっての「冬の終わり」です。郵送授与の手配をしたり、身の回りを整えたりするアクションそのものが、経営者の「一陽来復」の第一歩になります。</p>
+
+        <h3>「恵方」を清めるだけでも流れは変わる</h3>
+        <p>御守を貼る予定だった壁や、今年の恵方（令和8年は南南東のやや右）にある棚を、丁寧に掃除してください。淀みを消し、良い気が入るスペースを作るだけで気の流れは確実に変わります。</p>
+
+        <div class="daily-habit">
+            <h3>経営者が「毎日」やるべき習慣</h3>
+            <p><strong>①「淀み」を溜めない（書類と判断の整理）</strong><br>
+            お金の流れが止まる時は、情報の流れも止まっています。毎日少しの時間でも、未処理の書類や保留メールを処理し、判断を先延ばしにしない「流れ」を作ってください。</p>
+            
+            <p><strong>② 恵方を向いて「解決策」を考える</strong><br>
+            朝一番に今年の恵方を向いて深呼吸してください。ただ悩むのではなく、吉方を向いて「どうすればお金が回るか（融通できるか）」を可視化する。この思考の切り替えが、新しい協力者やアイデアを引き寄せます。</p>
+        </div>
+
+        <div class="cta-section">
+            <p>資金の巡り、事業の好転を全力でサポートします。</p>
+            <a href="contact.html" class="btn">無料査定・相談はこちら</a>
+        </div>
+    </article>
+</div>
+
+</body>
+</html>

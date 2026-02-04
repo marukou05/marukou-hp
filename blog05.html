@@ -27,6 +27,27 @@
             background: var(--bg);
         }
 
+        /* 共通ナビゲーションのスタイル */
+        .top-nav { 
+            background: #fff; 
+            padding: 15px; 
+            text-align: center; 
+            border-bottom: 2px solid var(--navy); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1100; 
+        }
+        .top-nav a { 
+            margin: 0 15px; 
+            text-decoration: none; 
+            color: var(--navy); 
+            font-weight: bold; 
+            font-size: 0.95rem; 
+            font-family: sans-serif; 
+            display: inline-block; 
+        }
+        .top-nav a:hover { color: var(--gold); }
+
         .page-bg {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             background: linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.94)),
@@ -62,10 +83,19 @@
         @media (max-width: 768px) { 
             h1 { font-size: 1.6rem; }
             .blog-card { padding: 30px 20px; }
+            .top-nav a { margin: 0 5px; font-size: 0.85rem; }
         }
     </style>
 </head>
 <body>
+
+<nav class="top-nav">
+    <a href="index.html">ホーム</a>
+    <a href="service.html">事業内容</a>
+    <a href="news.html">お知らせ</a>
+    <a href="blog.html">ブログ</a>
+    <a href="contact.html">お問い合わせ</a>
+</nav>
 
 <div class="page-bg"></div>
 

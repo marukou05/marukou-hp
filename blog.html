@@ -7,51 +7,92 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-18XGHDNQB3');
-    </script>
+    </script>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブログ | 株式会社丸幸【公式】</title>
+    <title>ブログ｜株式会社丸幸 - 日本橋兜町の資金繰り支援</title>
     <style>
         :root { 
             --navy: #002b55; 
-            --bg-beige: #f5f2eb; 
-            --white: #ffffff; 
             --gold: #917b56; 
+            --text: #333;
+            --white: #ffffff; 
         }
-        
+
+        * { box-sizing: border-box; }
+
         body { 
-            background-color: var(--bg-beige); 
             margin: 0; padding: 0; 
-            font-family: "YuMincho", "Hiragino Mincho ProN", serif;
-            color: #333; line-height: 1.8;
+            font-family: "Noto Sans JP", sans-serif; 
+            color: var(--text); 
+            line-height: 1.8; 
+            /* 背景：外から見上げた明るいビジネス街のビル群 */
+            background-color: #eef2f7; 
+            background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+                              url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
-        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
+        /* ナビゲーション */
+        .top-nav { background: rgba(255, 255, 255, 0.95); padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; backdrop-filter: blur(5px); }
+        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; display: inline-block; }
+        .top-nav a:hover { color: var(--gold); }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        .section-title { 
-            text-align: center; color: var(--navy); font-size: 2rem; margin-bottom: 40px;
-            position: relative; padding-bottom: 15px;
-        }
-        .section-title::after {
-            content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 40px; height: 2px; background: var(--gold);
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        
+        h1 { 
+            color: var(--navy); 
+            text-align: center; 
+            margin-bottom: 50px; 
+            font-size: 2.2rem; 
+            border-bottom: 2px solid var(--gold); 
+            display: inline-block; 
+            width: 100%; 
+            padding-bottom: 15px; 
+            font-family: "YuMincho", serif;
+            letter-spacing: 4px;
         }
 
-        .blog-list { list-style: none; padding: 0; }
-        .blog-item { 
-            background: var(--white); border-radius: 12px; margin-bottom: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e0dcd0;
-            transition: transform 0.3s;
-        }
-        .blog-item:hover { transform: translateY(-3px); }
-        .blog-link { display: block; padding: 35px; text-decoration: none; color: inherit; }
-        .blog-date { font-size: 0.9rem; color: #888; font-family: sans-serif; margin-bottom: 10px; display: block; }
-        .blog-item-title { margin: 0 0 15px 0; font-size: 1.4rem; color: var(--navy); line-height: 1.5; }
-        .blog-excerpt { font-size: 0.95rem; color: #666; margin: 0; line-height: 1.7; }
+        .blog-list { display: flex; flex-direction: column; gap: 30px; }
 
-        footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #888; }
+        /* ブログカード：白の磨りガラス風 */
+        .blog-card { 
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 35px; 
+            border-radius: 4px; 
+            border-left: 6px solid var(--navy);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            backdrop-filter: blur(8px); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+        .blog-card:hover {
+            background: rgba(255, 255, 255, 1);
+            border-left-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+        }
+
+        .blog-date { color: var(--gold); font-weight: bold; font-family: 'Helvetica', sans-serif; font-size: 0.95rem; }
+        .blog-title { color: var(--navy); margin: 0; font-size: 1.4rem; line-height: 1.4; }
+        .blog-excerpt { color: #555; margin: 0; font-size: 0.95rem; }
+        .read-more { color: var(--gold); font-weight: bold; font-size: 0.9rem; text-align: right; }
+
+        footer { text-align: center; padding: 80px 0; font-size: 0.8rem; color: #444; font-weight: bold; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
+            .blog-card { padding: 25px 20px; }
+            .blog-title { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
@@ -65,66 +106,60 @@
 </nav>
 
 <div class="container">
-    <h1 class="section-title">丸幸ブログ</h1>
+    <h1>ブログ一覧</h1>
     
-    <article class="blog-card">
-            <div class="blog-info">
-                <span class="blog-date">2026.02.24</span>
-                <h2 class="blog-card-title">確定申告を「資金繰り改善」の好機に変える手法：納税準備とキャッシュの最大化</h2>
-                <p class="blog-card-excerpt">所得税・消費税の納税準備から、ファクタリング手数料の経費算入まで。確定申告を機に財務体質を強化するポイントを解説します。</p>
-                <a href="blog07.html" class="read-more">記事を読む →</a>
-            </div>
-        </article>
-    
-    <ul class="blog-list">
-        <li class="blog-item">
-            <a href="blog06.html" class="blog-link">
-                <span class="blog-date">2026.02.12</span>
-                <h2 class="blog-item-title">建設業の法改正と資金管理――2026年、手形60日規制が経営に与える影響</h2>
-                <p class="blog-excerpt">完工に向けた最終局面で注視すべき「支払いサイクルの変化」。手形サイトの短縮義務化や労務費転嫁など、最新の法改正がもたらす実務上の注意点を整理しました。</p>
-            </a>
-        </li>
+    <div class="blog-list">
 
-        <li class="blog-item">
-            <a href="blog05.html" class="blog-link">
-                <span class="blog-date">2026.02.04</span>
-                <h2 class="blog-item-title">資金を回し、運を拓く――穴八幡宮「一陽来復」の教えと、経営者が今すぐできる開運習慣</h2>
-                <p class="blog-excerpt">「金銀融通」の教えの本質と、多忙な経営者が日々のルーティンに取り入れられる開運のヒントを綴ります。</p>
-            </a>
-        </li>
+        <a href="blog07.html" class="blog-card">
+            <span class="blog-date">2026.02.24</span>
+            <h2 class="blog-title">確定申告を「資金繰り改善」の好機に変える手法：納税準備とキャッシュの最大化</h2>
+            <p class="blog-excerpt">所得税・消費税の納税準備から、個人事業主なら知っておきたいファクタリング手数料の経費算入までを解説。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
 
-        <li class="blog-item">
-            <a href="blog04.html" class="blog-link">
-                <span class="blog-date">2026.01.29</span>
-                <h2 class="blog-item-title">【実例】30万円の仕入れ資金を確保し、月120万円の売上を創出する手法</h2>
-                <p class="blog-excerpt">「利益は出るのに、動かすお金が足りない」。そんな現場で、わずか3ヶ月でコストを回収した卸売・製造業の成功事例を解説します。</p>
-            </a>
-        </li>
+        <a href="blog06.html" class="blog-card">
+            <span class="blog-date">2026.02.12</span>
+            <h2 class="blog-title">建設業界の皆様へ：2026年「手形60日規制」と資金繰り対策について</h2>
+            <p class="blog-excerpt">下請法・建設業法の改正による支払いサイクルの変化が、中小企業の財務に与える影響と対策を解説。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
 
-        <li class="blog-item">
-            <a href="blog03.html" class="blog-link">
-                <span class="blog-date">2026.01.25</span>
-                <h2 class="blog-item-title">クリニック・医療法人の社保滞納・分納時の資金繰り解決策｜株式会社丸幸</h2>
-                <p class="blog-excerpt">入金が数ヶ月先になる診療報酬（レセプト）を早期に資金化。地域医療を支える先生方のための、誠実な資金繰りサポートについて。</p>
-            </a>
-        </li>
+        <a href="blog05.html" class="blog-card">
+            <span class="blog-date">2026.02.04</span>
+            <h2 class="blog-title">「一陽来復」の精神に学ぶ、経営者のための開運習慣と金銀融通の知恵</h2>
+            <p class="blog-excerpt">穴八幡宮の参拝を通じて感じた、お金の循環を円滑にするための考え方をまとめました。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
 
-        <li class="blog-item">
-            <a href="blog02.html" class="blog-link">
-                <span class="blog-date">2026.01.21</span>
-                <h2 class="blog-item-title">手数料は高い？安い？ファクタリングで得られる「4つの隠れた利益」</h2>
-                <p class="blog-excerpt">手数料という「コスト」以上に、会社の成長を加速させるための「投資」としての側面を詳しく解説しました。</p>
-            </a>
-        </li>
+        <a href="blog04.html" class="blog-card">
+            <span class="blog-date">2026.01.29</span>
+            <h2 class="blog-title">【実例公開】30万円の資金確保から月120万円の売上を作った手法</h2>
+            <p class="blog-excerpt">卸売・製造業の現場で役立つ、投資回収シミュレーションについて詳しく解説しています。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
 
-        <li class="blog-item">
-            <a href="blog01.html" class="blog-link">
-                <span class="blog-date">2026.01.12</span>
-                <h2 class="blog-item-title">【丸幸の約束】スピードより「対話」を大切にする理由</h2>
-                <p class="blog-excerpt">日本橋兜町で私たちが大切にしているのは、数字の奥にある社長様の想いです。対話を重視する理由を綴りました。</p>
-            </a>
-        </li>
-    </ul>
+        <a href="blog03.html" class="blog-card">
+            <span class="blog-date">2026.01.20</span>
+            <h2 class="blog-title">中小企業のための「攻めの資金繰り」とは？</h2>
+            <p class="blog-excerpt">守りの財務から攻めの財務へ。キャッシュを回すことで事業を加速させるヒント。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
+
+        <a href="blog02.html" class="blog-card">
+            <span class="blog-date">2026.01.15</span>
+            <h2 class="blog-title">日本橋兜町で資金繰り支援を行う理由</h2>
+            <p class="blog-excerpt">金融の聖地・兜町にて、私たちが中小企業の皆様に寄り添う想いをお伝えします。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
+
+        <a href="blog01.html" class="blog-card">
+            <span class="blog-date">2026.01.10</span>
+            <h2 class="blog-title">ホームページリニューアルのご挨拶</h2>
+            <p class="blog-excerpt">株式会社丸幸の公式ホームページを刷新。最新の支援情報をお届けしてまいります。</p>
+            <span class="read-more">詳しく読む →</span>
+        </a>
+
+    </div>
 </div>
 
 <footer>

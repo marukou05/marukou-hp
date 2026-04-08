@@ -33,16 +33,15 @@
         .top-nav { background: rgba(255,255,255,0.9); padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; backdrop-filter: blur(5px); }
         .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
 
-        /* 背景画像設定：兜町と打ち合わせ風景をミックス */
+        /* 背景画像設定：修正版 */
         body {
             background-image: 
-                linear-gradient(rgba(245, 242, 235, 0.75), rgba(245, 242, 235, 0.75)), /* この数値を下げると画像が濃くなります */
-                url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=2000'), /* 日本のビジネス街（兜町風） */
-                url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2000'); /* 打ち合わせ風景 */
+                linear-gradient(rgba(245, 242, 235, 0.75), rgba(245, 242, 235, 0.75)),
+                url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&q=80&w=2000');
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
-            background-blend-mode: lighten;
+            background-repeat: no-repeat;
         }
 
         .container { max-width: 900px; margin: 0 auto; padding: 60px 20px 150px; position: relative; }
@@ -104,12 +103,11 @@
 <body>
 
 <nav class="top-nav">
-   <nav class="top-nav">
-        <a href="index.html">ホーム</a>
-        <a href="company.html">会社概要</a>
-        <a href="service.html">事業内容</a>
-        <a href="blog.html">ブログ一覧</a>
-        <a href="contact.html">お問い合わせ</a>
+    <a href="index.html">ホーム</a>
+    <a href="company.html">会社概要</a>
+    <a href="service.html">事業内容</a>
+    <a href="blog.html">ブログ一覧</a>
+    <a href="contact.html">お問い合わせ</a>
 </nav>
 
 <div class="container">

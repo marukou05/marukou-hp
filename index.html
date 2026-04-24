@@ -35,7 +35,7 @@
             background: var(--bg-blue);
         }
 
-        /* PCでの余白を極限まで活用：最大幅を1400pxに拡大 */
+        /* PCの余白を極限まで活用（1400px） */
         .main-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -85,15 +85,26 @@
         .fee-badge-main strong { font-size: 2rem; letter-spacing: 1px; }
 
         /* --- コンテンツ共通 --- */
-        .section-wrap { padding: 100px 80px; border-bottom: 1px solid #eee; }
-        .section-title { font-family: 'Noto Serif JP', serif; font-size: 2.5rem; color: var(--navy); margin-bottom: 60px; text-align: center; }
+        .section-wrap { padding: 80px 40px; border-bottom: 1px solid #eee; }
+        .section-title { font-family: 'Noto Serif JP', serif; font-size: 2.5rem; color: var(--navy); margin-bottom: 50px; text-align: center; }
+
+        /* カードデザイン */
+        .card-white { 
+            background: #fff; 
+            padding: 60px 40px; 
+            border-radius: 12px; 
+            border: 1px solid #e1e8f0; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin: 0 auto 40px;
+            max-width: 1000px;
+        }
 
         /* 事業紹介 */
         .biz-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .biz-card { background: #fdfdfd; padding: 50px 30px; border: 1px solid #e1e8f0; border-radius: 8px; text-align: center; }
         .biz-card h4 { color: var(--navy); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
 
-        /* よくあるご質問 (他社大手準拠) */
+        /* FAQ */
         .faq-grid { max-width: 1000px; margin: 0 auto; }
         .faq-item { background: #fff; border: 1px solid #ddd; padding: 25px; border-radius: 8px; margin-bottom: 20px; }
         .faq-q { font-weight: 700; color: var(--navy); font-size: 1.2rem; display: flex; margin-bottom: 10px; }
@@ -101,7 +112,7 @@
         .faq-a { font-size: 1.05rem; display: flex; line-height: 1.8; }
         .faq-a::before { content: "A."; color: #e74c3c; font-weight: 700; margin-right: 15px; }
 
-        /* 会社概要 */
+        /* 会社概要テーブル */
         .profile-table { width: 100%; border-collapse: collapse; font-size: 1.1rem; }
         .profile-table th { background: #f9f9f9; width: 25%; padding: 25px; border: 1px solid #ddd; color: var(--navy); text-align: left; }
         .profile-table td { padding: 25px; border: 1px solid #ddd; }
@@ -111,26 +122,19 @@
         .btn-gold { background: var(--gold); color: #fff !important; padding: 25px 80px; text-decoration: none; border-radius: 4px; font-weight: 700; font-size: 1.5rem; display: inline-block; }
         .footer-tel { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin: 40px 0; }
 
-        /* --- スマホ最適化 (ナビゲーション崩れと文字サイズ改善) --- */
+        /* スマホ最適化 */
         @media (max-width: 768px) {
             .header-top { padding: 10px 15px; }
             .header-logo h1 { font-size: 1.5rem; }
-            .header-logo .sub { font-size: 0.6rem; }
-            
-            /* スマホナビ：スリム化して邪魔にならないように */
-            .g-nav ul { flex-wrap: wrap; }
-            .g-nav a { padding: 8px 0; width: 33.33%; text-align: center; font-size: 0.8rem; border: 0.1px solid rgba(255,255,255,0.05); }
-            
+            .g-nav a { padding: 10px 0; width: 33.33%; text-align: center; font-size: 0.8rem; }
             .hero { padding: 60px 20px; }
             .hero h2 { font-size: 1.8rem; }
             .fee-badge-main { min-width: 100%; }
-
             .section-wrap { padding: 50px 20px; }
             .section-title { font-size: 2rem; }
             .biz-cards { grid-template-columns: 1fr; }
-            
-            .profile-table th, .profile-table td { display: block; width: 100%; font-size: 1.1rem; }
-            .profile-table th { background: #eee; padding: 10px 20px; }
+            .card-white { padding: 40px 20px; }
+            .profile-table th, .profile-table td { display: block; width: 100%; }
             .footer-tel { font-size: 2.2rem; }
         }
     </style>
@@ -174,7 +178,22 @@
         </div>
     </section>
 
-    <section id="services" class="section-wrap">
+    <section class="section-wrap" style="background: #fdfdfd; border-bottom: none; padding-bottom: 0;">
+        <div class="card-white" style="text-align: center;">
+            <h3 style="color: #c5a059; font-family: 'Noto Serif JP', serif; font-size: 1.8rem; margin-bottom: 25px;">「雨の日に、傘を貸せる会社でありたい」</h3>
+            <p style="text-align: left; max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 2;">
+                資金繰りの課題は突然訪れます。私たちは貴社を守る「傘」となり、形式的な審査だけに依存せず、実態に即した現実的なご提案を行います。
+            </p>
+        </div>
+
+        <div class="card-white" style="text-align: center; border-top: 4px solid var(--navy);">
+            <h3 style="color: #002147; font-size: 1.6rem; margin-bottom: 20px;">ご相談実績</h3>
+            <p style="font-size: 1.1rem; color: var(--navy); margin-bottom: 15px;"><strong>多種多様な業種のご相談に向き合ってきた実績</strong></p>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: #555;">建設業・製造業・運送業・クリニック・サービス業から個人事業主様まで。<br>日本全国、あらゆる業界の経営者様に継続してご利用いただいております。</p>
+        </div>
+    </section>
+
+    <section id="services" class="section-wrap" style="padding-top: 40px;">
         <h3 class="section-title">事業内容</h3>
         <div class="biz-cards">
             <div class="biz-card">

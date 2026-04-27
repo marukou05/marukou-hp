@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-18XGHDNQB3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-18XGHDNQB3');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「これって経費？」経営者が知っておくべき節税の基本｜ブログ｜株式会社丸幸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #001f40;
+            --gold: #b89c6a;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --bg-texture: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36z8gAFWNhYfEPYwPZfwyMDFAtAOrFDvE8O3mUAAAAAElFTkSuQmCC');
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            line-height: 1.8;
+            background-color: #f6f8fa;
+            background-image: var(--bg-texture);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 60px rgba(0,0,0,0.05);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- ナビゲーション --- */
+        .top-nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 10px 0;
+            border-bottom: 3px solid var(--navy);
+            position: sticky;
+            top: 0;
+            z-index: 1100;
+            backdrop-filter: blur(10px);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo-text {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.6rem;
+            color: var(--navy);
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* --- 記事エリア --- */
+        .article-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            flex: 1;
+        }
+
+        .post-date {
+            color: var(--gold);
+            font-weight: 700;
+            font-family: 'Helvetica', sans-serif;
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .post-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.5rem, 4vw, 2.4rem);
+            color: var(--navy);
+            text-align: center;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .post-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid #e1e8f0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .post-content h2 {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--navy);
+            font-size: 1.6rem;
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+        }
+
+        .post-content p {
+            margin-bottom: 1.8em;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: #fdfcf9;
+            border: 1px solid rgba(184, 156, 106, 0.3);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-top: 50px;
+            color: var(--navy);
+            text-decoration: none;
+            font-weight: 700;
+            border: 1px solid var(--navy);
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+        .btn-back:hover {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        /* --- CTA --- */
+        .cta-footer {
+            padding: 80px 40px;
+            background: #fff;
+            text-align: center;
+            border-top: 10px solid var(--navy);
+        }
+        .btn-gold {
+            background: var(--gold);
+            color: #fff !important;
+            padding: 20px 60px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center; padding: 40px 0; font-size: 0.85rem; color: #888; background: #fff; border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; padding: 5px 20px; }
+            .logo-text { font-size: 1.4rem; }
+            .nav-links a { margin: 3px 8px; font-size: 0.8rem; }
+            .post-content { padding: 30px 20px; }
+            .post-title { font-size: 1.5rem; }
+            .btn-gold { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">株式会社丸幸</a>
+            <div class="nav-links">
+                <a href="index.html#services">事業内容</a>
+                <a href="company.html">会社概要</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        <span class="post-date">2026.04.27</span>
+        <h1 class="post-title">「これって経費？」経営者が知っておくべき節税の基本と、納税資金の作り方</h1>
+        
+        <div class="post-content">
+            <p>決算期や確定申告の時期になると、多くの経営者様が「どこまでを経費として計上できるのか」という悩みに直面します。適正な節税は手元にキャッシュを残すための基本ですが、一方で、納税のための資金繰りに頭を悩ませる方も少なくありません。</p>
+            <p>今回は、経営者や個人事業主の方が知っておくべき「経費」の考え方と、納税をスムーズに行うための財務戦略についてお話しします。</p>
+
+            <h2>1. 「経費」になるかどうかの判断基準</h2>
+            <p>結論から言えば、経費とは「売上をあげるために直接、あるいは間接的に必要だった支出」のことです。税務署がチェックするのは、その支出が「事業に関連性があるか」という一点です。</p>
+            <div class="highlight-box">
+                <strong>判断のポイント：</strong>
+                <ul>
+                    <li>その支出は、事業の継続や売上拡大に貢献したか？</li>
+                    <li>第三者に「なぜこれが必要だったか」を論理的に説明できるか？</li>
+                    <li>領収書や振込明細などの客観的な証拠が残っているか？</li>
+                </ul>
+            </div>
+            <p>例えば、取引先との打ち合わせ費用は「接待交際費」ですが、家族とのプライベートな食事は経費にはなりません。しかし、同じ食事でも「将来の仕事に繋がる情報収集の場」として証明できれば、会議費等として計上できる可能性があります。</p>
+
+            <h2>2. 節税をしすぎることの落とし穴</h2>
+            <p>「利益が出そうだから、期末に無駄な備品を買って経費を増やそう」という考えは危険です。節税の目的は「キャッシュを残すこと」であるべきです。経費を増やすということは、同時にお金が外に出ていることを意味します。</p>
+            <p>特に銀行融資を検討している場合、無理に利益を圧縮しすぎると、決算書の評価が下がり、いざという時の借入が困難になるリスクがあります。</p>
+
+            <h2>3. 納税資金をどう確保するか</h2>
+            <p>「利益は出ているのに、税金を払う現金がない」。これは黒字経営の企業でもよくある悩みです。利益には税金がかかりますが、売掛金の入金が遅れている場合、手元に現金がない状態で納税期限がやってきてしまいます。</p>
+            <p>納税資金の確保に困った際、有効な手段の一つが「ファクタリング」です。借入とは異なり、将来入ってくる予定の売掛金を事前に現金化することで、延滞税などの高いペナルティを回避し、クリーンな財務状態を維持することができます。</p>
+
+            <p>丸幸では、単なる資金化だけでなく、こうした税務を見越した長期的なキャッシュフローの改善提案も行っています。資金繰りの悩みは、一人で抱え込まずにぜひご相談ください。</p>
+            
+            <a href="blog.html" class="btn-back">← ブログ一覧へ戻る</a>
+        </div>
+    </article>
+
+    <section class="cta-footer">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-family: 'Noto Serif JP', serif; font-size: 1.4rem; color: var(--navy); font-weight: 700; margin: 0;">納税資金や資金繰りのご相談を承ります</p>
+            <p style="font-size: 1rem; color: #555; margin: 10px 0 30px;">丸幸は日本橋兜町を拠点に、全国の経営者様をサポートしています。</p>
+            <a href="contact.html" class="btn-gold">無料相談フォームを開く</a><br>
+            <a href="tel:0353242561" style="font-size: 2.2rem; font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin-top: 20px;">☎ 03-5324-2561</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -11,7 +11,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="64ca6db3c258d13a" />
     <title>株式会社丸幸 | ファクタリング・経理代行（日本橋兜町）</title>
     <link rel="canonical" href="https://www.marukouinc.com/">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
@@ -20,169 +19,141 @@
             --navy: #002147;
             --gold: #c5a059;
             --white: #ffffff;
-            --bg-blue: #f4f7f9;
             --text: #333;
         }
 
         * { box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 80px; /* ナビ固定分、移動先を調整 */
+        }
 
         body {
             margin: 0; padding: 0;
             font-family: 'Noto Sans JP', sans-serif;
             color: var(--text);
             line-height: 1.6;
-            background: #fff; /* 背景色を白にして一体感を出す */
+            background: #f4f7f9;
         }
 
-        /* 左右余白をパツパツにする設定 */
         .main-container {
-            width: 100%; /* 最大幅を制限せず100%に */
-            max-width: 1600px; /* 超大型モニターでもバラけない程度に制限 */
+            width: 100%;
+            max-width: 1600px;
             margin: 0 auto;
             background: #fff;
         }
 
-        /* --- ヘッダー・ナビゲーション（スリム化） --- */
-        .header-main {
-            background: #fff;
-            border-bottom: 3px solid var(--gold);
+        /* --- 指定のトップナビゲーション --- */
+        .top-nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--navy);
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 1100;
+            backdrop-filter: blur(10px);
         }
-        .header-top {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 30px; /* パツパツに */
+            padding: 0 20px;
         }
-        .header-logo h1 {
-            margin: 0; font-family: 'Noto Serif JP', serif; font-size: 1.8rem; color: var(--navy); letter-spacing: 1px;
+        .logo-text {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.05em;
         }
-        .header-logo .sub {
-            font-size: 0.7rem; color: var(--gold); font-weight: 700; letter-spacing: 0.2em;
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
-        
-        .g-nav { background: var(--navy); }
-        .g-nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
-        .g-nav a { display: block; padding: 10px 25px; color: #fff; text-decoration: none; font-size: 0.9rem; font-weight: 700; }
-        .g-nav a:hover { background: var(--gold); }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* --- ヒーロー（高さを抑えて凝縮） --- */
+        /* --- ヒーロー --- */
         .hero {
             background: linear-gradient(rgba(0,33,71,0.7), rgba(0,33,71,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000');
             background-size: cover; background-position: center;
             padding: 60px 20px; text-align: center; color: #fff;
         }
-        .hero h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.6rem, 4vw, 2.8rem); margin-bottom: 20px; line-height: 1.2; }
+        .hero h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 4vw, 2.8rem); margin-bottom: 20px; }
         
-        .fee-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }
-        .fee-badge-main {
-            background: var(--gold); color: #fff; padding: 10px 25px; border-radius: 4px; text-align: center; min-width: 240px;
-        }
-        .fee-badge-main span { display: block; font-size: 0.85rem; margin-bottom: 3px; }
-        .fee-badge-main strong { font-size: 1.5rem; }
+        .fee-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+        .fee-badge { background: var(--gold); color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 1rem; }
 
-        /* --- セクション（上下余白をガッツリ削る） --- */
-        .section-wrap { padding: 40px 30px; border-bottom: 1px solid #eee; }
+        /* --- セクション（パツパツ設定） --- */
+        .section-wrap { padding: 40px 20px; border-bottom: 1px solid #eee; }
         .section-title { font-family: 'Noto Serif JP', serif; font-size: 2rem; color: var(--navy); margin-bottom: 30px; text-align: center; }
 
-        .card-white { 
-            background: #fdfdfd; 
-            padding: 30px; 
-            border-radius: 8px; 
-            border: 1px solid #e1e8f0; 
-            margin: 0 auto 20px;
-            max-width: 1200px;
-        }
-
-        /* 事業紹介（3カラム固定） */
         .biz-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .biz-card { background: #fff; padding: 25px; border: 1px solid #e1e8f0; text-align: center; }
-        .biz-card h4 { color: var(--navy); font-size: 1.3rem; margin-top: 0; margin-bottom: 10px; border-bottom: 2px solid var(--gold); display: inline-block; padding: 0 10px 5px; }
+        .biz-card { background: #fdfdfd; padding: 25px; border: 1px solid #e1e8f0; text-align: center; }
+        .biz-card h4 { color: var(--navy); font-size: 1.3rem; margin-top: 0; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
 
-        /* FAQ */
-        .faq-grid { max-width: 1100px; margin: 0 auto; }
-        .faq-item { background: #fff; border: 1px solid #ddd; padding: 15px 20px; margin-bottom: 10px; }
-        .faq-q { font-weight: 700; color: var(--navy); font-size: 1.1rem; display: flex; }
-        .faq-q::before { content: "Q."; color: var(--gold); margin-right: 10px; }
-        .faq-a { font-size: 1rem; display: flex; line-height: 1.6; margin-top: 5px; }
-        .faq-a::before { content: "A."; color: #e74c3c; font-weight: 700; margin-right: 10px; }
-
-        /* 会社概要テーブル */
-        .profile-table { width: 100%; border-collapse: collapse; font-size: 1rem; max-width: 1100px; margin: 0 auto; }
-        .profile-table th { background: #f9f9f9; width: 20%; padding: 12px 15px; border: 1px solid #ddd; color: var(--navy); text-align: left; }
+        .profile-table { width: 100%; border-collapse: collapse; max-width: 1100px; margin: 0 auto; }
+        .profile-table th { background: #f9f9f9; width: 20%; padding: 12px 15px; border: 1px solid #ddd; text-align: left; }
         .profile-table td { padding: 12px 15px; border: 1px solid #ddd; }
 
-        /* お問い合わせ（パツパツのフッター） */
         .contact-footer { padding: 50px 20px; background: #fff; text-align: center; border-top: 6px solid var(--navy); }
-        .btn-gold { background: var(--gold); color: #fff !important; padding: 15px 50px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; border-radius: 4px; }
-        .footer-tel { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin: 20px 0; }
+        .footer-tel { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin: 15px 0; }
+        .btn-gold { background: var(--gold); color: #fff !important; padding: 15px 50px; text-decoration: none; border-radius: 4px; font-weight: 700; display: inline-block; }
 
-        /* --- スマホ最適化 --- */
         @media (max-width: 768px) {
-            .header-top { padding: 10px; }
-            .g-nav a { padding: 8px 0; width: 33.33%; font-size: 0.8rem; }
-            .section-wrap { padding: 30px 15px; }
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-links a { margin: 0 8px; font-size: 0.8rem; }
             .biz-cards { grid-template-columns: 1fr; }
             .profile-table th, .profile-table td { display: block; width: 100%; }
-            .profile-table th { padding: 5px 15px; background: #eee; }
+            .hero { padding: 40px 10px; }
         }
     </style>
 </head>
 <body>
 
 <div class="main-container">
-    <div class="header-main">
-        <header class="header-top">
-            <div class="header-logo">
-                <h1>株式会社丸幸</h1>
-                <div class="sub">MARUKOU INC. | 日本橋兜町</div>
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">株式会社丸幸</a>
+            <div class="nav-links">
+                <a href="index.html#services">事業内容</a>
+                <a href="index.html#about">会社概要</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
+                <a href="contact.html">お問い合わせ</a>
             </div>
-        </header>
-        <nav class="g-nav">
-            <ul>
-                <li><a href="#">ホーム</a></li>
-                <li><a href="#services">事業</a></li>
-                <li><a href="#faq">質問</a></li>
-                <li><a href="#about">会社</a></li>
-                <li><a href="./news.html">お知らせ</a></li>
-                <li><a href="./blog.html">ブログ</a></li>
-            </ul>
-        </nav>
-    </div>
+        </div>
+    </nav>
 
     <section class="hero">
-        <div class="fee-container">
-            <div class="fee-badge-main">
-                <span>2社間ファクタリング</span>
-                <strong>手数料 7.0% 〜</strong>
-            </div>
-            <div class="fee-badge-main">
-                <span>3社間ファクタリング</span>
-                <strong>手数料 4.0% 〜</strong>
-            </div>
+        <div class="fee-badges">
+            <div class="fee-badge">2社間：手数料 7.0% 〜</div>
+            <div class="fee-badge">3社間：手数料 4.0% 〜</div>
         </div>
         <h2>売掛金を、最短で資金へ。<br>経営を加速させる、最速の一手を。</h2>
         <div style="margin-top:20px;">
-            <a href="#contact" class="btn-gold">無料相談・査定依頼はこちら</a>
+            <a href="#contact" class="btn-gold">無料相談・査定依頼</a>
         </div>
     </section>
 
     <section class="section-wrap" style="background: #fdfdfd;">
-        <div class="card-white" style="text-align: center; margin-bottom: 15px;">
-            <h3 style="color: #c5a059; font-family: 'Noto Serif JP', serif; font-size: 1.4rem; margin-top:0; margin-bottom: 15px;">「雨の日に、傘を貸せる会社でありたい」</h3>
-            <p style="text-align: left; max-width: 900px; margin: 0 auto; font-size: 1rem; line-height: 1.8;">
-                資金繰りの課題は突然訪れます。私たちは貴社を守る「傘」となり、実態に即した現実的なご提案を行います。
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h3 style="color: #c5a059; font-family: 'Noto Serif JP', serif; font-size: 1.4rem; margin-bottom: 10px;">「雨の日に、傘を貸せる会社でありたい」</h3>
+            <p style="text-align: left; font-size: 1rem; line-height: 1.8;">
+                資金繰りの課題は突然訪れます。私たちは貴社を守る「傘」となり、形式的な審査だけに依存せず、実態に即した現実的なご提案を行います。
             </p>
-        </div>
-
-        <div class="card-white" style="text-align: center; border-top: 3px solid var(--navy);">
-            <h3 style="color: #002147; font-size: 1.3rem; margin-top:0; margin-bottom: 10px;">ご相談実績</h3>
-            <p style="font-size: 0.95rem; line-height: 1.6; color: #555; margin:0;">
-                建設・製造・運送・クリニック・個人事業主まで、全国あらゆる業界の経営者様に継続してご利用いただいております。
-            </p>
+            <div style="border-top: 1px solid #eee; margin-top: 20px; padding-top: 20px;">
+                <h3 style="color: #002147; font-size: 1.3rem; margin-bottom: 5px;">ご相談実績</h3>
+                <p style="font-size: 0.95rem; color: #555;">
+                    建設・製造・運送・クリニック・個人事業主まで、全国の経営者様にご利用いただいております。
+                </p>
+            </div>
         </div>
     </section>
 
@@ -191,33 +162,29 @@
         <div class="biz-cards">
             <div class="biz-card">
                 <h4>ファクタリング</h4>
-                <p style="text-align: left; font-size: 0.9rem; margin:0;">独自の柔軟審査で最短即日現金化。赤字・滞納がある場合でも実態を重視してサポートします。</p>
+                <p style="text-align: left; font-size: 0.9rem;">最短即日現金化。2社間契約により、取引先に知られることなく迅速な資金調達をサポートします。</p>
             </div>
             <div class="biz-card">
                 <h4>営業代行</h4>
-                <p style="text-align: left; font-size: 0.9rem; margin:0;">金融と実務の両面から強力支援。戦略的なアプローチで貴社の売上向上に直結する成果を出します。</p>
+                <p style="text-align: left; font-size: 0.9rem;">金融と実務の両面から支援。戦略的なアプローチで、貴社の販路拡大と売上向上を実現します。</p>
             </div>
             <div class="biz-card">
                 <h4>経理代行</h4>
-                <p style="text-align: left; font-size: 0.9rem; margin:0;">正確な事務処理により、経営者が本業に専念できる強固なバックオフィスを構築します。</p>
+                <p style="text-align: left; font-size: 0.9rem;">記帳代行から財務管理まで。正確な事務処理により、本業に集中できる環境を構築します。</p>
             </div>
         </div>
     </section>
 
     <section id="faq" class="section-wrap" style="background: #fdfdfd;">
         <h3 class="section-title">よくあるご質問</h3>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <span class="faq-q">審査の通過率はどのくらいですか？</span>
-                <span class="faq-a">通過率は90%以上です。赤字決算や税金滞納がある企業様でも、売掛金の実態があれば柔軟に対応可能です。</span>
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <div style="background:#fff; border:1px solid #ddd; padding:15px; margin-bottom:10px;">
+                <p style="font-weight:700; color:var(--navy); margin:0;">Q. 審査の通過率はどのくらいですか？</p>
+                <p style="margin:5px 0 0 0;">A. 90%以上です。赤字や滞納があっても、売掛金の実態があれば柔軟に対応可能です。</p>
             </div>
-            <div class="faq-item">
-                <span class="faq-q">個人事業主でも利用できますか？</span>
-                <span class="faq-a">はい、ご利用いただけます。売掛先（取引先）が法人であれば問題ございません。</span>
-            </div>
-            <div class="faq-item">
-                <span class="faq-q">最短どのくらいで入金されますか？</span>
-                <span class="faq-a">必要書類が揃っていれば、最短即日での入金が可能です。</span>
+            <div style="background:#fff; border:1px solid #ddd; padding:15px; margin-bottom:10px;">
+                <p style="font-weight:700; color:var(--navy); margin:0;">Q. 最短どのくらいで入金されますか？</p>
+                <p style="margin:5px 0 0 0;">A. 必要書類が揃っていれば、最短即日での入金が可能です。</p>
             </div>
         </div>
     </section>
@@ -234,10 +201,10 @@
     </section>
 
     <section id="contact" class="contact-footer">
-        <p style="margin-bottom: 20px; font-weight:700; color:var(--navy);">他社で断られた案件でも、まずは一度ご相談ください。</p>
-        <a href="https://form.run/@info-aLDJbEsoObCfrqrJlifq" class="btn-gold" target="_blank">無料相談フォーム</a><br>
+        <p style="font-weight:700; color:var(--navy); margin:0;">その不安、早めの対応が重要です。</p>
         <a href="tel:0353242561" class="footer-tel">☎ 03-5324-2561</a>
-        <p style="font-size: 0.9rem; color: #888; border-top: 1px solid #eee; padding-top: 20px; margin-top: 10px;">
+        <a href="contact.html" class="btn-gold" style="margin-top:10px;">無料相談フォーム</a>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 20px;">
             &copy; Marukou Inc. All Rights Reserved.
         </p>
     </section>

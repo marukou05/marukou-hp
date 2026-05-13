@@ -33,7 +33,6 @@
             background: var(--bg-blue);
         }
 
-        /* PCでの余白をパツパツにする設定 */
         .main-container {
             width: 100%;
             max-width: 1600px;
@@ -44,7 +43,6 @@
             flex-direction: column;
         }
 
-        /* --- ナビゲーション（トップページと共通） --- */
         .top-nav {
             background: rgba(255, 255, 255, 0.98);
             padding: 15px 0;
@@ -80,7 +78,6 @@
         }
         .nav-links a:hover { color: var(--gold); }
 
-        /* --- コンテンツエリア --- */
         .container {
             width: 100%;
             max-width: 1000px;
@@ -100,7 +97,6 @@
             letter-spacing: 2px;
         }
 
-        /* ブログリスト（パツパツ凝縮デザイン） */
         .blog-list {
             display: flex;
             flex-direction: column;
@@ -176,7 +172,6 @@
             border-top: 1px solid #eee;
         }
 
-        /* スマホ最適化 */
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 10px; }
             .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
@@ -209,8 +204,15 @@
         
         <div class="blog-list">
 
+            <a href="blog13.html" class="blog-card">
+                <span class="blog-date">2026.05.13<span class="new-tag">NEW</span></span>
+                <h2 class="blog-title">銀行格付けを下げない「オフバランス」戦略｜決算書を美しく保つ資金調達</h2>
+                <p class="blog-excerpt">銀行融資とファクタリング、財務諸表への影響はどう違うのか？将来のプロパー融資を見据え、B/Sをスリムに保つ「資産流動化」の経済的合理性を解説します。</p>
+                <span class="read-more">詳しく読む →</span>
+            </a>
+
             <a href="blog12.html" class="blog-card">
-                <span class="blog-date">2026.04.27<span class="new-tag">NEW</span></span>
+                <span class="blog-date">2026.04.27</span>
                 <h2 class="blog-title">「これって経費？」経営者が知っておくべき節税の基本と、納税資金の作り方</h2>
                 <p class="blog-excerpt">意外と見落としがちな経費計上のポイントから、急な納税通知に慌てないためのキャッシュフロー管理術を解説。税金を「支払う」だけでなく、賢く「備える」知恵を共有します。</p>
                 <span class="read-more">詳しく読む →</span>

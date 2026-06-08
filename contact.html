@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ｜株式会社丸幸 - 日本橋兜町の資金繰り支援</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { 
             --navy: #002147; 
@@ -19,69 +20,115 @@
             --white: #ffffff; 
             --line-green: #06C755;
             --accent-border: #d0dbe0;
+            --bg-blue: #f4f7f9;
         }
 
         * { box-sizing: border-box; }
 
         body { 
             margin: 0; padding: 0; 
-            font-family: "Noto Sans JP", sans-serif; 
+            font-family: 'Noto Sans JP', sans-serif; 
             color: var(--text); 
             line-height: 1.8; 
-            /* 背景：トップページと完全に統一（明るい青系の透過レイヤー） */
             background: linear-gradient(rgba(240, 248, 255, 0.93), rgba(240, 248, 255, 0.93)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ナビゲーション */
-        .top-nav { background: rgba(255, 255, 255, 0.95); padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; backdrop-filter: blur(5px); }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; display: inline-block; }
-        .top-nav a:hover { color: var(--gold); }
+        .main-container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 60px rgba(0,0,0,0.05);
+        }
 
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+        /* --- ナビゲーション（ご指定の並び順に修正） --- */
+        .top-nav { 
+            background: rgba(255, 255, 255, 0.98); 
+            padding: 15px 0; 
+            border-bottom: 2px solid var(--navy); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1100; 
+            backdrop-filter: blur(10px); 
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo-text-nav {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
+
+        .container { max-width: 800px; width: 100%; margin: 0 auto; padding: 40px 20px; flex: 1; }
         
         h1 { 
             color: var(--navy); 
             text-align: center; 
             margin-bottom: 40px; 
             font-size: 2.2rem; 
-            border-bottom: 2px solid var(--gold); 
+            border-bottom: 3px solid var(--gold); 
             display: inline-block; 
             width: 100%; 
             padding-bottom: 15px; 
-            font-family: "YuMincho", serif;
+            font-family: 'Noto Serif JP', serif;
             letter-spacing: 4px;
         }
 
-        /* お問い合わせカード：白の磨りガラス風 */
         .contact-card { 
-            background: rgba(255, 255, 255, 0.98); 
+            background: #fff; 
             padding: 50px 40px; 
-            border-radius: 12px; 
+            border-radius: 4px; 
             border: 1px solid var(--accent-border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             text-align: center;
         }
 
-        .contact-intro { margin-bottom: 40px; font-size: 1.1rem; color: var(--navy); font-weight: bold; }
+        .contact-intro { margin-bottom: 40px; font-size: 1.1rem; color: var(--navy); font-weight: 700; }
 
         .btn-formrun { 
             background: var(--navy); 
             color: white !important; 
             padding: 20px; 
             text-decoration: none; 
-            border-radius: 8px; 
+            border-radius: 4px; 
             font-weight: bold; 
             display: block; 
             width: 100%; 
             max-width: 400px; 
-            margin: 0 auto 20px; 
+            margin: 0 auto 25px; 
             font-size: 1.2rem;
-            transition: opacity 0.3s;
+            transition: 0.3s;
+        }
+        .btn-formrun:hover {
+            background: var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .line-btn { 
@@ -91,24 +138,37 @@
             background: var(--line-green); 
             color: white !important; 
             text-decoration: none; 
-            padding: 18px; 
-            border-radius: 50px; 
+            padding: 16px; 
+            border-radius: 4px; 
             font-weight: bold; 
             font-size: 1.1rem; 
             margin: 0 auto 30px; 
-            max-width: 350px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px; 
+            transition: 0.3s;
+        }
+        .line-btn:hover {
+            opacity: 0.9;
+            box-shadow: 0 5px 15px rgba(6, 199, 85, 0.2);
         }
 
         .tel-area { border-top: 1px solid #eee; padding-top: 30px; margin-top: 20px; }
-        .tel-label { font-size: 0.9rem; color: #666; display: block; margin-bottom: 5px; }
-        .tel-number { font-size: 2.5rem; font-weight: bold; color: var(--navy); text-decoration: none; font-family: sans-serif; }
+        .tel-label { font-size: 0.9rem; color: #666; display: block; margin-bottom: 8px; font-weight: 500; }
+        .tel-number { font-size: 2.5rem; font-weight: bold; color: var(--navy); text-decoration: none; font-family: 'Helvetica', sans-serif; transition: 0.3s; }
+        .tel-number:hover { color: var(--gold); }
 
-        footer { text-align: center; padding: 60px 0; font-size: 0.8rem; color: #444; font-weight: bold; }
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #eee;
+        }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
             h1 { font-size: 1.8rem; }
-            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
             .contact-card { padding: 40px 20px; }
             .tel-number { font-size: 1.8rem; }
         }
@@ -116,34 +176,44 @@
 </head>
 <body>
 
-<nav class="top-nav">
-    <a href="index.html">ホーム</a>
-    <a href="service.html">事業内容</a>
-    <a href="news.html">お知らせ</a>
-    <a href="blog.html">ブログ</a>
-    <a href="contact.html">お問い合わせ</a>
-</nav>
+<div class="main-container">
+    <!-- 「ホーム」から始まるご指定順のナビゲーションバー -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-text-nav">株式会社丸幸</a>
+            <div class="nav-links">
+                <a href="index.html">ホーム</a>
+                <a href="index.html#services">事業内容</a>
+                <a href="company.html">会社概要</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+        </div>
+    </nav>
 
-<div class="container">
-    <h1>お問い合わせ</h1>
-    
-    <div class="contact-card">
-        <p class="contact-intro">その不安、一人で抱え込まずに丸幸へお預けください。<br>企業様の「傘」として、最適な一手をご提案します。</p>
+    <div class="container">
+        <h1>お問い合わせ</h1>
         
-        <a href="https://form.run/@info-aLDJbEsoObCfrqrJlifq" target="_blank" class="btn-formrun">無料相談フォームを開く</a>
-        
-        <a href="https://line.me/R/ti/p/@719ncqnx" target="_blank" class="line-btn">LINEで無料相談・査定</a>
-        
-        <div class="tel-area">
-            <span class="tel-label">お急ぎの方はお電話ください（平日 9:00〜18:00）</span>
-            <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
+        <div class="contact-card">
+            <p class="contact-intro">その不安、一人で抱え込まずに丸幸へお預けください。<br>企業様の「傘」として、最適な一手をご提案します。</p>
+            
+            <a href="https://form.run/@info-aLDJbEsoObCfrqrJlifq" target="_blank" class="btn-formrun">無料相談フォームを開く</a>
+            
+            <a href="https://line.me/R/ti/p/@719ncqnx" target="_blank" class="line-btn">LINEで無料相談・査定</a>
+            
+            <div class="tel-area">
+                <span class="tel-label">お急ぎの方はお電話ください（平日 9:00〜18:00）</span>
+                <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
+            </div>
         </div>
     </div>
-</div>
 
-<footer>
-    <p>&copy; Marukou Inc. All Rights Reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    </footer>
+</div>
 
 </body>
 </html>

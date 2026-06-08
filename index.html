@@ -43,7 +43,7 @@
             background: #fff;
         }
 
-        /* --- ナビゲーション --- */
+        /* --- ナビゲーション（ロゴサイズ修正版） --- */
         .top-nav {
             background: rgba(255, 255, 255, 0.98);
             padding: 15px 0;
@@ -61,9 +61,9 @@
             align-items: center;
             padding: 0 20px;
         }
-        .logo-text {
+        .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.5rem;
+            font-size: 1.5rem; /* サイズを1.5remへ適正修正 */
             color: var(--navy);
             font-weight: 700;
             text-decoration: none;
@@ -124,11 +124,11 @@
 </head>
 <body>
 
-<nav class="top-nav">
+<div class="main-container">
+    <nav class="top-nav">
         <div class="nav-container">
             <a href="index.html" class="logo-text-nav">株式会社丸幸</a>
             <div class="nav-links">
-                <a href="index.html">ホーム</a>
                 <a href="service.html">事業内容</a>
                 <a href="company.html">会社概要</a>
                 <a href="index.html#faq">よくある質問</a>

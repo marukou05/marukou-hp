@@ -12,13 +12,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>会社概要 | 株式会社丸幸</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root { 
             --navy: #002147; 
             --gold: #c5a059; 
             --white: #ffffff; 
-            --bg-blue: #f0f7ff; 
+            --bg-blue: #f4f7f9; 
             --text: #333; 
             --accent-border: #d0dbe0;
         }
@@ -29,17 +29,57 @@
             font-family: 'Noto Sans JP', sans-serif; 
             color: var(--text); 
             line-height: 1.8; 
-            background: #fcfcfc;
+            background: var(--bg-blue);
             overflow-x: hidden; 
+            -webkit-font-smoothing: antialiased;
         }
 
-        .top-nav { background: rgba(255, 255, 255, 0.95); padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; display: inline-block; }
-        .top-nav a:hover { color: var(--gold); }
+        /* PCでの余白をパツパツにするコンテナ設定 */
+        .main-container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-        header { background: rgba(255, 255, 255, 0.95); border-bottom: 2px solid var(--navy); padding: 8px 0; }
-        .header-inner { max-width: 950px; margin: 0 auto; padding: 0 20px; }
-        .logo-text { margin: 0; color: var(--navy); font-size: 1.15rem; font-family: 'Noto Serif JP', serif; letter-spacing: 1px; }
+        /* --- ナビゲーション（右側にリンクをまとめる共通デザイン） --- */
+        .top-nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--navy);
+            position: sticky;
+            top: 0;
+            z-index: 1100;
+            backdrop-filter: blur(10px);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .logo-text-nav {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold); }
 
         .page-header {
             background: linear-gradient(rgba(0,33,71,0.8), rgba(0,33,71,0.8)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000');
@@ -51,31 +91,32 @@
         }
         .page-header h1 { font-family: 'Noto Serif JP', serif; font-size: 2rem; margin: 0; letter-spacing: 2px; }
 
-        .container { width: 100%; max-width: 950px; margin: 0 auto; padding: 60px 20px; }
+        .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; }
 
         .company-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             background: white;
-            border-radius: 8px;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8f0;
         }
         .company-table th, .company-table td {
-            padding: 25px;
-            border-bottom: 1px solid #eee;
+            padding: 20px 25px;
+            border-bottom: 1px solid #e1e8f0;
             text-align: left;
         }
         .company-table th {
-            width: 30%;
+            width: 25%;
             background: #f8f9fa;
             color: var(--navy);
             font-weight: bold;
             font-size: 0.95rem;
+            border-right: 1px solid #e1e8f0;
         }
         .company-table td {
-            width: 70%;
+            width: 75%;
             font-size: 1rem;
         }
         .company-table tr:last-child th, .company-table tr:last-child td {
@@ -83,46 +124,57 @@
         }
 
         .map-container {
-            margin-top: 40px;
-            border-radius: 12px;
+            margin-top: 30px;
+            border-radius: 4px;
             overflow: hidden;
             border: 1px solid var(--accent-border);
             height: 450px;
         }
 
-        footer { background: #111; color: white; padding: 40px 20px; font-size: 13px; text-align: center; }
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #eee;
+        }
 
+        /* スマホ最適化 */
         @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
             .company-table th, .company-table td {
                 display: block;
                 width: 100%;
                 padding: 15px 20px;
             }
-            .company-table th { background: #f0f4f8; border-bottom: none; }
-            .top-nav a { margin: 0 5px; font-size: 0.8rem; }
+            .company-table th { background: #f0f4f8; border-bottom: none; border-right: none; }
+            .map-container { height: 300px; }
         }
     </style>
 </head>
 <body>
 
+<div class="main-container">
+    <!-- 右側まとめ型の共通ナビゲーション構造 -->
     <nav class="top-nav">
-        <a href="index.html">ホーム</a>
-        <a href="company.html">会社概要</a>
-        <a href="service.html">事業内容</a>
-        <a href="news.html">お知らせ</a>
-        <a href="blog.html">ブログ</a>
-        <a href="contact.html">お問い合わせ</a>
-    </nav>
-
-    <header>
-        <div class="header-inner">
-            <h1 class="logo-text">株式会社丸幸</h1>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text-nav">株式会社丸幸</a>
+            <div class="nav-links">
+                <a href="index.html#services">事業内容</a>
+                <a href="company.html">会社概要</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <div class="page-header">
         <h1>会社概要</h1>
-        <p style="margin-top:10px; opacity:0.8;">Company Profile</p>
+        <p style="margin-top:10px; opacity:0.8; font-weight: 500;">Company Profile</p>
     </div>
 
     <div class="container">
@@ -170,15 +222,16 @@
             </tr>
         </table>
 
-        <h2 style="font-family: 'Noto Serif JP', serif; color: var(--navy); margin-top: 60px; text-align: center;">アクセス</h2>
+        <h2 style="font-family: 'Noto Serif JP', serif; color: var(--navy); margin-top: 50px; text-align: center; font-size: 1.6rem;">アクセス</h2>
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.828030386117!2d139.776632411516!3d35.6812275302196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018895080075555%3A0x620f4c0840b37260!2z5YW兜55S65bmz5ZKM44OA44Kk44Ok44OT44Or!5e0!3m2!1sja!2sjp!4v1711438000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
     <footer>
-        <p>© Marukou Inc. All Rights Reserved.</p>
+        <p>&copy; Marukou Inc. All Rights Reserved.</p>
     </footer>
+</div>
 
 </body>
 </html>

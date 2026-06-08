@@ -43,7 +43,7 @@
             background: #fff;
         }
 
-        /* --- ナビゲーション（ロゴサイズ修正版） --- */
+        /* --- ナビゲーション --- */
         .top-nav {
             background: rgba(255, 255, 255, 0.98);
             padding: 15px 0;
@@ -63,7 +63,7 @@
         }
         .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.5rem; /* サイズを1.5remへ適正修正 */
+            font-size: 1.5rem;
             color: var(--navy);
             font-weight: 700;
             text-decoration: none;
@@ -105,20 +105,18 @@
         .faq-a { margin:8px 0 0 0; display: flex; align-items: baseline; font-size: 0.95rem; line-height: 1.7; }
         .faq-a::before { content: "A."; color: #e74c3c; margin-right: 10px; font-weight: bold; }
 
-        .profile-table { width: 100%; border-collapse: collapse; max-width: 1100px; margin: 0 auto; }
-        .profile-table th { background: #f9f9f9; width: 20%; padding: 12px 15px; border: 1px solid #ddd; text-align: left; }
-        .profile-table td { padding: 12px 15px; border: 1px solid #ddd; }
-
-        .contact-footer { padding: 50px 20px; background: #fff; text-align: center; border-top: 6px solid var(--navy); }
-        .footer-tel { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin: 15px 0; }
-        .btn-gold { background: var(--gold); color: #fff !important; padding: 15px 50px; text-decoration: none; border-radius: 4px; font-weight: 700; display: inline-block; }
+        /* お問い合わせ兼フ料フッター（一体化のスマート仕様） */
+        .contact-footer { padding: 60px 20px; background: #fff; text-align: center; border-top: 6px solid var(--navy); }
+        .footer-tel { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin: 15px 0; transition: 0.3s; }
+        .footer-tel:hover { color: var(--gold); }
+        .btn-gold { background: var(--gold); color: #fff !important; padding: 15px 50px; text-decoration: none; border-radius: 4px; font-weight: 700; display: inline-block; transition: 0.3s; }
+        .btn-gold:hover { background: var(--navy); }
 
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 10px; }
             .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
             .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
             .biz-cards { grid-template-columns: 1fr; }
-            .profile-table th, .profile-table td { display: block; width: 100%; }
         }
     </style>
 </head>
@@ -209,22 +207,11 @@
         </div>
     </section>
 
-    <section id="about" class="section-wrap">
-        <h3 class="section-title">会社概要</h3>
-        <table class="profile-table">
-            <tr><th>会社名</th><td>株式会社丸幸</td></tr>
-            <tr><th>所在地</th><td>東京都中央区日本橋兜町9-5 兜町平和ダイヤビル 1006号室</td></tr>
-            <tr><th>電話番号</th><td>03-5324-2561</td></tr>
-            <tr><th>資本金</th><td>1,000万円</td></tr>
-            <tr><th>事業内容</th><td>ファクタリング、営業代行、経理代行</td></tr>
-        </table>
-    </section>
-
     <section id="contact" class="contact-footer">
-        <p style="font-weight:700; color:var(--navy); margin:0;">その不安、早めの対応が重要です。</p>
+        <p style="font-weight:700; color:var(--navy); margin:0; font-size: 1.1rem;">その不安、早めの対応が重要です。</p>
         <a href="tel:0353242561" class="footer-tel">☎ 03-5324-2561</a>
         <a href="contact.html" class="btn-gold" style="margin-top:10px;">無料相談フォーム</a>
-        <p style="font-size: 0.8rem; color: #888; margin-top: 20px;">
+        <p style="font-size: 0.85rem; color: #888; margin-top: 30px; letter-spacing: 0.05em;">
             &copy; Marukou Inc. All Rights Reserved.
         </p>
     </section>

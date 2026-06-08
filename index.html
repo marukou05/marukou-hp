@@ -32,8 +32,9 @@
             margin: 0; padding: 0;
             font-family: 'Noto Sans JP', sans-serif;
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7; /* 読みやすさのために少し広げました */
             background: #f4f7f9;
+            font-size: 16px; /* 基本の文字サイズを16pxに底上げ */
         }
 
         .main-container {
@@ -63,18 +64,18 @@
         }
         .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem; /* 少し大きく視認性をアップ */
             color: var(--navy);
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 0.05em;
         }
         .nav-links a {
-            margin-left: 15px;
+            margin-left: 18px;
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.95rem; /* メニューの文字も一回り大きく */
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--gold); }
@@ -83,40 +84,120 @@
         .hero {
             background: linear-gradient(rgba(0,33,71,0.7), rgba(0,33,71,0.7)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000');
             background-size: cover; background-position: center;
-            padding: 60px 20px; text-align: center; color: #fff;
+            padding: 80px 20px; text-align: center; color: #fff;
         }
-        .hero h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 4vw, 2.8rem); margin-bottom: 20px; }
+        .hero h2 { 
+            font-family: 'Noto Serif JP', serif; 
+            font-size: clamp(1.8rem, 4.5vw, 3.2rem); /* スマホでもPCでも力強く見えるサイズ */
+            margin-bottom: 25px; 
+            line-height: 1.4;
+        }
         
-        .fee-badges { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
-        .fee-badge { background: var(--gold); color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 1rem; }
+        .fee-badges { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .fee-badge { 
+            background: var(--gold); 
+            color: #fff; 
+            padding: 12px 24px; 
+            border-radius: 4px; 
+            font-weight: 700; 
+            font-size: 1.15rem; /* 手数料の数字をしっかり強調 */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
 
         /* --- セクション --- */
-        .section-wrap { padding: 40px 20px; border-bottom: 1px solid #eee; }
-        .section-title { font-family: 'Noto Serif JP', serif; font-size: 2rem; color: var(--navy); margin-bottom: 30px; text-align: center; }
+        .section-wrap { padding: 60px 20px; border-bottom: 1px solid #eee; }
+        .section-title { 
+            font-family: 'Noto Serif JP', serif; 
+            font-size: 2.2rem; /* タイトルを大きく */
+            color: var(--navy); 
+            margin-bottom: 40px; 
+            text-align: center; 
+            font-weight: 700;
+        }
 
-        .biz-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .biz-card { background: #fdfdfd; padding: 25px; border: 1px solid #e1e8f0; text-align: center; }
-        .biz-card h4 { color: var(--navy); font-size: 1.3rem; margin-top: 0; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        /* 導入メッセージ */
+        .intro-lead {
+            color: var(--gold); 
+            font-family: 'Noto Serif JP', serif; 
+            font-size: 1.6rem; /* スローガンを強調 */
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .intro-body {
+            text-align: left; 
+            font-size: 1.15rem; /* 本文を1.15rem(約18px)に拡大 */
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 事業内容カード */
+        .biz-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .biz-card { background: #fdfdfd; padding: 35px 25px; border: 1px solid #e1e8f0; text-align: center; border-radius: 4px; }
+        .biz-card h4 { 
+            color: var(--navy); 
+            font-size: 1.4rem; 
+            margin-top: 0; 
+            border-bottom: 2px solid var(--gold); 
+            display: inline-block; 
+            padding-bottom: 8px; 
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .biz-card p { text-align: left; font-size: 1.05rem; color: #444; line-height: 1.7; margin: 0; }
 
         /* FAQ */
-        .faq-item { background:#fff; border:1px solid #ddd; padding:15px; margin-bottom:12px; }
-        .faq-q { font-weight:700; color:var(--navy); margin:0; display: flex; align-items: baseline; }
-        .faq-q::before { content: "Q."; color: var(--gold); margin-right: 10px; font-size: 1.2rem; }
-        .faq-a { margin:8px 0 0 0; display: flex; align-items: baseline; font-size: 0.95rem; line-height: 1.7; }
-        .faq-a::before { content: "A."; color: #e74c3c; margin-right: 10px; font-weight: bold; }
+        .faq-item { background:#fff; border:1px solid #ddd; padding:20px; margin-bottom:15px; border-radius: 4px; }
+        .faq-q { font-weight:700; color:var(--navy); margin:0; display: flex; align-items: center; font-size: 1.15rem; }
+        .faq-q::before { content: "Q."; color: var(--gold); margin-right: 12px; font-size: 1.4rem; font-family: 'Noto Serif JP', serif; }
+        .faq-a { margin:12px 0 0 0; display: flex; align-items: flex-start; font-size: 1.1rem; line-height: 1.7; color: #444; }
+        .faq-a::before { content: "A."; color: #e74c3c; margin-right: 12px; font-weight: bold; font-size: 1.3rem; line-height: 1; }
 
-        /* お問い合わせ兼フッター（border-topの青い線を完全に消去しました） */
-        .contact-footer { padding: 60px 20px; background: #fff; text-align: center; }
-        .footer-tel { font-size: clamp(2rem, 6vw, 3rem); font-weight: 700; color: var(--navy); text-decoration: none; display: block; margin: 15px 0; transition: 0.3s; }
+        /* お問い合わせ兼フッター */
+        .contact-footer { padding: 70px 20px; background: #fff; text-align: center; }
+        .contact-footer p.lead-text { font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem; }
+        .footer-tel { 
+            font-size: clamp(2.2rem, 7vw, 3.5rem); /* 電話番号を圧倒的に大きく、スマホでも綺麗に自動調整 */
+            font-weight: 700; 
+            color: var(--navy); 
+            text-decoration: none; 
+            display: block; 
+            margin: 20px 0; 
+            transition: 0.3s; 
+            font-family: 'Helvetica', sans-serif;
+        }
         .footer-tel:hover { color: var(--gold); }
-        .btn-gold { background: var(--gold); color: #fff !important; padding: 15px 50px; text-decoration: none; border-radius: 4px; font-weight: 700; display: inline-block; transition: 0.3s; }
-        .btn-gold:hover { background: var(--navy); }
+        .btn-gold { 
+            background: var(--gold); 
+            color: #fff !important; 
+            padding: 18px 60px; /* ボタンを大きく押しやすく */
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: 700; 
+            font-size: 1.25rem; 
+            display: inline-block; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+        .btn-gold:hover { background: var(--navy); transform: translateY(-2px); }
+        .copyright { font-size: 0.95rem; color: #888; margin-top: 40px; letter-spacing: 0.05em; }
+
+        /* スマホ・タブレット最適化 */
+        @media (max-width: 992px) {
+            .biz-cards { grid-template-columns: 1fr; max-width: 600px; }
+        }
 
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 10px; }
-            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
-            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
-            .biz-cards { grid-template-columns: 1fr; }
+            body { font-size: 15px; }
+            .nav-container { flex-direction: column; gap: 12px; padding: 10px 20px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+            .nav-links a { margin: 4px 8px; font-size: 0.85rem; }
+            .section-wrap { padding: 45px 15px; }
+            .section-title { font-size: 1.8rem; margin-bottom: 30px; }
+            .intro-lead { font-size: 1.35rem; }
+            .intro-body { font-size: 1.05rem; }
+            .biz-card { padding: 30px 20px; }
+            .btn-gold { width: 100%; max-width: 400px; padding: 16px 0; font-size: 1.15rem; }
         }
     </style>
 </head>
@@ -143,20 +224,20 @@
             <div class="fee-badge">3社間：手数料 4.0% 〜</div>
         </div>
         <h2>売掛金を、最短で資金へ。<br>経営を加速させる、最速の一手を。</h2>
-        <div style="margin-top:20px;">
+        <div style="margin-top:25px;">
             <a href="#contact" class="btn-gold">無料相談・査定依頼</a>
         </div>
     </section>
 
     <section class="section-wrap" style="background: #fdfdfd;">
         <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <h3 style="color: #c5a059; font-family: 'Noto Serif JP', serif; font-size: 1.4rem; margin-bottom: 10px;">「雨の日に、傘を貸せる会社でありたい」</h3>
-            <p style="text-align: left; font-size: 1rem; line-height: 1.8;">
+            <h3 class="intro-lead">「雨の日に、傘を貸せる会社でありたい」</h3>
+            <p class="intro-body">
                 資金繰りの課題は突然訪れます。私たちは貴社を守る「傘」となり、形式的な審査だけに依存せず、実態に即した現実的なご提案を行います。
             </p>
-            <div style="border-top: 1px solid #eee; margin-top: 20px; padding-top: 20px;">
-                <h3 style="color: #002147; font-size: 1.3rem; margin-bottom: 5px;">ご相談実績</h3>
-                <p style="font-size: 0.95rem; color: #555;">
+            <div style="border-top: 1px solid #eee; margin-top: 30px; padding-top: 25px;">
+                <h3 style="color: #002147; font-size: 1.4rem; margin-bottom: 8px; font-weight: 700;">ご相談実績</h3>
+                <p style="font-size: 1.05rem; color: #555; margin: 0;">
                     建設・製造・運送・クリニック・個人事業主まで、全国の経営者様にご利用いただいております。
                 </p>
             </div>
@@ -168,15 +249,15 @@
         <div class="biz-cards">
             <div class="biz-card">
                 <h4>ファクタリング</h4>
-                <p style="text-align: left; font-size: 0.9rem;">最短即日現金化。2社間契約により、取引先に知られることなく迅速な資金調達をサポートします。</p>
+                <p>最短即日現金化。2社間契約により、取引先に知られることなく迅速な資金調達をサポートします。</p>
             </div>
             <div class="biz-card">
                 <h4>営業代行</h4>
-                <p style="text-align: left; font-size: 0.9rem;">金融と実務の両面から支援。戦略的なアプローチで、貴社の販路拡大と売上向上を実現します。</p>
+                <p>金融と実務の両面から支援。戦略的なアプローチで、貴社の販路拡大と売上向上を実現します。</p>
             </div>
             <div class="biz-card">
                 <h4>経理代行</h4>
-                <p style="text-align: left; font-size: 0.9rem;">記帳代行から財務管理まで。正確な事務処理により、本業に集中できる環境を構築します。</p>
+                <p>記帳代行から財務管理まで。正確な事務処理により、本業に集中できる環境を構築します。</p>
             </div>
         </div>
     </section>
@@ -189,7 +270,7 @@
                 <p class="faq-a">弊社の審査通過率は90%以上です。銀行融資を断られた方、赤字決算、税金滞納がある場合でも、売掛金の実態があれば柔軟に対応可能です。</p>
             </div>
             <div class="faq-item">
-                <p class="faq-q">最短どのくらいで入金されます化？</p>
+                <p class="faq-q">最短どのくらいで入金されますか？</p>
                 <p class="faq-a">必要書類が揃っていれば、最短即日での入金が可能です。お急ぎの場合は午前中にご連絡いただけますとスムーズです。</p>
             </div>
             <div class="faq-item">
@@ -207,12 +288,11 @@
         </div>
     </section>
 
-    <!-- 完全に1枚としてつながった、すっきりしたフッターエリア -->
     <section id="contact" class="contact-footer">
-        <p style="font-weight:700; color:var(--navy); margin:0; font-size: 1.1rem;">その不安、早めの対応が重要です。</p>
+        <p class="lead-text">その不安、早めの対応が重要です。</p>
         <a href="tel:0353242561" class="footer-tel">☎ 03-5324-2561</a>
-        <a href="contact.html" class="btn-gold" style="margin-top:10px;">無料相談フォーム</a>
-        <p style="font-size: 0.85rem; color: #888; margin-top: 30px; letter-spacing: 0.05em;">
+        <a href="contact.html" class="btn-gold">無料相談フォーム</a>
+        <p class="copyright">
             &copy; Marukou Inc. All Rights Reserved.
         </p>
     </section>

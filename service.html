@@ -42,11 +42,11 @@
             box-shadow: 0 0 60px rgba(0,0,0,0.05);
         }
 
-        /* --- ナビゲーション（index.htmlと共通） --- */
+        /* --- ナビゲーション --- */
         .top-nav {
             background: rgba(255, 255, 255, 0.98);
-            padding: 10px 0;
-            border-bottom: 3px solid var(--navy);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--navy);
             position: sticky;
             top: 0;
             z-index: 1100;
@@ -62,44 +62,32 @@
         }
         .logo-text {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--navy);
             font-weight: 700;
             text-decoration: none;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
         }
         .nav-links a {
-            margin-left: 20px;
+            margin-left: 15px;
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: color 0.3s;
-            position: relative;
         }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -3px;
-            left: 0;
-            background-color: var(--gold);
-            transition: width 0.3s;
-        }
-        .nav-links a:hover::after { width: 100%; }
         .nav-links a:hover { color: var(--gold); }
 
         /* --- コンテンツエリア --- */
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         h1.page-title {
             font-family: 'Noto Serif JP', serif;
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--navy);
             text-align: center;
             margin: 40px 0 10px;
@@ -108,20 +96,60 @@
         }
         .intro-text {
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 500;
             color: var(--navy);
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+        }
+
+        /* 業種別ショートカットナビ */
+        .industry-shortcut {
+            background: #fff;
+            border: 1px solid #e1e8f0;
+            padding: 20px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .shortcut-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .shortcut-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .shortcut-links a {
+            background: #f8f9fa;
+            color: var(--text);
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 4px;
+            border: 1px solid #e1e8f0;
+            transition: 0.2s;
+        }
+        .shortcut-links a:hover {
+            background: var(--navy);
+            color: #fff;
+            border-color: var(--navy);
         }
 
         .section-title {
             font-family: 'Noto Serif JP', serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--navy);
             text-align: center;
-            margin: 80px 0 40px;
+            margin: 60px 0 30px;
             position: relative;
-            padding-bottom: 18px;
+            padding-bottom: 15px;
             font-weight: 700;
             letter-spacing: 0.1em;
         }
@@ -131,87 +159,91 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: var(--gold);
         }
 
-        /* お悩みボックス（和モダンなカード） */
+        /* お悩みボックス */
         .pain-point-box {
+            scroll-margin-top: 100px;
             background: #fff;
             border-left: 8px solid var(--gold);
             padding: 40px;
-            margin-bottom: 30px;
+            margin-bottom: 45px;
             border-radius: 4px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-top: 1px solid #e1e8f0;
+            border-right: 1px solid #e1e8f0;
+            border-bottom: 1px solid #e1e8f0;
         }
         .solution-tag {
-            background: rgba(0, 31, 64, 0.1);
+            background: rgba(0, 31, 64, 0.05);
             color: var(--navy);
             padding: 5px 15px;
             border-radius: 4px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             display: inline-block;
-            border: 1px solid rgba(0, 31, 64, 0.2);
+            border: 1px solid rgba(0, 31, 64, 0.1);
         }
         .pain-point-box h3 {
             color: var(--navy);
-            margin: 0 0 15px;
-            font-size: 1.5rem;
+            margin: 0 0 20px;
+            font-size: 1.4rem;
             font-family: 'Noto Serif JP', serif;
             font-weight: 700;
         }
 
-        .check-list { list-style: none; padding: 0; margin-bottom: 25px; }
+        .check-list { list-style: none; padding: 0; margin-bottom: 30px; }
         .check-list li {
             position: relative;
-            padding-left: 35px;
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-            color: #555;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.7;
         }
         .check-list li::before {
-            content: "×";
+            content: "◆";
             position: absolute;
-            left: 0;
+            left: 5px;
             color: #d9534f;
-            font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 0.9rem;
+            top: 1px;
         }
 
         .marukou-ans {
             background: #fdfcf9;
-            padding: 20px;
+            padding: 25px;
             border-radius: 4px;
-            font-weight: 700;
-            color: var(--gold);
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            border: 1px solid rgba(184, 156, 106, 0.2);
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.8;
+            border: 1px solid rgba(184, 156, 106, 0.3);
         }
-        .marukou-ans::before {
-            content: "○";
-            margin-right: 12px;
-            font-size: 1.6rem;
-            font-weight: 700;
+        .marukou-ans strong {
+            color: var(--navy);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+            font-family: 'Noto Serif JP', serif;
         }
 
-        /* 比較エリア（モダンなフロストガラス効果） */
+        /* 比較エリア */
         .comparison-area {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
         .comp-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(5px);
             border-radius: 4px;
-            padding: 40px;
-            border: 1px solid #e0dcd0;
+            padding: 35px;
+            border: 1px solid #e1e8f0;
             text-align: center;
         }
         .comp-card.navy {
@@ -219,16 +251,16 @@
             color: #fff;
             border: none;
         }
-        .comp-card h4 { font-family: 'Noto Serif JP', serif; font-size: 1.6rem; margin: 0 0 15px; font-weight: 700; }
-        .comp-card p { font-size: 1rem; color: #555; margin: 0;}
+        .comp-card h4 { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; margin: 0 0 15px; font-weight: 700; }
+        .comp-card p { font-size: 0.95rem; color: #555; margin: 0;}
         .comp-card.navy p { color: rgba(255, 255, 255, 0.9); }
 
         /* 経営代行 */
         .daiko-box {
             background: #fff;
-            padding: 50px;
+            padding: 40px;
             border-radius: 4px;
-            border: 1px solid #e0dcd0;
+            border: 1px solid #e1e8f0;
             text-align: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
         }
@@ -239,25 +271,18 @@
             gap: 12px;
             list-style: none;
             padding: 0;
-            margin-top: 30px;
+            margin-top: 25px;
         }
         .daiko-list li {
             background: rgba(184, 156, 106, 0.1);
             color: var(--navy);
-            padding: 10px 25px;
+            padding: 10px 20px;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 1.05rem;
-            border: 1px solid rgba(184, 156, 106, 0.3);
+            font-size: 1rem;
+            border: 1px solid rgba(184, 156, 106, 0.2);
         }
 
-        /* CTA */
-        .cta-section {
-            text-align: center;
-            padding: 80px 20px;
-            background: #fff;
-            border-top: 6px solid var(--navy);
-        }
         .btn-gold {
             background: var(--gold);
             color: #fff !important;
@@ -265,31 +290,30 @@
             text-decoration: none;
             border-radius: 4px;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             display: inline-block;
             transition: all 0.3s;
             letter-spacing: 0.1em;
         }
-        .btn-gold:hover { background: var(--navy); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,31,64,0.2); }
+        .btn-gold:hover { background: var(--navy); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,31,64,0.15); }
 
         footer {
-            text-align: center; padding: 40px 0; font-size: 0.85rem; color: #888; background: #fff; border-top: 1px solid #eee; letter-spacing: 0.1em;
+            text-align: center; padding: 40px 0; font-size: 0.9rem; color: #888; background: #fff; border-top: 1px solid #eee;
         }
 
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; padding: 5px 20px; }
-            .logo-text { font-size: 1.4rem; }
-            .nav-links a { margin: 3px 8px; font-size: 0.8rem; padding: 2px 0; }
-            h1.page-title { font-size: 2rem; margin: 20px 0 5px;}
-            .intro-text { font-size: 1rem; margin-bottom: 40px; }
+            .nav-container { flex-direction: column; padding: 5px 20px; gap: 10px; }
+            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
+            h1.page-title { font-size: 2rem; }
+            .intro-text { font-size: 1rem; }
+            .industry-shortcut { padding: 15px; }
+            .shortcut-links a { font-size: 0.8rem; padding: 6px 12px; }
             .comparison-area { grid-template-columns: 1fr; gap: 15px;}
-            .daiko-box { padding: 30px 20px; }
-            .daiko-list li { font-size: 0.95rem; padding: 8px 15px; }
-            .section-title { font-size: 1.8rem; }
-            .pain-point-box { padding: 30px 20px; }
-            .pain-point-box h3 { font-size: 1.3rem; }
-            .check-list li { font-size: 1rem; }
-            .marukou-ans { font-size: 1.1rem; }
+            .daiko-box { padding: 25px 15px; }
+            .shortcut-links { gap: 6px; }
+            .section-title { font-size: 1.6rem; }
+            .pain-point-box { padding: 25px 20px; }
+            .pain-point-box h3 { font-size: 1.2rem; }
             .btn-gold { width: 100%; padding: 18px 0; font-size: 1.1rem; }
         }
     </style>
@@ -301,7 +325,8 @@
         <div class="nav-container">
             <a href="index.html" class="logo-text">株式会社丸幸</a>
             <div class="nav-links">
-                <a href="index.html#services">事業内容</a>
+                <a href="index.html">ホーム</a>
+                <a href="service.html">事業内容</a>
                 <a href="company.html">会社概要</a>
                 <a href="index.html#faq">よくある質問</a>
                 <a href="blog.html">ブログ</a>
@@ -314,49 +339,127 @@
     <div class="container">
         <div style="text-align: center;">
             <h1 class="page-title">丸幸にできること</h1>
-            <p class="intro-text">日本全国の経営者様が抱える、<br>資金のお悩みを解決へと導きます。</p>
+            <p class="intro-text">日本全国の経営者様が抱える、資金のお悩みを解決へと導きます。</p>
+        </div>
+
+        <div class="industry-shortcut">
+            <span class="shortcut-title">【業種をお選びください】クリックすると、それぞれの解決策へジャンプします</span>
+            <div class="shortcut-links">
+                <a href="#construction">建設業・土木業</a>
+                <a href="#architecture">建築業・内装・設計</a>
+                <a href="#medical">医療・診療報酬債権</a>
+                <a href="#nursing">介護・福祉</a>
+                <a href="#transport">運送業・物流</a>
+                <a href="#manufacturing">製造業・加工工場</a>
+                <a href="#dispatch">人材派遣・紹介業</a>
+                <a href="#service-ind">飲食・小売・サービス</a>
+            </div>
         </div>
 
         <h2 class="section-title">業界別のお悩み解決</h2>
 
-        <div class="pain-point-box">
-            <span class="solution-tag">建設・建築・土木業</span>
-            <h3>支払い先行の負担を軽減</h3>
+        <div id="construction" class="pain-point-box">
+            <span class="solution-tag">建設業・土木業</span>
+            <h3>「仕事はあるのに、下請けさんへの支払いが先で追いつかない…」</h3>
             <ul class="check-list">
-                <li>大型案件受注により、資材費や外注費の支払いが先行している。</li>
-                <li>元請けからの入金が数ヶ月先で、次現場の着工資金が足りない。</li>
+                <li>元請けさんからの入金が数ヶ月先なのに、職人さんの手間受け代や、現場の資材費の支払いがどうしても先に来てしまい、口座のやりくりが大変。</li>
+                <li>ありがたいことに大きな工事が決まったけれど、次の出来高査定までのあいだ、手元の運転資金がもつか不安で夜も眠れない。</li>
             </ul>
-            <div class="marukou-ans">解決策：工事代金を即日現金化。現場の回転を止めません。</div>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                すでに確定している工事の「出来高未収金（請求書）」を、お急ぎのスケジュールに合わせて現金化いたします。職人さんへの確実な支払いや次の資材調達をスムーズにすることで、現場の信用を守り、社長が安心して次の現場に集中できる環境を整えます。
+            </div>
         </div>
 
-        <div class="pain-point-box">
-            <span class="solution-tag">介護・医療・福祉</span>
-            <h3>入金のタイムラグを解消</h3>
+        <div id="architecture" class="pain-point-box">
+            <span class="solution-tag">建築業・内装工事・設計</span>
+            <h3>「引き渡しが終わるまで、ずーーっとお金が固定されるのが苦しい」</h3>
             <ul class="check-list">
-                <li>国保・社保からの介護報酬や診療報酬の入金が2ヶ月先で重い。</li>
-                <li>スタッフの増員や医療機器の更新で、一時的な出費が必要になった。</li>
+                <li>店舗の内装工事や注文住宅など、着工金・中間金・最終引き渡し金という分割払いのズレのせいで、現場経費の持ち出しばかりが増えていく。</li>
+                <li>設計が完了した段階や、部材を発注したタイミングで大きなお金が出てしまい、お施主様から最後の入金があるまでの数ヶ月間、資金繰りがかなりタイトでハラハラしている。</li>
             </ul>
-            <div class="marukou-ans">解決策：レセプト債権を早期資金化。キャッシュフローを正常化します。丸幸なら２社間契約も可能</div>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                引き渡し前の確定している債権をスピーディーに買い取り、しばらく動かせないはずだった「未収金」を、今すぐ使える運転資金に変えます。手元資金のショートを心配することなく、次の案件の着工や仕入れにどんどん動けるようになります。
+            </div>
         </div>
 
-        <div class="pain-point-box">
+        <div id="medical" class="pain-point-box">
+            <span class="solution-tag">医療法人・クリニック</span>
+            <h3>「診療報酬が入るまでの『2ヶ月のズレ』、どうにかならないか」</h3>
+            <ul class="check-list">
+                <li>窓口でいただく分以外の診療報酬（全体の約7割）が、国保や社保から実際に振り込まれるまでの「中2ヶ月のタイムラグ」が毎月地味に響いている。</li>
+                <li>医療機器の買い替えや医薬品の仕入れ、スタッフへのボーナス支給が重なる時期に、万が一のことを考えて手元の現金を多めに確保しておきたい。</li>
+            </ul>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                国から支払われるため一番確実な「診療報酬（レセプト債権）」を、少しでも早くお手元にお届けします。銀行からの新しい借入（負債）を増やすわけではないので、これからの経営に負担をかけることなく、医療現場の安定や前向きな投資に活かしていただけます。
+            </div>
+        </div>
+
+        <div id="nursing" class="pain-point-box">
+            <span class="solution-tag">介護事業・福祉施設</span>
+            <h3>「スタッフの給与支払いが先なのに、介護報酬が2ヶ月先でいつも綱渡り」</h3>
+            <ul class="check-list">
+                <li>国保連からの入金は2ヶ月先なのに、大切な介護スタッフさんへの毎月の給料や、社会保険料の引き落としは毎月きっちりやってくる。いつも口座残高を気にしてばかりで気が休まらない。</li>
+                <li>デイサービスの送迎車を増やしたり、施設の一部を急いで修繕しなくてはならなくなったが、まとまった出費に頭を抱えている。</li>
+            </ul>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                これから入ってくる予定の介護報酬をベースに、無理のない形でお手元に資金をご用意します。丸幸なら、日頃お世話になっている利用者様や地域の皆様に知られることのない「2社間契約」が可能です。大切なスタッフさんの離職を防ぐための給与確保を、影からしっかりサポートします。
+            </div>
+        </div>
+
+        <div id="transport" class="pain-point-box">
+            <span class="solution-tag">運送業・物流・ロジスティクス</span>
+            <h3>「毎月の燃料費や高速代は待ってくれないのに、運賃の回収が遅すぎる」</h3>
+            <ul class="check-list">
+                <li>毎月必ず引落とされる高額な燃料代や高速代、傭車費。それなのに荷主さんからの支払いは60日や90日先の手形だったりして、いつも資金のバランスが崩れがち。</li>
+                <li>複数台のトラックの車検、タイヤの交換、ドライバーさんの募集費用が同じ時期に重なってしまい、どうやって工面しようか悩んでいる。</li>
+            </ul>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                日々現場を走ってすでに確定している運賃請求書をもとに、その日のうちにキャッシュをご用意します。これは借金ではなく、すでにある「資産」を少し早めに現金化する手続きです。インフレで高騰する燃料費の支払いに怯えない、強い会社作りをお手伝いします。
+            </div>
+        </div>
+
+        <div id="manufacturing" class="pain-point-box">
+            <span class="solution-tag">製造業・加工工場</span>
+            <h3>「せっかくの量産チャンスなのに、材料費が出せない…銀行にも断られた」</h3>
+            <ul class="check-list">
+                <li>発注元から新しい量産案件をもらえたけれど、最初の金型代や原材料費、工場を動かす電気代がドカンと先に出ていってしまい、納品して回収できる数ヶ月後まで耐えられそうにない。</li>
+                <li>ここ最近のコスト高でたまたま決算が赤字になってしまったり、過去のゼロゼロ融資の返済が重くて銀行にリスケをお願いしているため、追加の融資を断られてしまった。</li>
+            </ul>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                銀行のように「会社の過去の決算書（赤字など）」だけを見るのではなく、納品先であるお客様（売掛先）の信用力を大切に考えて請求書を買い取ります。たとえ今が厳しい逆境の真っ只中であっても、日本のものづくりを支える素晴らしい技術や受注のチャンスを諦めさせません。
+            </div>
+        </div>
+
+        <div id="dispatch" class="pain-point-box">
             <span class="solution-tag">人材派遣・紹介業</span>
-            <h3>人件費支払いの先行をサポート</h3>
+            <h3>「売上が伸びれば伸びるほど、スタッフさんへの前払いで手元が空っぽになる」</h3>
             <ul class="check-list">
-                <li>派遣先からの入金前にスタッフへの給与が発生し、資金繰りが苦しい。</li>
-                <li>大型派遣契約が決まったが、運転資金を確保したい。</li>
+                <li>派遣スタッフさんへの週払いや前払い対応など、お給料はどんどん先に出ていく。でも派遣先企業からの入金は翌月末や翌々月なので、事業が大きくなるほど手元の現金が減っていくのが恐ろしい。</li>
+                <li>新しい大きな派遣契約が決まったけれど、動かすスタッフの人数が多すぎて、最初の入金があるまでのあいだ、給与資金が物理的に足りなくなってしまった。</li>
             </ul>
-            <div class="marukou-ans">解決策：最短即日で資金化。成長のチャンスを逃しません。</div>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                派遣料金の未収請求書を、必要なタイミングでタイムリーに現金化します。お金が戻ってくるサイクルをぎゅっと縮めることで、資金不足が原因で「今回は見送ろう…」と諦めていたような大型案件も、これからは自信を持ってどんどん受けられるようになります。
+            </div>
         </div>
 
-        <div class="pain-point-box">
+        <div id="service-ind" class="pain-point-box">
             <span class="solution-tag">飲食・小売・サービス業</span>
-            <h3>売掛回収の悩みと運転資金確保</h3>
+            <h3>「ツケ（掛け取引）の回収を待っていたら、新店の仕入れや家賃がピンチに」</h3>
             <ul class="check-list">
-                <li>取引先（BtoB）の売掛回収サイトが長く、仕入れ代金が不足している。</li>
-                <li>店舗の改装や多店舗展開のための、急ぎの運転資金を確保したい。</li>
+                <li>卸売りや、法人向けの宴会・イベントの掛け払いの回収がズルズルと長引いていて、毎月の店舗の家賃やアルバイト代の支払いに影響が出そう。</li>
+                <li>「今すぐ現金一括なら格安で仕入れられる！」という絶好のチャンスや、お店のリニューアルの話があるけれど、手元に動かせる現金がなくて見送るしかないのかと悔しい思いをしている。</li>
             </ul>
-            <div class="marukou-ans">解決策：あらゆる商取引の売掛金を活用し、機動的な資金調達を実現します。</div>
+            <div class="marukou-ans">
+                <strong>丸幸からのご提案：</strong>
+                商取引の中で生まれているあらゆる「売掛債権」を流動化し、せっかくのビジネスチャンスを逃さないお手伝いをします。銀行の審査を何週間も待っている時間がないときこそ、スピード査定で「今やりたい攻めの経営」を支えます。
+            </div>
         </div>
 
         <h2 class="section-title">2つのファクタリング</h2>

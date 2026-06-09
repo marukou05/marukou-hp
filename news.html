@@ -36,6 +36,7 @@
             background-attachment: fixed;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
+            font-size: 16px; /* 基本の文字サイズを16pxに底上げ */
         }
 
         .main-container {
@@ -49,6 +50,7 @@
             box-shadow: 0 0 60px rgba(0,0,0,0.05);
         }
 
+        /* --- ナビゲーション --- */
         .top-nav { 
             background: rgba(255, 255, 255, 0.98); 
             padding: 15px 0; 
@@ -68,23 +70,23 @@
         }
         .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem; /* 一回り大きく調整 */
             color: var(--navy);
             font-weight: 700;
             text-decoration: none;
             letter-spacing: 0.05em;
         }
         .nav-links a {
-            margin-left: 15px;
+            margin-left: 18px;
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.95rem; /* 他のページと統一 */
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--gold); }
 
-        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 40px 20px; flex: 1; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 60px 20px; flex: 1; }
         
         h1 { 
             color: var(--navy); 
@@ -97,6 +99,7 @@
             padding-bottom: 15px; 
             font-family: 'Noto Serif JP', serif;
             letter-spacing: 4px;
+            font-weight: 700;
         }
         
         .news-list { list-style: none; padding: 0; margin: 0; }
@@ -109,7 +112,7 @@
             margin-bottom: 20px; 
             display: flex; 
             flex-direction: column; 
-            gap: 10px; 
+            gap: 12px; 
             backdrop-filter: blur(8px); 
             border: 1px solid #e1e8f0;
             text-decoration: none;
@@ -129,27 +132,52 @@
         
         .label-blog { background: #fff5e6; color: #e67e22; border-color: #e67e22; }
         
-        .news-title { font-size: 1.2rem; font-weight: bold; color: var(--navy); line-height: 1.4; font-family: 'Noto Sans JP', sans-serif; }
+        .news-title { font-size: 1.35rem; font-weight: bold; color: var(--navy); line-height: 1.4; font-family: 'Noto Sans JP', sans-serif; }
         .news-item:hover .news-title { color: var(--gold); }
         
-        .news-excerpt { font-size: 0.95rem; color: #555; margin: 0; line-height: 1.6; }
+        .news-excerpt { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
         .new-mark { background: #e63946; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; margin-left: 8px; vertical-align: middle; }
 
-        footer {
-            background: rgba(255, 255, 255, 0.95);
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 0.9rem;
-            color: #888;
-            border-top: 1px solid #eee;
+        /* --- お問い合わせ兼フッター（1枚のエリアとして統一） --- */
+        .contact-footer { padding: 70px 20px; background: #fff; text-align: center; border-top: 1px solid #eee; }
+        .contact-footer p.lead-text { font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem; }
+        .footer-tel { 
+            font-size: clamp(2.2rem, 7vw, 3.5rem);
+            font-weight: 700; 
+            color: var(--navy); 
+            text-decoration: none; 
+            display: block; 
+            margin: 20px 0; 
+            transition: 0.3s; 
+            font-family: 'Helvetica', sans-serif;
         }
+        .footer-tel:hover { color: var(--gold); }
+        .btn-gold { 
+            background: var(--gold); 
+            color: #fff !important; 
+            padding: 18px 60px;
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: 700; 
+            font-size: 1.25rem; 
+            display: inline-block; 
+            transition: 0.3s; 
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+        .btn-gold:hover { background: var(--navy); transform: translateY(-2px); }
+        .copyright { font-size: 0.95rem; color: #888; margin-top: 40px; letter-spacing: 0.05em; }
 
         @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 10px; }
-            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
+            body { font-size: 15px; }
+            .nav-container { flex-direction: column; gap: 12px; padding: 10px 20px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+            .nav-links a { margin: 4px 8px; font-size: 0.85rem; }
+            .container { padding: 40px 15px; }
             h1 { font-size: 1.8rem; }
             .news-item { padding: 20px; }
-            .news-title { font-size: 1.1rem; }
+            .news-title { font-size: 1.2rem; }
+            .news-excerpt { font-size: 0.95rem; }
+            .btn-gold { width: 100%; max-width: 400px; padding: 16px 0; font-size: 1.15rem; }
         }
     </style>
 </head>
@@ -174,14 +202,15 @@
         <h1>お知らせ</h1>
         
         <ul class="news-list">
+            <!-- 実在する最新記事「blog14.html」への案内に修正 -->
             <li style="margin:0;">
-                <a href="blog17.html" class="news-item">
+                <a href="blog14.html" class="news-item">
                     <div class="news-meta">
                         <span class="news-date">2026.06.10</span>
                         <span class="news-label label-blog">ブログ更新</span>
                     </div>
-                    <div class="news-title">【製造業支援】赤字・銀行リスケ中の製造業向け資金調達戦略を公開しました<span class="new-mark">NEW</span></div>
-                    <p class="news-excerpt">先行する材料費や外注費の不足を、自社の決算書に関わらず「売掛金」を使って解決する資産流動化（ファクタリング）の手法について詳しく解説しています。</p>
+                    <div class="news-title">【経営者必見】2社間ファクタリングのメリットと手数料を抑えるポイントを公開しました<span class="new-mark">NEW</span></div>
+                    <p class="news-excerpt">取引先に知られることなくスピーディーに運転資金を確保できる「2社間契約」について、具体的なメリットと賢く手数料を抑えるコツを分かりやすくご紹介しています。</p>
                 </a>
             </li>
 
@@ -275,8 +304,11 @@
         </ul>
     </div>
 
-    <footer>
-        <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    <footer class="contact-footer">
+        <p class="lead-text">その不安、早めの対応が重要です。</p>
+        <a href="tel:0353242561" class="footer-tel">☎ 03-5324-2561</a>
+        <a href="contact.html" class="btn-gold">無料相談フォーム</a>
+        <p class="copyright">&copy; Marukou Inc. All Rights Reserved.</p>
     </footer>
 </div>
 

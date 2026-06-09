@@ -7,58 +7,48 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-18XGHDNQB3');
-    </script>    
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>お知らせ｜株式会社丸幸 - 日本橋兜町の資金繰り支援</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>ブログ一覧 | 株式会社丸幸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --navy: #002b55; 
-            --gold: #917b56; 
+        :root {
+            --navy: #002147;
+            --gold: #c5a059;
+            --white: #ffffff;
             --text: #333;
-            --white: #ffffff; 
-            --bg-blue: #f4f7f9;
         }
 
         * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
-        body { 
-            margin: 0; padding: 0; 
-            font-family: 'Noto Sans JP', sans-serif; 
-            color: var(--text); 
-            line-height: 1.8; 
-            background-color: var(--bg-blue); 
-            background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
-                              url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-            font-size: 16px; /* 基本文字サイズを拡大 */
+        body {
+            margin: 0; padding: 0;
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: #f4f7f9;
+            font-size: 16px;
         }
 
         .main-container {
             width: 100%;
             max-width: 1600px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.92);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 0 60px rgba(0,0,0,0.05);
+            background: #fff;
         }
 
         /* --- ナビゲーション --- */
-        .top-nav { 
-            background: rgba(255, 255, 255, 0.98); 
-            padding: 15px 0; 
-            border-bottom: 2px solid var(--navy); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1100; 
-            backdrop-filter: blur(10px); 
+        .top-nav {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 15px 0;
+            border-bottom: 2px solid var(--navy);
+            position: sticky;
+            top: 0;
+            z-index: 1100;
+            backdrop-filter: blur(10px);
         }
         .nav-container {
             max-width: 1200px;
@@ -86,57 +76,52 @@
         }
         .nav-links a:hover { color: var(--gold); }
 
-        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 40px 20px; flex: 1; }
-        
-        h1 { 
-            color: var(--navy); 
-            text-align: center; 
-            margin-bottom: 40px; 
-            font-size: 2.2rem; 
-            border-bottom: 3px solid var(--gold); 
-            display: inline-block; 
-            width: 100%; 
-            padding-bottom: 15px; 
-            font-family: 'Noto Serif JP', serif;
-            letter-spacing: 4px;
-            font-weight: 700;
+        /* --- 下層共通ヘッダー --- */
+        .sub-header {
+            background: linear-gradient(rgba(0,33,71,0.8), rgba(0,33,71,0.8)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=2000');
+            background-size: cover; background-position: center;
+            padding: 50px 20px; text-align: center; color: #fff;
         }
-        
-        .news-list { list-style: none; padding: 0; margin: 0; }
-        
-        .news-item { 
-            background: rgba(255, 255, 255, 0.94); 
-            padding: 25px 30px; 
-            border-radius: 4px; 
-            border-left: 6px solid var(--navy);
+        .sub-header h2 { font-family: 'Noto Serif JP', serif; font-size: 2.2rem; margin: 0 0 10px 0; }
+        .sub-header p { font-size: 1.05rem; margin: 0; color: #ddd; }
+
+        /* --- コンテンツエリア --- */
+        .content-wrap { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+
+        /* ブログリストスタイル */
+        .blog-list { list-style: none; padding: 0; margin: 0; }
+        .blog-item { 
+            background: #fff; 
+            border: 1px solid #e1e8f0; 
+            padding: 25px; 
             margin-bottom: 20px; 
-            display: flex; 
-            flex-direction: column; 
-            gap: 10px; 
-            backdrop-filter: blur(8px); 
-            border: 1px solid #e1e8f0;
+            border-radius: 4px;
+            transition: 0.3s;
+            display: block;
             text-decoration: none;
             color: inherit;
-            transition: all 0.3s;
+            border-left: 6px solid var(--navy);
         }
-        .news-item:hover {
-            background: rgba(255, 255, 255, 1);
+        .blog-item:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08); 
             border-left-color: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
         
-        .news-meta { display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; }
-        .news-date { color: var(--gold); font-size: 0.95rem; font-weight: bold; font-family: 'Helvetica', sans-serif; }
-        .news-label { font-size: 0.75rem; padding: 2px 10px; border-radius: 4px; color: var(--navy); font-weight: bold; border: 1px solid var(--navy); background: #fff; }
+        .blog-meta { display: flex; gap: 15px; margin-bottom: 8px; font-size: 0.95rem; color: #777; }
+        .blog-date { font-weight: bold; color: var(--gold); }
+        .blog-category { font-weight: 700; border: 1px solid var(--navy); padding: 1px 8px; border-radius: 4px; font-size: 0.75rem; color: var(--navy); }
         
-        .label-blog { background: #fff5e6; color: #e67e22; border-color: #e67e22; }
-        
-        .news-title { font-size: 1.3rem; font-weight: bold; color: var(--navy); line-height: 1.4; font-family: 'Noto Sans JP', sans-serif; }
-        .news-item:hover .news-title { color: var(--gold); }
-        
-        .news-excerpt { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
-        .new-mark { background: #e63946; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; margin-left: 8px; vertical-align: middle; }
+        .blog-item h3 { 
+            margin: 0 0 10px 0; 
+            color: var(--navy); 
+            font-size: 1.35rem; 
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .blog-item h3:hover { color: var(--gold); }
+        .blog-item p { margin: 0; color: #555; font-size: 1.05rem; line-height: 1.6; }
+        .new-tag { background: #e63946; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; margin-left: 10px; vertical-align: middle; }
 
         /* --- お問い合わせ兼フッター --- */
         .contact-footer { padding: 70px 20px; background: #fff; text-align: center; border-top: 1px solid #eee; }
@@ -167,14 +152,18 @@
         .btn-gold:hover { background: var(--navy); transform: translateY(-2px); }
         .copyright { font-size: 0.95rem; color: #888; margin-top: 40px; letter-spacing: 0.05em; }
 
+        /* スマホ対応 */
         @media (max-width: 768px) {
             body { font-size: 15px; }
-            .nav-container { flex-direction: column; gap: 12px; }
+            .nav-container { flex-direction: column; gap: 12px; padding: 10px 20px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
             .nav-links a { margin: 4px 8px; font-size: 0.85rem; }
-            h1 { font-size: 1.8rem; }
-            .news-item { padding: 20px; }
-            .news-title { font-size: 1.15rem; }
-            .news-excerpt { font-size: 0.95rem; }
+            .sub-header { padding: 40px 15px; }
+            .sub-header h2 { font-size: 1.8rem; }
+            .content-wrap { padding: 40px 15px; }
+            .blog-item { padding: 20px; }
+            .blog-item h3 { font-size: 1.2rem; }
+            .blog-item p { font-size: 0.95rem; }
             .btn-gold { width: 100%; max-width: 400px; padding: 16px 0; font-size: 1.15rem; }
         }
     </style>
@@ -196,69 +185,164 @@
         </div>
     </nav>
 
-    <div class="container">
-        <h1>お知らせ</h1>
-        
-        <ul class="news-list">
-            <!-- 最新：blog14.htmlへ正常に繋ぎ直しました -->
-            <li style="margin:0;">
-                <a href="blog14.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2024.11.15</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">【経営者必見】2社間ファクタリングのメリットと手数料を抑えるポイントを公開しました<span class="new-mark">NEW</span></div>
-                    <p class="news-excerpt">取引先に知られることなくスピーディーに運転資金を確保できる「2社間契約」について、具体的なメリットと賢く手数料を抑えるコツを分かりやすくご紹介しています。</p>
-                </a>
-            </li>
+    <header class="sub-header">
+        <h2>ブログ・経営コラム</h2>
+        <p>資金繰り改善のヒントや、中小企業経営に役立つ情報を発信しています</p>
+    </header>
 
-            <!-- 過去のお知らせ13 -->
-            <li style="margin:0;">
-                <a href="blog13.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2024.10.28</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">【資金繰り改善】中小企業のキャッシュフローを劇的に改善する3つの具体策</div>
-                    <p class="news-excerpt">黒字倒産を防ぎ、安定した経営基盤を作るための管理術。売掛金の早期回収や支払いサイクルの見直しについて役立つ情報を共有します。</p>
-                </a>
-            </li>
+    <main class="content-wrap">
+        <div class="blog-list">
+            
+            <!-- 正しい記事 14 -->
+            <a href="blog14.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.06.10</span>
+                    <span class="blog-category">ブログ更新</span>
+                    <span class="new-tag">NEW</span>
+                </div>
+                <h3>【製造業の資金調達】赤字決算・銀行リスケ中でも試作・量産資金を確保する財務戦略</h3>
+                <p>原材料高騰や人件費増で赤字に陥った中小製造業や、銀行リスケ中で追加融資が望めない経営者様へ。先行する材料費や外注費の不足を、自社の決算書に関わらず「優良な売掛金」を使って解決する資産流動化（ファクタリング）の手法を解説します。</p>
+            </a>
 
-            <!-- 過去のお知らせ12 -->
-            <li style="margin:0;">
-                <a href="blog12.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2024.09.10</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">【経理効率化】経理代行を導入する最適なタイミングとは？採用コストとの徹底比較</div>
-                    <p class="news-excerpt">新しくスタッフを採用・教育する手間と、専門の経理代行に外注するコストをシミュレーション。本業に100%集中できる環境作りのための情報を掲載しました。</p>
-                </a>
-            </li>
+            <!-- 記事 13 -->
+            <a href="blog13.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.05.13</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>銀行格付けを下げない「オフバランス」戦略｜決算書を美しく保つ資金調達</h3>
+                <p>銀行融資とファクタリング、財務諸表への影響はどう違うのか？将来のプロパー融資を見据え、B/Sをスリムに保つ「資産流動化」の経済的合理性を解説します。</p>
+            </a>
 
-            <!-- 公式アナウンス -->
-            <li style="margin:0;">
-                <a href="index.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2024.01.10</span>
-                        <span class="news-label">お知らせ</span>
-                    </div>
-                    <div class="news-title">株式会社丸幸 公式ホームページをリニューアルいたしました</div>
-                    <p class="news-excerpt">日本橋兜町の事務所にて、より深く、温かい対話を通じた経営支援体制を強化してまいります。</p>
-                </a>
-            </li>
-        </ul>
-    </div>
+            <!-- 記事 12 -->
+            <a href="blog12.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.04.27</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>「これって経費？」経営者が知っておくべき節税の基本と、納税資金の作り方</h3>
+                <p>意外と見落としがちな経費計上のポイントから、急な納税通知に慌てないためのキャッシュフロー管理術を解説。税金を「支払う」だけでなく、賢く「備える」知恵を共有します。</p>
+            </a>
 
-    <!-- フッター -->
-    <section id="contact" class="contact-footer">
+            <!-- 記事 11 -->
+            <a href="blog11.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.04.08</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>入金までの「空白」をどう埋めるか。売上はあるが、現金が足りない闘い。</h3>
+                <p>「請求書は出している。売上も立っている。ただ、入金前に支払いが来る」という経営者様へ。この入金サイクルのジレンマを解決し、明日への活力を取り戻すための視点を語ります。</p>
+            </a>
+
+            <!-- 記事 10 -->
+            <a href="blog10.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.03.18</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>ファクタリング審査が不安な方へ。丸幸が請求書買取で重視する本当の基準</h3>
+                <p>「急ぎで資金が必要だが、通帳コピーを見せるのが不安」という経営者様へ。審査の目的と、私たちが大切にしている評価のポイントを解説します。</p>
+            </a>
+
+            <!-- 記事 09 -->
+            <a href="blog09.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.03.12</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>「銀行に断られたから終わり」ではない。赤字・リスケ中でも再起できる理由</h3>
+                <p>決算書という「過去」ではなく会社の「今」を見れば、打てる手はまだあります。銀行に断られても道が閉ざされたわけではありません。</p>
+            </a>
+
+            <!-- 記事 08 -->
+            <a href="blog08.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.03.04</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>4月からの「資金計画書」を作っていますか？どんぶり勘定から脱却するコツ</h3>
+                <p>新年度のスタートに向けた資金計画の重要性と立て方のコツを解説。確定申告データを活用して融資に強い財務基盤を作りましょう。</p>
+            </a>
+
+            <!-- 記事 07 -->
+            <a href="blog07.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.02.24</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>確定申告を「資金繰り改善」の好機に変える手法：キャッシュの最大化</h3>
+                <p>所得税・消費税の納税準備から、個人事業主なら知っておきたい手数料の経費算入までを解説。</p>
+            </a>
+
+            <!-- 記事 06 -->
+            <a href="blog06.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.02.12</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>建設業界の皆様へ：2026年「手形60日規制」と資金繰り対策について</h3>
+                <p>下請法・建設業法の改正による支払いサイクルの変化が、中小企業の財務に与える影響と対策。</p>
+            </a>
+
+            <!-- 記事 05 -->
+            <a href="blog05.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.02.04</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>「一陽来復」の精神に学ぶ、経営者のための開運習慣と金銀融通の知恵</h3>
+                <p>穴八幡宮の参拝を通じて感じた、お金の循環を円滑にするための考え方をまとめました。</p>
+            </a>
+
+            <!-- 記事 04 -->
+            <a href="blog04.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.01.29</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>【実例公開】30万円の資金確保から月120万円の売上を作った手法</h3>
+                <p>卸売・製造業の現場で役立つ、投資回収シミュレーションについて詳しく解説しています。</p>
+            </a>
+
+            <!-- 記事 03 -->
+            <a href="blog03.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.01.23</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>クリニック・医療法人の資金調達について</h3>
+                <p>社会保険が分納中でも資金調達を諦めないために。</p>
+            </a>
+
+            <!-- 記事 02 -->
+            <a href="blog02.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.01.21</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>ファクタリングの手数料：得られる「4つの隠れた利益」</h3>
+                <p>コストとしてだけでなく、攻めの経営手段としてのファクタリングの価値を解説。</p>
+            </a>
+
+            <!-- 記事 01 -->
+            <a href="blog01.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.01.12</span>
+                    <span class="blog-category">ブログ更新</span>
+                </div>
+                <h3>丸幸の約束</h3>
+                <p>株式会社丸幸の公式ホームページを刷新。日本橋兜町から全国の経営者様へ。</p>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="contact-footer">
         <p class="lead-text">その不安、早めの対応が重要です。</p>
         <a href="tel:0353242561" class="footer-tel">☎ 03-5324-2561</a>
         <a href="contact.html" class="btn-gold">無料相談フォーム</a>
-        <p class="copyright">
-            &copy; Marukou Inc. All Rights Reserved.
-        </p>
-    </section>
+        <p class="copyright">&copy; Marukou Inc. All Rights Reserved.</p>
+    </footer>
 </div>
 
 </body>

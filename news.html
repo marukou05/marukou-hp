@@ -36,7 +36,7 @@
             background-attachment: fixed;
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
-            font-size: 16px; /* 基本の文字サイズを16pxに底上げ */
+            font-size: 16px;
         }
 
         .main-container {
@@ -70,7 +70,7 @@
         }
         .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.6rem; /* 一回り大きく調整 */
+            font-size: 1.6rem;
             color: var(--navy);
             font-weight: 700;
             text-decoration: none;
@@ -81,7 +81,7 @@
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
-            font-size: 0.95rem; /* 他のページと統一 */
+            font-size: 0.95rem;
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--gold); }
@@ -130,15 +130,19 @@
         .news-date { color: var(--gold); font-size: 0.95rem; font-weight: bold; font-family: 'Helvetica', sans-serif; }
         .news-label { font-size: 0.75rem; padding: 2px 10px; border-radius: 4px; color: var(--navy); font-weight: bold; border: 1px solid var(--navy); background: #fff; }
         
-        .label-blog { background: #fff5e6; color: #e67e22; border-color: #e67e22; }
+        /* ラベルごとの専用カラー */
+        .label-schedule { background: #fdf2f2; color: #e74c3c; border-color: #e74c3c; }
+        .label-release { background: #f0f4f8; color: var(--navy); border-color: var(--navy); }
+        .label-line { background: #e8fbe8; color: #06c755; border-color: #06c755; }
         
         .news-title { font-size: 1.35rem; font-weight: bold; color: var(--navy); line-height: 1.4; font-family: 'Noto Sans JP', sans-serif; }
         .news-item:hover .news-title { color: var(--gold); }
         
         .news-excerpt { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
+        .news-excerpt strong { color: #e74c3c; font-weight: 700; }
         .new-mark { background: #e63946; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; margin-left: 8px; vertical-align: middle; }
 
-        /* --- お問い合わせ兼フッター（1枚のエリアとして統一） --- */
+        /* --- お問い合わせ兼フッター --- */
         .contact-footer { padding: 70px 20px; background: #fff; text-align: center; border-top: 1px solid #eee; }
         .contact-footer p.lead-text { font-weight: 700; color: var(--navy); margin: 0; font-size: 1.3rem; }
         .footer-tel { 
@@ -202,105 +206,56 @@
         <h1>お知らせ</h1>
         
         <ul class="news-list">
-            <!-- 実在する最新記事「blog14.html」への案内に修正 -->
+            
+            <!-- ① 令和8年4月20日：ゴールデンウィークのお知らせ -->
             <li style="margin:0;">
-                <a href="blog14.html" class="news-item">
+                <span class="news-item" style="cursor: default;">
                     <div class="news-meta">
-                        <span class="news-date">2026.06.10</span>
-                        <span class="news-label label-blog">ブログ更新</span>
+                        <span class="news-date">2026.04.20</span>
+                        <span class="news-label label-schedule">営業スケジュール</span>
+                        <span class="new-mark">NEW</span>
                     </div>
-                    <div class="news-title">【経営者必見】2社間ファクタリングのメリットと手数料を抑えるポイントを公開しました<span class="new-mark">NEW</span></div>
-                    <p class="news-excerpt">取引先に知られることなくスピーディーに運転資金を確保できる「2社間契約」について、具体的なメリットと賢く手数料を抑えるコツを分かりやすくご紹介しています。</p>
-                </a>
+                    <div class="news-title">2026年度 ゴールデンウィーク期間中の営業日のご案内</div>
+                    <p class="news-excerpt">GW期間中も暦通り（平日）営業いたしております。連休前後の急な資金需要や売掛金の現金化に関するご相談も、随時柔軟に対応しておりますのでお早めにご連絡ください。</p>
+                </span>
             </li>
 
-            <li style="margin:0;">
-                <a href="blog13.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.05.13</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">【財務戦略】銀行格付けを下げない「オフバランス」戦略｜決算書を美しく保つ資金調達</div>
-                    <p class="news-excerpt">銀行融資とファクタリングの財務諸表（B/S）への違いを徹底比較。将来の大規模融資を見据え、会社評価を下げずに短期資金を回す経済的合理性をご紹介します。</p>
-                </a>
-            </li>
-
-            <li style="margin:0;">
-                <a href="blog12.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.04.27</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">「これって経費？」経営者が知っておくべき節税の基本と、納税資金の作り方</div>
-                    <p class="news-excerpt">意外と見落としがちな経費計上のポイントから、急な納税通知に慌てないためのキャッシュフロー管理術を解説。税金を「支払う」だけでなく、賢く「備える」知恵を共有します。</p>
-                </a>
-            </li>
-
-            <li style="margin:0;">
-                <a href="blog11.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.04.08</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">入金までの「空白」をどう埋めるか。売上はあるが、現金が足りない闘い。</div>
-                    <p class="news-excerpt">物価高騰と長い支払いサイクル。経営の「空白の時間」を力に変え、再び事業を軌道に乗せるための対話型支援についてお伝えします。</p>
-                </a>
-            </li>
-
-            <li style="margin:0;">
-                <a href="blog10.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.18</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">ファクタリング審査が不安な方へ。丸幸が請求書買取で重視する本当の基準</div>
-                    <p class="news-excerpt">「通帳コピーを見せるのが不安」「税金滞納がある」といった悩みに対し、審査の目的と丸幸独自の柔軟な評価基準を詳しく解説しました。</p>
-                </a>
-            </li>
-
-            <li style="margin:0;">
-                <a href="blog09.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.12</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">「銀行に断られたから終わり」ではない。赤字・リスケ中でも再起できる理由</div>
-                    <p class="news-excerpt">融資を断られても諦める必要はありません。不動産担保ローンやファクタリングを組み合わせ、本命の融資実行までをどう繋ぐか、実務的な視点で解説しました。</p>
-                </a>
-            </li>
-
-            <li style="margin:0;">
-                <a href="blog08.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.03.04</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">4月からの「資金計画書」を作っていますか？どんぶり勘定からの脱却と新年度の備え</div>
-                    <p class="news-excerpt">新年度のスタートに向けた資金計画の重要性と立て方のコツを解説。確定申告データを活用して融資に強い財務基盤を作りましょう。</p>
-                </a>
-            </li>
-
-            <li style="margin:0;">
-                <a href="blog07.html" class="news-item">
-                    <div class="news-meta">
-                        <span class="news-date">2026.02.24</span>
-                        <span class="news-label label-blog">ブログ更新</span>
-                    </div>
-                    <div class="news-title">【個人事業主】確定申告を資金繰り改善の好機に。ファクタリング手数料の経費計上についても解説</div>
-                    <p class="news-excerpt">2026年度の確定申告期限と、納税資金の確保、そこで意外と知られていない「ファクタリング手数料の経費処理」について詳しく解説しています。</p>
-                </a>
-            </li>
-
+            <!-- ② 令和8年1月10日：ホームページ更新 -->
             <li style="margin:0;">
                 <a href="index.html" class="news-item">
                     <div class="news-meta">
                         <span class="news-date">2026.01.10</span>
-                        <span class="news-label">お知らせ</span>
+                        <span class="news-label label-release">WEBサイト更新</span>
                     </div>
                     <div class="news-title">株式会社丸幸 公式ホームページをリニューアルいたしました</div>
-                    <p class="news-excerpt">日本橋兜町の事務所にて、より深く、温かい対話を通じた支援体制を強化してまいります。</p>
+                    <p class="news-excerpt">日本橋兜町の事務所にて、経営者様の「傘」となる、より深く温かい対話を通じた支援体制を強化してまいります。今後とも変わらぬご愛顧を賜りますようお願い申し上げます。</p>
                 </a>
             </li>
+
+            <!-- ③ 令和7年12月20日：年末年始のお知らせ -->
+            <li style="margin:0;">
+                <span class="news-item" style="cursor: default;">
+                    <div class="news-meta">
+                        <span class="news-date">2025.12.20</span>
+                        <span class="news-label label-schedule">営業スケジュール</span>
+                    </div>
+                    <div class="news-title">年末年始の休業期間（令和7年12月31日～令和8年1月4日）に関するお知らせ</div>
+                    <p class="news-excerpt">誠に勝手ながら、令和7年12月31日（水）から令和8年1月4日（日）までの期間、年末年始休業とさせていただきます。なお、<strong>年内のつなぎ資金の確保など、特にお急ぎの経営者様は個別に対応いたしますので、お早めにお電話（03-5324-2561）にてご連絡ください。</strong></p>
+                </span>
+            </li>
+
+            <!-- ④ 令和7年11月28日：公式ライン -->
+            <li style="margin:0;">
+                <a href="contact.html" class="news-item">
+                    <div class="news-meta">
+                        <span class="news-date">2025.11.28</span>
+                        <span class="news-label label-line">LINE開設</span>
+                    </div>
+                    <div class="news-title">【かんたん無料査定】丸幸の「公式LINEアカウント」を開設いたしました</div>
+                    <p class="news-excerpt">お手元のスマートフォンから請求書の写真を送るだけで、24時間いつでもスピーディーに無料相談・売掛金の査定依頼ができるようになりました。ぜひお気軽にご登録ください。</p>
+                </a>
+            </li>
+
         </ul>
     </div>
 

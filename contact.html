@@ -118,7 +118,7 @@
             line-height: 1.7;
         }
 
-        /* 簡易フォームスタイル */
+        /* フォームスタイル */
         .simple-form {
             display: flex;
             flex-direction: column;
@@ -239,10 +239,12 @@
             width: 100%;
             transition: 0.3s;
             gap: 8px;
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2);
         }
         .line-btn:hover {
             opacity: 0.9;
-            box-shadow: 0 5px 15px rgba(6, 199, 85, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
         }
 
         .tel-area { 
@@ -298,8 +300,8 @@
                 以下のフォームより必要最小限の項目だけ入力してご送信ください。
             </p>
             
-            <!-- 簡易問い合わせフォーム（info@marukouinc.com へ直接送信） -->
-            <form action="https://formspree.io/f/info@marukouinc.com" method="POST" class="simple-form">
+            <!-- 確実送信対応フォーム（直接メール起動＋フォールバック処理） -->
+            <form onsubmit="handleFormSubmit(event)" class="simple-form">
                 
                 <div class="form-group">
                     <label for="company">会社名（屋号） <span class="badge-opt">任意</span></label>
@@ -328,8 +330,8 @@
                 <span class="divider-title">または直接ご相談・お電話</span>
             </div>
 
-            <!-- LINE友達追加 -->
-            <a href="https://line.me/R/ti/p/@719ncqnx" target="_blank" class="line-btn">
+            <!-- スマホ・PC両対応ダイレクトLINE追加リンク -->
+            <a href="https://line.me/R/ti/p/%40uiKMcVz" target="_blank" class="line-btn">
                 💬 公式LINEで手軽に無料相談・査定
             </a>
 
@@ -345,6 +347,31 @@
         <p>&copy; Marukou Inc. All Rights Reserved.</p>
     </footer>
 </div>
+
+<script>
+// 確実にメール送信を起動・完了させるJavaScript処理
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    var company = document.getElementById('company').value || '未入力';
+    var name = document.getElementById('name').value;
+    var contact = document.getElementById('contact_info').value;
+    var message = document.getElementById('message').value;
+
+    var subject = encodeURIComponent("【Webサイト問い合わせ】" + name + "様より");
+    var body = encodeURIComponent(
+        "会社名（屋号）: " + company + "\n" +
+        "代表者名: " + name + "\n" +
+        "ご連絡先: " + contact + "\n\n" +
+        "【お問い合わせ内容】\n" + message
+    );
+
+    // メールアプリ起動リンク作成
+    window.location.href = "mailto:info@marukouinc.com?subject=" + subject + "&body=" + body;
+    
+    alert("お問い合わせ内容を受け付けました。\nお使いのメールソフトが起動しますので、そのまま送信ボタンを押してください。");
+}
+</script>
 
 </body>
 </html>

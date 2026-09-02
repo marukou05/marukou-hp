@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お問い合わせ｜株式会社丸幸 - 日本橋兜町の経営支援</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://sdk.form.run/js/v2/formrun.js"></script>
+    <script src="https://sdk.form.run/js/v2/embed.js"></script>
     <style>
         :root { 
             --navy: #002147; 
@@ -87,7 +87,7 @@
         .nav-links a:hover { color: var(--gold); }
 
         .container { 
-            max-width: 800px; 
+            max-width: 850px; 
             width: 100%; 
             margin: 40px auto; 
             padding: 0 20px 60px; 
@@ -128,87 +128,6 @@
             line-height: 1.7;
         }
 
-        /* フォームスタイル */
-        .simple-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-weight: 700;
-            color: var(--navy);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .badge-req {
-            background: #e74c3c;
-            color: #fff;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-
-        .badge-opt {
-            background: #7f8c8d;
-            color: #fff;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: inherit;
-            background-color: #ffffff;
-            color: #333333;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--navy);
-            box-shadow: 0 0 5px rgba(0, 33, 71, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .btn-submit { 
-            background: var(--navy); 
-            color: #ffffff !important; 
-            padding: 18px; 
-            border: none;
-            border-radius: 4px; 
-            font-weight: bold; 
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.3s;
-            margin-top: 10px;
-            width: 100%;
-        }
-        .btn-submit:hover {
-            background: var(--gold);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
         /* 区切り線 */
         .divider-area {
             position: relative;
@@ -246,125 +165,4 @@
             padding: 16px; 
             border-radius: 4px; 
             font-weight: bold; 
-            font-size: 1.15rem; 
-            margin: 0 auto 25px; 
-            width: 100%;
-            transition: 0.3s;
-            gap: 8px;
-            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2);
-        }
-        .line-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
-        }
-
-        .tel-area { 
-            border-top: 1px dashed #ddd; 
-            padding-top: 25px; 
-            text-align: center;
-        }
-        .tel-label { font-size: 0.95rem; color: var(--navy); display: block; margin-bottom: 8px; font-weight: 700; }
-        .tel-number { font-size: 2.2rem; font-weight: bold; color: var(--navy); text-decoration: none; font-family: 'Helvetica', sans-serif; transition: 0.3s; }
-        .tel-number:hover { color: var(--gold); }
-
-        footer {
-            background: #ffffff;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-            color: #888;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 10px; }
-            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
-            h1 { font-size: 1.8rem; }
-            .contact-card { padding: 25px 18px; }
-            .tel-number { font-size: 1.8rem; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="main-container">
-    <nav class="top-nav">
-        <div class="nav-container">
-            <a href="index.html" class="logo-text-nav">株式会社丸幸</a>
-            <div class="nav-links">
-                <a href="service.html">事業内容</a>
-                <a href="company.html">会社概要</a>
-                <a href="index.html#faq">よくある質問</a>
-                <a href="blog.html">ブログ</a>
-                <a href="news.html">お知らせ</a>
-                <a href="contact.html">お問い合わせ</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>お問い合わせ</h1>
-        
-        <div class="contact-card">
-            <p class="contact-intro">
-                「LINE追加や電話をする時間がない」「まずは手短に相談したい」という経営者様へ。<br>
-                以下のフォームより必要最小限の項目だけ入力してご送信ください。
-            </p>
-            
-            <form class="formrun simple-form" action="https://form.run/api/v1/r/aLDJbEsoObCfrqrJlifq" method="post">
-                
-                <div class="form-group">
-                    <label for="company">会社名（屋号） <span class="badge-opt">任意</span></label>
-                    <input type="text" id="company" name="会社名" class="form-control" placeholder="例：株式会社丸幸">
-                </div>
-
-                <div class="form-group">
-                    <label for="name">代表者名（お名前） <span class="badge-req">必須</span></label>
-                    <input type="text" id="name" name="代表者名" class="form-control" placeholder="例：山田 太郎" data-formrun-required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">電話番号 <span class="badge-req">必須</span></label>
-                    <input type="tel" id="phone" name="電話番号" class="form-control" placeholder="例：090-1234-5678" data-formrun-required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">メールアドレス <span class="badge-req">必須</span></label>
-                    <input type="email" id="email" name="メールアドレス" class="form-control" placeholder="例：info@example.com" data-formrun-type="email" data-formrun-required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">お問い合わせ内容 <span class="badge-req">必須</span></label>
-                    <textarea id="message" name="お問い合わせ内容" class="form-control" placeholder="ご相談内容や資金調達・サービスに関するご質問をご記入ください。" data-formrun-required></textarea>
-                </div>
-
-                <div _formrun_hide_ style="display:none;">
-                    <input type="text" name="_field_kana">
-                </div>
-
-                <button type="submit" class="btn-submit" data-formrun-error-text="未入力の必須項目があります">送信する</button>
-            </form>
-
-            <div class="divider-area">
-                <span class="divider-title">または直接ご相談・お電話</span>
-            </div>
-
-            <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="line-btn">
-                💬 公式LINEで手軽に無料相談・査定
-            </a>
-
-            <div class="tel-area">
-                <span class="tel-label">お急ぎの方はお電話ください</span>
-                <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; Marukou Inc. All Rights Reserved.</p>
-    </footer>
-</div>
-
-</body>
-</html>
+            font-size: 1.15

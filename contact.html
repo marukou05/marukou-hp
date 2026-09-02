@@ -37,7 +37,6 @@
 
         .main-container {
             width: 100%;
-            max-width: 1200px;
             margin: 0 auto;
             min-height: 100vh;
             display: flex;
@@ -71,20 +70,21 @@
             letter-spacing: 0.05em;
         }
         .nav-links a {
-            margin-left: 15px;
+            margin-left: 18px;
             text-decoration: none;
             color: var(--navy);
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             transition: 0.3s;
         }
         .nav-links a:hover { color: var(--gold); }
 
+        /* PCでの横幅を絞って見やすく調整 */
         .container { 
-            max-width: 850px; 
+            max-width: 720px; 
             width: 100%; 
-            margin: 30px auto; 
-            padding: 0 15px 60px; 
+            margin: 40px auto; 
+            padding: 0 20px 60px; 
             flex: 1; 
         }
         
@@ -92,22 +92,22 @@
             color: var(--navy); 
             text-align: center; 
             margin-bottom: 25px; 
-            font-size: 2.2rem; 
+            font-size: 2rem; 
             border-bottom: 3px solid var(--gold); 
             display: block; 
             width: 100%; 
-            padding-bottom: 15px; 
+            padding-bottom: 12px; 
             font-family: 'Noto Serif JP', serif;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
         }
 
-        /* カードの可視性とスクロール保護の強化 */
+        /* PCでも見やすいカードの幅と影 */
         .contact-card { 
             background: #ffffff !important; 
-            padding: 30px 20px; 
+            padding: 40px 35px; 
             border-radius: 12px; 
             border: 1px solid #dcdfe6;
-            box-shadow: 0 8px 25px rgba(0, 33, 71, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 33, 71, 0.06);
             position: relative;
             z-index: 10;
             display: block;
@@ -116,7 +116,7 @@
 
         .contact-intro { 
             margin-bottom: 25px; 
-            font-size: 1.05rem; 
+            font-size: 1rem; 
             color: var(--navy); 
             font-weight: 700; 
             text-align: center;
@@ -129,13 +129,12 @@
             border-radius: 8px;
             border: 1px solid #e2e8f0;
             background: #ffffff;
-            -webkit-overflow-scrolling: touch;
             overflow: hidden;
         }
         
         .formrun-iframe {
             width: 100%;
-            min-height: 850px;
+            height: 720px;
             border: none;
             display: block;
         }
@@ -163,7 +162,7 @@
             padding: 0 15px;
             color: var(--navy);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* LINE・電話エリア */
@@ -177,17 +176,17 @@
             padding: 16px; 
             border-radius: 6px; 
             font-weight: bold; 
-            font-size: 1.15rem; 
+            font-size: 1.1rem; 
             margin: 0 auto 25px; 
             width: 100%;
             transition: 0.3s;
             gap: 8px;
-            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.25);
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2);
         }
         .line-btn:hover {
             opacity: 0.95;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.35);
+            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
         }
 
         .tel-area { 
@@ -208,12 +207,14 @@
             border-top: 1px solid #e2e8f0;
         }
 
+        /* スマホ専用レイアウト調整 */
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 10px; }
             .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
-            h1 { font-size: 1.8rem; }
-            .contact-card { padding: 20px 10px; }
-            .formrun-iframe { min-height: 950px; }
+            .container { margin: 20px auto; padding: 0 12px 40px; }
+            h1 { font-size: 1.6rem; }
+            .contact-card { padding: 25px 15px; }
+            .formrun-iframe { height: 920px; }
             .tel-number { font-size: 1.8rem; }
         }
     </style>
@@ -244,7 +245,6 @@
                 以下のフォームより必要最小限の項目だけ入力してご送信ください。
             </p>
             
-            <!-- Formrunダイレクト埋め込み -->
             <div class="formrun-iframe-wrapper">
                 <iframe 
                     src="https://form.run/embed/@info-aLDJbEsoObCfrqrJlifq?embed=direct" 
@@ -257,12 +257,10 @@
                 <span class="divider-title">または直接ご相談・お電話</span>
             </div>
 
-            <!-- 公式LINE追加リンク -->
             <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="line-btn">
                 💬 公式LINEで手軽に無料相談・査定
             </a>
 
-            <!-- 電話番号 -->
             <div class="tel-area">
                 <span class="tel-label">お急ぎの方はお電話ください</span>
                 <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>

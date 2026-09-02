@@ -17,11 +17,11 @@
         :root { 
             --navy: #002147; 
             --gold: #c5a059; 
-            --text: #333;
+            --text: #333333;
             --white: #ffffff; 
             --line-green: #06C755;
             --accent-border: #d0dbe0;
-            --bg-blue: #f4f7f9;
+            --bg-light: #f4f7f9;
         }
 
         * { box-sizing: border-box; }
@@ -31,8 +31,9 @@
             font-family: 'Noto Sans JP', sans-serif; 
             color: var(--text); 
             line-height: 1.8; 
-            background: linear-gradient(rgba(240, 248, 255, 0.93), rgba(240, 248, 255, 0.93)), 
-                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000');
+            background-color: var(--bg-light);
+            background-image: linear-gradient(rgba(0, 33, 71, 0.75), rgba(0, 33, 71, 0.75)), 
+                                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -44,22 +45,20 @@
             width: 100%;
             max-width: 1600px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 0 60px rgba(0,0,0,0.05);
         }
 
         /* --- ナビゲーション --- */
         .top-nav { 
-            background: rgba(255, 255, 255, 0.98); 
+            background: #ffffff; 
             padding: 15px 0; 
             border-bottom: 2px solid var(--navy); 
             position: sticky; 
             top: 0; 
             z-index: 1100; 
-            backdrop-filter: blur(10px); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .nav-container {
             max-width: 1200px;
@@ -87,10 +86,16 @@
         }
         .nav-links a:hover { color: var(--gold); }
 
-        .container { max-width: 800px; width: 100%; margin: 0 auto; padding: 40px 20px 80px; flex: 1; }
+        .container { 
+            max-width: 800px; 
+            width: 100%; 
+            margin: 40px auto; 
+            padding: 0 20px 60px; 
+            flex: 1; 
+        }
         
         h1 { 
-            color: var(--navy); 
+            color: var(--white); 
             text-align: center; 
             margin-bottom: 30px; 
             font-size: 2.2rem; 
@@ -100,14 +105,18 @@
             padding-bottom: 15px; 
             font-family: 'Noto Serif JP', serif;
             letter-spacing: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
+        /* くっきり浮き上がるカード背景設定 */
         .contact-card { 
-            background: #fff; 
+            background: #ffffff !important; 
             padding: 40px; 
-            border-radius: 6px; 
+            border-radius: 8px; 
             border: 1px solid var(--accent-border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 10;
         }
 
         .contact-intro { 
@@ -166,6 +175,8 @@
             border-radius: 4px;
             font-size: 1rem;
             font-family: inherit;
+            background-color: #ffffff;
+            color: #333333;
             transition: border-color 0.3s;
         }
 
@@ -182,10 +193,178 @@
 
         .btn-submit { 
             background: var(--navy); 
-            color: white !important; 
+            color: #ffffff !important; 
             padding: 18px; 
             border: none;
             border-radius: 4px; 
             font-weight: bold; 
             font-size: 1.2rem;
             cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .btn-submit:hover {
+            background: var(--gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 区切り線 */
+        .divider-area {
+            position: relative;
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+        .divider-area::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #e1e8f0;
+            z-index: 1;
+        }
+        .divider-title {
+            position: relative;
+            z-index: 2;
+            background: #ffffff;
+            padding: 0 15px;
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* LINE・電話エリア */
+        .line-btn { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: var(--line-green); 
+            color: #ffffff !important; 
+            text-decoration: none; 
+            padding: 16px; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            font-size: 1.15rem; 
+            margin: 0 auto 25px; 
+            width: 100%;
+            transition: 0.3s;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.2);
+        }
+        .line-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 199, 85, 0.3);
+        }
+
+        .tel-area { 
+            border-top: 1px dashed #ddd; 
+            padding-top: 25px; 
+            text-align: center;
+        }
+        .tel-label { font-size: 0.95rem; color: var(--navy); display: block; margin-bottom: 8px; font-weight: 700; }
+        .tel-number { font-size: 2.2rem; font-weight: bold; color: var(--navy); text-decoration: none; font-family: 'Helvetica', sans-serif; transition: 0.3s; }
+        .tel-number:hover { color: var(--gold); }
+
+        footer {
+            background: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9rem;
+            color: #888;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 10px; }
+            .nav-links a { margin: 5px 8px; font-size: 0.8rem; }
+            h1 { font-size: 1.8rem; }
+            .contact-card { padding: 25px 18px; }
+            .tel-number { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-text-nav">株式会社丸幸</a>
+            <div class="nav-links">
+                <a href="service.html">事業内容</a>
+                <a href="company.html">会社概要</a>
+                <a href="index.html#faq">よくある質問</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>お問い合わせ</h1>
+        
+        <div class="contact-card">
+            <p class="contact-intro">
+                「LINE追加や電話をする時間がない」「まずは手短に相談したい」という経営者様へ。<br>
+                以下のフォームより必要最小限の項目だけ入力してご送信ください。
+            </p>
+            
+            <form class="formrun simple-form" action="https://form.run/api/v1/r/aLDJbEsoObCfrqrJlifq" method="post">
+                
+                <div class="form-group">
+                    <label for="company">会社名（屋号） <span class="badge-opt">任意</span></label>
+                    <input type="text" id="company" name="会社名" class="form-control" placeholder="例：株式会社丸幸">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">代表者名（お名前） <span class="badge-req">必須</span></label>
+                    <input type="text" id="name" name="代表者名" class="form-control" placeholder="例：山田 太郎" data-formrun-required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">電話番号 <span class="badge-req">必須</span></label>
+                    <input type="tel" id="phone" name="電話番号" class="form-control" placeholder="例：090-1234-5678" data-formrun-required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス <span class="badge-req">必須</span></label>
+                    <input type="email" id="email" name="メールアドレス" class="form-control" placeholder="例：info@example.com" data-formrun-type="email" data-formrun-required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">お問い合わせ内容 <span class="badge-req">必須</span></label>
+                    <textarea id="message" name="お問い合わせ内容" class="form-control" placeholder="ご相談内容や資金調達・サービスに関するご質問をご記入ください。" data-formrun-required></textarea>
+                </div>
+
+                <div _formrun_hide_ style="display:none;">
+                    <input type="text" name="_field_kana">
+                </div>
+
+                <button type="submit" class="btn-submit" data-formrun-error-text="未入力の必須項目があります">送信する</button>
+            </form>
+
+            <div class="divider-area">
+                <span class="divider-title">または直接ご相談・お電話</span>
+            </div>
+
+            <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="line-btn">
+                💬 公式LINEで手軽に無料相談・査定
+            </a>
+
+            <div class="tel-area">
+                <span class="tel-label">お急ぎの方はお電話ください</span>
+                <a href="tel:0353242561" class="tel-number">☎ 03-5324-2561</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>

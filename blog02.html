@@ -11,21 +11,54 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>手数料は高い？それとも安い？ファクタリングで得られる「4つの隠れた利益」 | 株式会社丸幸</title>
+    <!-- ★アクセス・クリック数爆増のための最適化タイトル -->
+    <title>【2026年最新】ファクタリング手数料は高い？得られる「4つの隠れた利益」と賢い経費活用法｜丸幸ブログ</title>
+    <meta name="description" content="ファクタリング手数料は単なるコストではありません。決算書のオフバランス化、節税効果、倒産リスク回避、機会損失防止など、手数料以上に手に入る4つの隠れた利益を詳しく解説します。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #002b55; --bg: #f5f2eb; --gold: #917b56; --white: #ffffff; --text: #333; }
-        body { background-color: var(--bg); margin: 0; padding: 0; font-family: "YuMincho", "Hiragino Mincho ProN", serif; color: var(--text); line-height: 2.0; }
+        :root { --navy: #002b55; --bg: #f5f2eb; --gold: #917b56; --white: #ffffff; --text: #333; --line-green: #06C755; }
+        * { box-sizing: border-box; }
+        body { background-color: var(--bg); margin: 0; padding: 0; font-family: "YuMincho", "Hiragino Mincho ProN", serif; color: var(--text); line-height: 2.0; -webkit-font-smoothing: antialiased; }
+        
         .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 1100; }
-        .top-nav a { margin: 0 15px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
+        .top-nav a { margin: 0 10px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 0.95rem; font-family: sans-serif; display: inline-block; }
         .top-nav a:hover { color: var(--gold); }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
-        .article-card { background: #fff; padding: 40px; border-radius: 12px; border: 1px solid #e0dcd0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        h1 { color: var(--navy); font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 15px; margin-bottom: 30px; line-height: 1.4; }
-        h2 { color: var(--navy); font-size: 1.4rem; border-left: 6px solid var(--gold); padding-left: 15px; margin-top: 40px; }
+        
+        .container { max-width: 800px; margin: 0 auto; padding: 50px 20px; }
+        .article-card { background: #fff; padding: 45px 35px; border-radius: 12px; border: 1px solid #e0dcd0; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        
+        h1 { color: var(--navy); font-size: 1.75rem; border-bottom: 2px solid var(--gold); padding-bottom: 18px; margin-bottom: 30px; line-height: 1.4; }
+        h2 { color: var(--navy); font-size: 1.35rem; border-left: 6px solid var(--gold); padding-left: 15px; margin-top: 45px; }
+        
         .highlight { font-weight: bold; background: linear-gradient(transparent 70%, #fff4cc 70%); }
-        .cta-box { background: var(--navy); color: white; padding: 30px; border-radius: 12px; text-align: center; margin-top: 50px; }
-        .btn-line { display: inline-block; background: #06C755; color: white !important; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; font-family: sans-serif; }
-        @media (max-width: 600px) { h1 { font-size: 1.4rem; } .container { padding-top: 30px; } .top-nav a { margin: 0 5px; font-size: 0.8rem; } }
+        
+        /* LP誘導カード */
+        .lp-banner-card {
+            background: linear-gradient(135deg, #002b55 0%, #001229 100%);
+            color: #ffffff;
+            padding: 28px;
+            border-radius: 10px;
+            margin: 35px 0;
+            text-align: center;
+            font-family: sans-serif;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        .lp-banner-title { font-family: "Noto Serif JP", serif; font-size: 1.3rem; color: #f1f5f9; margin: 0 0 10px 0; }
+        .btn-lp { display: inline-block; background: var(--gold); color: #000000 !important; font-weight: bold; padding: 15px 28px; border-radius: 6px; text-decoration: none; font-size: 1.05rem; transition: 0.3s; margin-top: 12px; }
+        .btn-lp:hover { background: #ffffff; }
+
+        .cta-box { background: var(--navy); color: white; padding: 35px 20px; border-radius: 12px; text-align: center; margin-top: 50px; font-family: sans-serif; }
+        .btn-line { display: inline-block; background: var(--line-green); color: white !important; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; font-family: sans-serif; box-shadow: 0 4px 15px rgba(6,199,85,0.3); transition: 0.3s; }
+        .btn-line:hover { opacity: 0.9; }
+
+        @media (max-width: 600px) { 
+            .container { padding: 30px 12px; }
+            .article-card { padding: 25px 18px; }
+            .top-nav a { margin: 0 4px; font-size: 0.8rem; } 
+            h1 { font-size: 1.35rem; }
+            h2 { font-size: 1.15rem; }
+            .btn-lp, .btn-line { font-size: 1rem; padding: 15px 20px; width: 100%; box-sizing: border-box; }
+        }
     </style>
 </head>
 <body>
@@ -41,7 +74,7 @@
 <div class="container">
     <article class="article-card">
         <p style="color: #888; font-family: sans-serif; font-size: 0.9rem;">2026.01.21</p>
-        <h1>手数料は高い？それとも安い？<br>ファクタリングで得られる「4つの隠れた利益」</h1>
+        <h1>【2026年最新】手数料は高い？それとも安い？<br>ファクタリングで得られる「4つの隠れた利益」</h1>
         
         <p>「ファクタリングの手数料って、正直ちょっと高いよね……」<br>
         日々、会社の数字を真剣に見ている社長や経理担当者の方なら、そう思うのは当然のことだと思います。</p>
@@ -64,10 +97,19 @@
         <p>「いい仕事が舞い込んできた！でも、外注費を払う現金が今すぐ足りない……」<br>
         たとえ10％の手数料を払ったとしても、その資金で20％、30％の利益が出る仕事を受けられたら、差し引きでしっかりプラスになります。「入金を待ってチャンスを逃す」のが、経営にとって一番の損失です。そのスピードを買うことこそが成功の秘訣です。</p>
 
+        <!-- ★全業種対応ファクタリングLPへの誘導バナー -->
+        <div class="lp-banner-card">
+            <div class="lp-banner-title">💬 自社の請求書でいくら調達できるか試してみませんか？</div>
+            <p style="font-size: 0.95rem; color: #cbd5e1; margin-bottom: 12px;">
+                丸幸なら他社からの乗り換えや手数料見直しのご相談も大歓迎。専任スタッフが親身に対応いたします。
+            </p>
+            <a href="factoring.html" class="btn-lp">👉 ファクタリング（即日資金調達）の詳細を見る</a>
+        </div>
+
         <div class="cta-box">
             <h3 style="margin-top:0;">丸幸が大切にしていること</h3>
-            <p>「今の状況でファクタリングを使うのが、本当にプラスになるのか？」迷っているなら、まずは正直にご相談ください。公式LINEからメッセージをお待ちしております。</p>
-            <a href="https://line.me/R/ti/p/@719ncqnx" class="btn-line">LINEで無料相談・査定</a>
+            <p style="font-size: 0.95rem;">「今の状況でファクタリングを使うのが、本当にプラスになるのか？」迷っているなら、まずは正直にご相談ください。公式LINEからメッセージをお待ちしております。</p>
+            <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="btn-line">💬 公式LINEで無料相談・査定</a>
         </div>
     </article>
 </div>

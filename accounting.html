@@ -101,7 +101,14 @@
 
         footer { background: #ffffff; text-align: center; padding: 35px 20px; font-size: 1rem; color: #777; border-top: 1px solid #e2e8f0; }
 
+        /* ★スマホ表示の最適化レスポンシブスタイル */
         @media (max-width: 768px) {
+            .top-nav { padding: 12px 0; }
+            .nav-container { flex-direction: column; gap: 8px; padding: 0 15px; }
+            .logo-text-nav { font-size: 1.25rem; } /* スマホ用にロゴ文字サイズを小さく最適化 */
+            .nav-links a { margin: 0 6px; font-size: 0.85rem; }
+
+            .hero-section { padding: 40px 15px; }
             .hero-title { font-size: 1.6rem; }
             .hero-sub { font-size: 0.95rem; }
             .aruaru-grid { grid-template-columns: 1fr; }
@@ -160,7 +167,7 @@
             </div>
         </div>
 
-        <!-- ★丸幸だからできる「経理整理 × 即日資金調達」導線バナー -->
+        <!-- 丸幸だからできる「経理整理 × 即日資金調達」導線バナー -->
         <div class="funding-link-box">
             <div class="funding-link-title">💡 経理の整理と同時に「売掛金の即日現金化」も対応可能です</div>
             <p style="margin: 0 0 15px 0; color: #444; font-size: 1.05rem;">
@@ -187,7 +194,7 @@
                 </div>
             </div>
             <p style="font-size: 0.88rem; color: #777; margin-top: 20px; text-align: center;">
-                ※当社は税務申告・税務相談等の税理士独独占業務は行いません。提出データ整理や記帳事務代行、資金繰り支援として経営者様をサポートいたします。
+                ※当社は税務申告・税務相談等の税理士独占業務は行いません。提出データ整理や記帳事務代行、資金繰り支援として経営者様をサポートいたします。
             </p>
         </div>
 

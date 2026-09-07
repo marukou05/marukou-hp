@@ -30,9 +30,17 @@
         strong { color: var(--navy); background: linear-gradient(transparent 70%, #fff4cc 70%); }
         .quote-box { background: #f9f7f2; padding: 25px; border-radius: 8px; margin: 25px 0; border: 1px solid #e0dcd0; }
         
-        .cta-box { background: var(--navy); color: #fff; padding: 40px; border-radius: 12px; text-align: center; margin-top: 60px; font-family: sans-serif; }
-        .btn-line { display: inline-block; background: var(--line-green); color: #fff !important; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 25px; font-family: sans-serif; box-shadow: 0 4px 15px rgba(6,199,85,0.3); transition: 0.3s; }
+        /* お問い合わせCTAエリア */
+        .cta-box { background: var(--navy); color: #fff; padding: 40px 25px; border-radius: 12px; text-align: center; margin-top: 60px; font-family: sans-serif; }
+        .cta-buttons { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 25px; }
+        .btn-line { display: block; background: var(--line-green); color: #fff !important; padding: 18px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6,199,85,0.3); transition: 0.3s; width: 100%; max-width: 500px; }
         .btn-line:hover { opacity: 0.9; }
+        .btn-web { display: block; background: var(--gold); color: #fff !important; padding: 18px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(145,123,86,0.3); transition: 0.3s; width: 100%; max-width: 500px; }
+        .btn-web:hover { opacity: 0.9; }
+
+        /* 電話番号エリア */
+        .tel-box { margin-top: 30px; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 25px; }
+        .tel-num { font-size: 2.2rem; font-weight: bold; color: #fff; text-decoration: none; display: inline-block; margin-top: 5px; }
 
         @media (max-width: 768px) {
             .container { padding: 30px 12px; }
@@ -40,7 +48,8 @@
             .top-nav a { font-size: 0.8rem; margin: 0 4px; }
             h1 { font-size: 1.35rem; }
             h2 { font-size: 1.15rem; }
-            .btn-line { font-size: 1rem; padding: 15px 20px; width: 100%; box-sizing: border-box; }
+            .btn-line, .btn-web { font-size: 1rem; padding: 15px 15px; }
+            .tel-num { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -86,10 +95,24 @@
         「今回はファクタリングを使わない方が、会社のためになりますよ」</p>
         <p>目先の利益よりも、社長の会社の1年後、5年後を守ること。それが丸幸のプライドです。お客様の状況を真剣に聴き、もし他の手段が適切であれば、そちらを検討するよう正直にアドバイスいたします。</p>
 
+        <!-- お問い合わせCTA・電話エリア -->
         <div class="cta-box">
             <h3 style="margin-top:0;">「ちょっと話を聴いてほしい」だけでも大歓迎です</h3>
             <p style="font-size: 0.95rem;">電話を切ったあと、少しでも心が軽くなっていただけるように。丸幸は、経営者の「一番近い相談相手」として、あなたの「今」に全力で向き合います。</p>
-            <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="btn-line">💬 公式LINEで無料相談・査定</a>
+            
+            <div class="cta-buttons">
+                <!-- 公式LINEボタン -->
+                <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="btn-line">💬 公式LINEで手軽に無料相談・査定</a>
+                
+                <!-- お問い合わせフォームボタン -->
+                <a href="contact.html" class="btn-web">✉ Webお問い合わせフォームはこちら</a>
+            </div>
+
+            <!-- 電話相談エリア -->
+            <div class="tel-box">
+                <p style="margin: 0; font-size: 0.95rem; color: #f1f5f9;">お急ぎの方・直接お話しされたい方はこちら</p>
+                <a href="tel:0353242561" class="tel-num">☎ 03-5324-2561</a>
+            </div>
         </div>
     </article>
 </div>

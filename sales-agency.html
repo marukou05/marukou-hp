@@ -90,8 +90,15 @@
 
         footer { background: #ffffff; text-align: center; padding: 35px 20px; font-size: 1rem; color: #777; border-top: 1px solid #e2e8f0; }
 
+        /* ★スマホ表示の最適化レスポンシブスタイル */
         @media (max-width: 768px) {
-            .hero-title { font-size: 1.6rem; }
+            .top-nav { padding: 12px 0; }
+            .nav-container { flex-direction: column; gap: 8px; padding: 0 15px; }
+            .logo-text-nav { font-size: 1.25rem; } /* スマホ用にロゴ文字サイズを小さく最適化 */
+            .nav-links a { margin: 0 6px; font-size: 0.85rem; }
+
+            .hero-section { padding: 40px 15px; }
+            .hero-title { font-size: 1.5rem; }
             .hero-sub { font-size: 0.95rem; }
             .aruaru-grid { grid-template-columns: 1fr; }
             .cta-container { padding: 30px 15px; }

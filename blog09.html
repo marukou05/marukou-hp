@@ -11,9 +11,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>「銀行に断られたから終わり」ではない。赤字・リスケ中でも再起できる資金繰り術とファクタリング活用｜丸幸ブログ</title>
-    
     <meta name="description" content="銀行やノンバンクの融資を断られても諦める必要はありません。赤字決算やリスケ中でも検討可能な不動産担保ローンやファクタリングの使い分け、融資実行までの「つなぎ」の活用法について日本橋兜町の丸幸が詳しく解説します。">
     
     <link rel="canonical" href="https://www.marukouinc.com/blog09.html">
@@ -31,30 +29,18 @@
         
         body { 
             font-family: 'Noto Sans JP', sans-serif; 
-            line-height: 1.8; 
+            line-height: 2.0; 
+            font-size: 19px;
             color: var(--text); 
             margin: 0; 
             background-color: #fcfcfc; 
             -webkit-font-smoothing: antialiased;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
-        .top-nav { 
-            background: #fff; 
-            padding: 15px; 
-            text-align: center; 
-            border-bottom: 2px solid var(--navy); 
-            position: sticky; 
-            top: 0; 
-            z-index: 100; 
-        }
-        .top-nav a { 
-            margin: 0 10px; 
-            text-decoration: none; 
-            color: var(--navy); 
-            font-weight: bold; 
-            font-size: 0.95rem;
-            display: inline-block;
-        }
+        .top-nav { background: #fff; padding: 15px; text-align: center; border-bottom: 2px solid var(--navy); position: sticky; top: 0; z-index: 100; }
+        .top-nav a { margin: 0 10px; text-decoration: none; color: var(--navy); font-weight: bold; font-size: 1rem; display: inline-block; }
         .top-nav a:hover { color: var(--gold); }
 
         .container { 
@@ -67,19 +53,18 @@
             border: 1px solid #e0dcd0;
         }
 
-        .date { color: #888; font-size: 0.9rem; margin-bottom: 10px; }
-        h1 { font-family: 'Noto Serif JP', serif; color: var(--navy); font-size: 1.75rem; border-bottom: 3px solid var(--gold); padding-bottom: 20px; line-height: 1.5; margin-top: 5px; }
-        h2 { color: var(--navy); border-left: 6px solid var(--gold); padding-left: 15px; margin-top: 45px; font-size: 1.35rem; background: var(--bg-blue); padding-top: 10px; padding-bottom: 10px; font-family: 'Noto Serif JP', serif; }
-        h3 { color: var(--navy); font-size: 1.15rem; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .date { color: #888; font-size: 0.95rem; margin-bottom: 10px; }
+        h1 { font-family: 'Noto Serif JP', serif; color: var(--navy); font-size: 1.85rem; border-bottom: 3px solid var(--gold); padding-bottom: 20px; line-height: 1.5; margin-top: 5px; }
+        h2 { color: var(--navy); border-left: 6px solid var(--gold); padding-left: 15px; margin-top: 45px; font-size: 1.45rem; background: var(--bg-blue); padding-top: 10px; padding-bottom: 10px; font-family: 'Noto Serif JP', serif; }
+        h3 { color: var(--navy); font-size: 1.2rem; margin-top: 35px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
         .highlight { background: linear-gradient(transparent 70%, #fff3b0 70%); font-weight: bold; color: var(--navy); }
         
         .method-list { list-style: none; padding: 0; margin: 25px 0; }
         .method-item { margin-bottom: 15px; padding: 20px; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
-        .method-name { font-weight: bold; color: var(--navy); font-size: 1.1rem; display: block; margin-bottom: 5px; }
+        .method-name { font-weight: bold; color: var(--navy); font-size: 1.15rem; display: block; margin-bottom: 5px; }
         
         .important-note { background: #fff9e6; border: 1px solid var(--gold); padding: 22px 25px; border-radius: 8px; margin: 30px 0; }
 
-        /* LP誘導カード */
         .lp-banner-card {
             background: linear-gradient(135deg, #002147 0%, #001229 100%);
             color: #ffffff;
@@ -91,15 +76,11 @@
         }
         .lp-banner-title { font-family: "Noto Serif JP", serif; font-size: 1.3rem; color: #f1f5f9; margin: 0 0 10px 0; }
         .btn-lp { display: inline-block; background: var(--gold); color: #000000 !important; font-weight: bold; padding: 15px 28px; border-radius: 6px; text-decoration: none; font-size: 1.05rem; transition: 0.3s; margin-top: 12px; }
-        .btn-lp:hover { background: #ffffff; }
 
-        /* CTA・電話相談エリア */
         .cta-area { background: var(--navy); color: white; padding: 35px 20px; border-radius: 12px; text-align: center; margin-top: 50px; }
         .cta-buttons { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 25px; }
         .btn-line { display: block; background: var(--line-green); color: #fff !important; padding: 18px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6,199,85,0.3); transition: 0.3s; width: 100%; max-width: 500px; }
-        .btn-line:hover { opacity: 0.9; }
         .btn-web { display: block; background: var(--gold); color: #fff !important; padding: 18px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(197,160,89,0.3); transition: 0.3s; width: 100%; max-width: 500px; }
-        .btn-web:hover { opacity: 0.9; }
 
         .tel-box { margin-top: 30px; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 25px; }
         .tel-num { font-size: 2.2rem; font-weight: bold; color: #fff; text-decoration: none; display: inline-block; margin-top: 5px; }
@@ -107,10 +88,11 @@
         footer { text-align: center; padding: 40px 0; color: #666; font-size: 0.85rem; }
 
         @media (max-width: 600px) { 
+            body { font-size: 17px; line-height: 1.8; }
             .container { padding: 25px 18px; margin: 20px auto; } 
-            .top-nav a { margin: 0 4px; font-size: 0.8rem; }
-            h1 { font-size: 1.35rem; } 
-            h2 { font-size: 1.1rem; }
+            .top-nav a { margin: 0 4px; font-size: 0.85rem; }
+            h1 { font-size: 1.45rem; } 
+            h2 { font-size: 1.25rem; }
             .btn-lp, .btn-line, .btn-web { font-size: 1rem; padding: 15px 15px; width: 100%; box-sizing: border-box; }
             .tel-num { font-size: 1.7rem; }
         }
@@ -157,7 +139,7 @@
     <p><span class="highlight">借りられるなら融資がベストであることは間違いありません。</span>経営にとって金利負担が最も少ない道を、まずは第一に検討すべきです。</p>
 
     <div class="important-note">
-        <p style="margin-top: 0;"><strong>「赤字決算だから」「リスケスケジュール中だから」という理由で、全ての道が閉ざされるわけではありません。</strong></p>
+        <p style="margin-top: 0;"><strong>「赤字決算だから」「リスケジュール中だから」という理由で、全ての道が閉ざされるわけではありません。</strong></p>
         <p style="margin-bottom: 0;">銀行が「過去の数字」を重視するのに対し、ノンバンクや不動産担保、そしてファクタリングは、現在の資産や今後の事業計画、あるいは取引先の信用力を評価してくれるケースが多くあります。今の状況を否定せず、活用できる「資産」がどこにあるかを見極めることが再起への近道です。</p>
     </div>
 
@@ -179,12 +161,11 @@
     <p>経営者の熱意や、現場の状況、取引先との信頼関係。これらを含めて総合的に判断してくれる相談先を見つけることが、再起の第一歩となります。まずは今の状況を整理し、客観的なアドバイスを受けてみてください。</p>
 
     <div class="cta-area">
-        <h3 style="margin-top:0; border:none; color:#fff;">資金計画書を作って見えてきた課題は、必ず解決できる方法があります</h3>
+        <h3 style="margin-top:0; border:none; color:#fff; font-size:1.4rem;">資金計画書を作って見えてきた課題は、必ず解決できる方法があります</h3>
         <p style="font-size: 0.95rem; color:#f1f5f9;">銀行やノンバンクに断られた不安を、一人で抱え込む必要はありません。日本橋兜町の丸幸が誠心誠意ご相談を承ります。</p>
         
         <div class="cta-buttons">
             <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="btn-line">💬 公式LINEで手軽に無料相談・査定</a>
-            
             <a href="contact.html" class="btn-web">✉ Webお問い合わせフォームはこちら</a>
         </div>
 

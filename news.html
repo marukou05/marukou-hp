@@ -7,7 +7,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-18XGHDNQB3');
-    </script>    
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>お知らせ｜株式会社丸幸 - 日本橋兜町の資金繰り支援</title>
@@ -125,12 +125,20 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
+
+        /* キャンペーン専用目立つスタイル */
+        .news-item.campaign-highlight {
+            border-left-color: #c53030;
+            background: #fffcf8;
+            border: 2px solid #b89c6a;
+        }
         
         .news-meta { display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; }
         .news-date { color: var(--gold); font-size: 0.95rem; font-weight: bold; font-family: 'Helvetica', sans-serif; }
         .news-label { font-size: 0.75rem; padding: 2px 10px; border-radius: 4px; color: var(--navy); font-weight: bold; border: 1px solid var(--navy); background: #fff; }
         
         /* ラベルごとの専用カラー */
+        .label-campaign { background: #c53030; color: #fff; border-color: #c53030; }
         .label-schedule { background: #fdf2f2; color: #e74c3c; border-color: #e74c3c; }
         .label-release { background: #f0f4f8; color: var(--navy); border-color: var(--navy); }
         .label-line { background: #e8fbe8; color: #06c755; border-color: #06c755; }
@@ -139,7 +147,7 @@
         .news-item:hover .news-title { color: var(--gold); }
         
         .news-excerpt { font-size: 1.05rem; color: #555; margin: 0; line-height: 1.6; }
-        .news-excerpt strong { color: #e74c3c; font-weight: 700; }
+        .news-excerpt strong { color: #c53030; font-weight: 700; }
 
         /* --- お問い合わせ兼フッター --- */
         .contact-footer { padding: 70px 20px; background: #fff; text-align: center; border-top: 1px solid #eee; }
@@ -205,6 +213,20 @@
         <h1>お知らせ</h1>
         
         <ul class="news-list">
+
+            <!-- 令和8年9月10日：キャンペーン追加項目 -->
+            <li style="margin:0;">
+                <a href="news20260910.html" class="news-item campaign-highlight">
+                    <div class="news-meta">
+                        <span class="news-date">2026.09.10</span>
+                        <span class="news-label label-campaign">キャンペーン</span>
+                    </div>
+                    <div class="news-title">【先着100社限定】他社からの乗り換えで手数料3%割引！秋のファクタリング乗り換え応援キャンペーン開催</div>
+                    <p class="news-excerpt">
+                        他社のファクタリング手数料が高いとお悩みの経営者様へ。9月10日〜9月30日までの期間限定で、<strong>他社ご提示手数料より「3%割引」で乗り換え買取を行うお得なキャンペーン</strong>を開催いたします（個人事業主様〜法人様対象）。他社契約書をお手元にご用意の上、お早めにお申し込みください。
+                    </p>
+                </a>
+            </li>
 
             <!-- 令和8年7月27日：お盆期間営業のお知らせ -->
             <li style="margin:0;">

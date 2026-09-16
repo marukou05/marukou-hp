@@ -351,6 +351,91 @@
         }
         .service-link:hover { color: var(--gold); }
 
+        /* --- ★特化型LP（業界専用ページ）案内バナーエリア --- */
+        .lp-banner-section {
+            background: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 40px 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 8px 25px rgba(184, 156, 106, 0.08);
+        }
+        .lp-banner-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .lp-banner-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.55rem;
+            color: var(--navy);
+            margin: 0 0 8px;
+            font-weight: 700;
+        }
+        .lp-banner-sub {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0;
+        }
+        .lp-banner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .lp-banner-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px 25px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        .lp-banner-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 30px rgba(184, 156, 106, 0.2);
+        }
+        .lp-banner-badge {
+            display: inline-block;
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+        .lp-badge-construction { background: #e67e22; }
+        .lp-badge-medical { background: #27ae60; }
+        .lp-banner-card-h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin: 0 0 10px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .lp-banner-card-p {
+            font-size: 0.9rem;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.7;
+        }
+        .lp-banner-btn {
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
         /* --- 8大専門対応業界 --- */
         .industry-box {
             background: var(--light-bg);
@@ -554,6 +639,7 @@
             .section-wrap { padding: 40px 15px; }
             .sim-container { padding: 25px 15px; }
             .sim-grid { grid-template-columns: 1fr; }
+            .lp-banner-grid { grid-template-columns: 1fr; }
             .news-blog-grid { grid-template-columns: 1fr; }
             .faq-a { padding-left: 0; }
             .btn-line, .btn-web { font-size: 1rem; padding: 16px 15px; width: 100%; }
@@ -688,6 +774,40 @@
             </div>
         </div>
 
+        <!-- ★業界特化型LP（専用ページ）案内バナーセクション★ -->
+        <div class="lp-banner-section">
+            <div class="lp-banner-header">
+                <h3 class="lp-banner-title">業界別 特化型ファクタリングのご案内</h3>
+                <p class="lp-banner-sub">業界特有の入金ラグや課題に合わせた専用の資金調達ソリューションです。</p>
+            </div>
+
+            <div class="lp-banner-grid">
+                <!-- 建設・塗装・製造業向けLPバナー -->
+                <a href="construction-lp.html" class="lp-banner-card">
+                    <div>
+                        <span class="lp-banner-badge lp-badge-construction">建設・塗装・製造業の皆様へ</span>
+                        <h4 class="lp-banner-card-h3">🏗️ 建設・塗装・製造業特化 即日調達ページ</h4>
+                        <p class="lp-banner-card-p">
+                            材料費・資材費の先行支払い、職人さんへの人工代（人件費）立て替え、長サイト売掛金の悩みを即日解決！他社利用中や乗り換えのご相談も大歓迎。
+                        </p>
+                    </div>
+                    <span class="lp-banner-btn">建設・製造特化LPを見る &#8594;</span>
+                </a>
+
+                <!-- 医療・介護・保育向けLPバナー -->
+                <a href="medical-care-lp.html" class="lp-banner-card">
+                    <div>
+                        <span class="lp-banner-badge lp-badge-medical">医療・介護・保育施設の皆様へ</span>
+                        <h4 class="lp-banner-card-h3">🏥 医療・介護・保育特化 即日調達ページ</h4>
+                        <p class="lp-banner-card-p">
+                            国保連・社保連からの2ヶ月のレセプト入金ラグ、自治体の委託費・公的補助金待ちを優遇手数料（4%〜）で即日早期化。患者様・保護者様に完全秘密。
+                        </p>
+                    </div>
+                    <span class="lp-banner-btn">医療・介護特化LPを見る &#8594;</span>
+                </a>
+            </div>
+        </div>
+
         <!-- 8大専門対応業界 -->
         <div class="industry-box">
             <h3 class="industry-title">
@@ -719,7 +839,7 @@
                     <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600" alt="建設業・建築業・製造業" class="industry-card-img">
                     <div class="industry-card-content">
                         <strong>建設業・建築業・製造業</strong>
-                        <span>手形60日規制対策・人件費/材料費先行</span>
+                        <span>人件費/材料費先行・人工代立替え</span>
                     </div>
                 </div>
                 <!-- 4. 運送・物流 -->

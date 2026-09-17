@@ -16,6 +16,13 @@
     
     <meta name="description" content="株式会社丸幸（日本橋兜町）は、即日ファクタリング（売掛金・請求書買取・診療介護報酬・個人事業主対応）、新規開拓を担う営業代行、バックオフィスを効率化する経理代行の3つの軸で中小企業・個人事業主様の資金繰りと経営改善を伴走支援いたします。">
 
+    <!-- カノニカルタグ（Google Search Consoleの重複エラー解消用） -->
+    <link rel="canonical" href="https://www.marukouinc.com/">
+
+    <!-- ファビコン・検索結果アイコン設定 -->
+    <link rel="icon" href="favicon.png.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
@@ -60,7 +67,7 @@
         /* --- ナビゲーション --- */
         .top-nav {
             background: rgba(255, 255, 255, 0.98);
-            padding: 14px 0;
+            padding: 10px 0;
             border-bottom: 3px solid var(--navy);
             position: sticky;
             top: 0;
@@ -75,13 +82,16 @@
             align-items: center;
             padding: 0 20px;
         }
-        .logo-text {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.55rem;
-            color: var(--navy);
-            font-weight: 700;
+        .logo-wrap {
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            letter-spacing: 0.1em;
+        }
+        .logo-img {
+            height: 58px;
+            width: auto;
+            display: block;
+            object-fit: contain;
         }
         .nav-links a {
             margin-left: 18px;
@@ -167,7 +177,7 @@
             letter-spacing: 0.15em;
         }
 
-        /* --- 代表対話・理念セクション --- */
+        /* 代表対話・理念 */
         .about-person-section {
             background: linear-gradient(135deg, #ffffff 0%, #fcfbf7 100%);
             border: 1px solid var(--border-color);
@@ -200,7 +210,7 @@
             margin: 0;
         }
 
-        /* --- 業種別ファクタリング シミュレーター --- */
+        /* シミュレーター */
         .sim-container {
             background: #ffffff;
             border: 1px solid var(--border-color);
@@ -293,7 +303,7 @@
             line-height: 1.6;
         }
 
-        /* --- 3大事業軸カード --- */
+        /* 3大事業軸 */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -351,7 +361,7 @@
         }
         .service-link:hover { color: var(--gold); }
 
-        /* --- ★特化型LP（業界専用ページ）案内バナーエリア --- */
+        /* 特化型LP案内バナー */
         .lp-banner-section {
             background: #fdfbf7;
             border: 2px solid var(--gold);
@@ -393,8 +403,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
-            overflow: hidden;
         }
         .lp-banner-card:hover {
             transform: translateY(-4px);
@@ -436,7 +444,7 @@
             gap: 6px;
         }
 
-        /* --- 8大専門対応業界 --- */
+        /* 8大専門業界 */
         .industry-box {
             background: var(--light-bg);
             border: 1px solid var(--border-color);
@@ -507,7 +515,7 @@
             line-height: 1.35;
         }
 
-        /* --- よくある質問（FAQ）アコーディオンセクション --- */
+        /* FAQ */
         .faq-container {
             background: #fff;
             border: 1px solid var(--border-color);
@@ -546,7 +554,7 @@
             line-height: 1.8;
         }
 
-        /* --- お知らせ・ブログエリア --- */
+        /* お知らせ・ブログ */
         .news-blog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -605,7 +613,7 @@
         }
         .item-link:hover { color: var(--gold); }
 
-        /* --- CTAエリア --- */
+        /* CTA */
         .cta-footer {
             padding: 65px 20px;
             background: var(--navy);
@@ -632,7 +640,7 @@
         @media (max-width: 768px) {
             body { font-size: 17px; line-height: 1.9; }
             .nav-container { flex-direction: column; padding: 10px 15px; }
-            .logo-text { font-size: 1.3rem; }
+            .logo-img { height: 48px; }
             .nav-links { margin-top: 8px; display: flex; flex-wrap: wrap; justify-content: center; }
             .nav-links a { margin: 3px 6px; font-size: 0.8rem; }
             .hero { padding: 50px 15px; }
@@ -652,7 +660,11 @@
 <div class="main-container">
     <nav class="top-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo-text">株式会社丸幸</a>
+            <!-- 会社名入りロゴ -->
+            <a href="https://www.marukouinc.com/" class="logo-wrap">
+                <img src="logo.png.png" alt="株式会社丸幸" class="logo-img">
+            </a>
+
             <div class="nav-links">
                 <a href="service.html">事業内容</a>
                 <a href="company.html">会社概要</a>
@@ -774,7 +786,7 @@
             </div>
         </div>
 
-        <!-- ★業界特化型LP（専用ページ）案内バナーセクション★ -->
+        <!-- 特化型LP案内バナー -->
         <div class="lp-banner-section">
             <div class="lp-banner-header">
                 <h3 class="lp-banner-title">業界別 特化型ファクタリングのご案内</h3>
@@ -885,7 +897,7 @@
             </div>
         </div>
 
-        <!-- よくある質問（FAQ）セクション -->
+        <!-- FAQ -->
         <div class="faq-container" id="faq">
             <h2 class="section-title" style="margin-bottom:5px;">よくあるご質問</h2>
             <div class="section-subtitle">FREQUENTLY ASKED QUESTIONS</div>
@@ -976,7 +988,6 @@
     <!-- 最新お知らせ＆ブログエリア -->
     <section class="section-wrap" style="padding-top:0;">
         <div class="news-blog-grid">
-            <!-- 最新お知らせ -->
             <div class="news-block">
                 <div class="block-header">
                     <span>最新のお知らせ</span>
@@ -998,7 +1009,6 @@
                 </ul>
             </div>
 
-            <!-- 最新ブログ -->
             <div class="blog-block">
                 <div class="block-header">
                     <span>経営ブログ・コラム</span>
@@ -1022,7 +1032,7 @@
         </div>
     </section>
 
-    <!-- お問い合わせ・CTAエリア -->
+    <!-- CTAエリア -->
     <section class="cta-footer">
         <div style="max-width: 800px; margin: 0 auto;">
             <p style="font-family: 'Noto Serif JP', serif; font-size: 1.45rem; color: #fff; font-weight: 700; margin: 0;">
@@ -1033,14 +1043,10 @@
             </p>
 
             <div class="cta-buttons">
-                <!-- 公式LINEボタン -->
                 <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="btn-line">公式LINEで無料相談・査定依頼</a>
-
-                <!-- お問い合わせフォームボタン -->
                 <a href="contact.html" class="btn-web">Webお問い合わせフォームはこちら</a>
             </div>
 
-            <!-- 電話相談エリア -->
             <div class="tel-box">
                 <p style="margin: 0; font-size: 0.95rem; color: #f1f5f9;">お急ぎの方・直通電話でお話しされたい方はこちら</p>
                 <a href="tel:0353242561" class="tel-num">☎ 03-5324-2561</a>
@@ -1053,7 +1059,6 @@
     </footer>
 </div>
 
-<!-- 業種別簡易シミュレーターのJavaScript計算スクリプト -->
 <script>
 function calculateFactoring() {
     const feeRate = parseFloat(document.getElementById('industrySelect').value) || 0.08;
@@ -1072,7 +1077,6 @@ function calculateFactoring() {
     document.getElementById('resultAmount').innerText = receiveYen.toLocaleString() + " 円";
     document.getElementById('resultFee').innerText = "概算手数料：" + feeYen.toLocaleString() + "円";
 }
-// 初期計算を実行
 calculateFactoring();
 </script>
 

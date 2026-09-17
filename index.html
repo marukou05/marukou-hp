@@ -85,13 +85,37 @@
         .logo-wrap {
             display: flex;
             align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
         .logo-img {
-            height: 58px;
+            height: 52px;
             width: auto;
             display: block;
             object-fit: contain;
+        }
+        .logo-text-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .logo-text-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            color: var(--navy);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.08em;
+            white-space: nowrap;
+        }
+        .logo-text-sub {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.72rem;
+            color: #555;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            margin-top: 3px;
+            white-space: nowrap;
         }
         .nav-links a {
             margin-left: 18px;
@@ -640,7 +664,9 @@
         @media (max-width: 768px) {
             body { font-size: 17px; line-height: 1.9; }
             .nav-container { flex-direction: column; padding: 10px 15px; }
-            .logo-img { height: 48px; }
+            .logo-img { height: 44px; }
+            .logo-text-title { font-size: 1.2rem; }
+            .logo-text-sub { font-size: 0.65rem; }
             .nav-links { margin-top: 8px; display: flex; flex-wrap: wrap; justify-content: center; }
             .nav-links a { margin: 3px 6px; font-size: 0.8rem; }
             .hero { padding: 50px 15px; }
@@ -660,9 +686,13 @@
 <div class="main-container">
     <nav class="top-nav">
         <div class="nav-container">
-            <!-- 会社名入りロゴ -->
+            <!-- マーク ＋ クッキリ縦並び文字（1行目: 株式会社丸幸 / 2行目: 今日を支え、明日を育てる） -->
             <a href="https://www.marukouinc.com/" class="logo-wrap">
-                <img src="logo.png.png" alt="株式会社丸幸" class="logo-img">
+                <img src="favicon.png.png" alt="株式会社丸幸 ロゴ" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="logo-text-title">株式会社丸幸</span>
+                    <span class="logo-text-sub">今日を支え、明日を育てる</span>
+                </div>
             </a>
 
             <div class="nav-links">

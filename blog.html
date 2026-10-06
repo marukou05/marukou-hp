@@ -15,6 +15,9 @@
     <title>ブログ・経営コラム一覧 | 株式会社丸幸</title>
     <meta name="description" content="株式会社丸幸のブログ・経営コラム一覧です。中小企業や個人事業主の経営者様に向けて、資金繰り改善、ファクタリング活用法、税金対策、売掛債権管理（与信管理）など、日々の財務に役立つ専門情報を発信しています。">
     
+    <link rel="icon" href="favicon.png.png" type="image/png">
+    <link rel="apple-touch-icon" href="favicon.png.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -46,7 +49,7 @@
         /* --- ナビゲーション --- */
         .top-nav {
             background: rgba(255, 255, 255, 0.98);
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 2px solid var(--navy);
             position: sticky;
             top: 0;
@@ -61,14 +64,27 @@
             align-items: center;
             padding: 0 20px;
         }
+        
+        /* ロゴマーク＋社名エリア */
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
         .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--navy);
             font-weight: 700;
-            text-decoration: none;
             letter-spacing: 0.05em;
         }
+
         .nav-links a {
             margin-left: 18px;
             text-decoration: none;
@@ -168,6 +184,8 @@
             .blog-item h3 { font-size: 1.2rem; }
             .blog-item p { font-size: 0.95rem; }
             .btn-gold { width: 100%; max-width: 400px; padding: 16px 0; font-size: 1.15rem; }
+            .logo-img { height: 32px; }
+            .logo-text-nav { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -176,7 +194,11 @@
 <div class="main-container">
     <nav class="top-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo-text-nav">株式会社丸幸</a>
+            <!-- ロゴ画像 ＋ 社名 -->
+            <a href="index.html" class="logo-wrap">
+                <img src="favicon.png.png" alt="株式会社丸幸 ロゴ" class="logo-img">
+                <span class="logo-text-nav">株式会社丸幸</span>
+            </a>
             <div class="nav-links">
                 <a href="service.html">事業内容</a>
                 <a href="company.html">会社概要</a>
@@ -196,11 +218,21 @@
     <main class="content-wrap">
         <div class="blog-list">
             
+            <!-- 最新記事：blog21 -->
+            <a href="blog21.html" class="blog-item">
+                <div class="blog-meta">
+                    <span class="blog-date">2026.10.06</span>
+                    <span class="blog-category">見直し・選び方</span>
+                    <span class="new-tag">NEW</span>
+                </div>
+                <h3>今使っているファクタリング会社は大丈夫？後悔しない「5つのチェックリスト」と出口戦略</h3>
+                <p>「今の会社でいいのか不安…」「手元に入るキャッシュが減っている気がする」とお悩みの経営者様へ。今の利用状況を見直す5つの基準と、ファクタリング依存から卒業するための出口戦略を分かりやすく解説します。</p>
+            </a>
+
             <a href="blog20.html" class="blog-item">
                 <div class="blog-meta">
                     <span class="blog-date">2026.09.14</span>
                     <span class="blog-category">税務・節税</span>
-                    <span class="new-tag">NEW</span>
                 </div>
                 <h3>2026年9月に「2割特例」が終了！インボイス経過措置見直しで増える消費税負担と手元キャッシュを守る防衛術</h3>
                 <p>インボイスの緩和措置「2割特例」が2026年9月末で期限切れに。実際の納付税額がどう変化するのか明確な金額例（シミュレーション）で解説し、資金ショートを防ぐ手元キャッシュ防衛策をお伝えします。</p>
@@ -374,7 +406,7 @@
                     <span class="blog-category">会社思想</span>
                 </div>
                 <h3>丸幸の約束</h3>
-                <p>株式会社丸幸の公式ホームページを刷新。日本橋兜町から全国の経営者様へ。</p>
+                <p>株式会社丸幸の公式ホームページを刷新。全国の経営者様へ。</p>
             </a>
 
         </div>

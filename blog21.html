@@ -80,15 +80,22 @@
             display: flex; justify-content: space-between; align-items: center;
             padding: 0 20px;
         }
-        .logo-text {
+        .logo-wrap {
+            display: flex; align-items: center; gap: 10px; text-decoration: none;
+        }
+        .logo-img {
+            height: 40px; width: auto; object-fit: contain;
+        }
+        .logo-text-nav {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.5rem; color: var(--navy); font-weight: 700;
-            text-decoration: none; letter-spacing: 0.1em;
+            letter-spacing: 0.05em;
         }
         .nav-links a {
             margin-left: 18px; text-decoration: none; color: var(--navy);
-            font-weight: 700; font-size: 0.95rem;
+            font-weight: 700; font-size: 0.95rem; transition: 0.3s;
         }
+        .nav-links a:hover { color: var(--gold); }
 
         /* 記事エリア */
         .article-container {
@@ -284,9 +291,10 @@
 
         @media (max-width: 768px) {
             body { font-size: 17px; line-height: 1.85; }
-            .nav-container { flex-direction: column; padding: 10px 15px; }
-            .logo-text { font-size: 1.3rem; }
-            .nav-links { margin-top: 8px; display: flex; flex-wrap: wrap; justify-content: center; }
+            .nav-container { flex-direction: column; gap: 12px; padding: 10px 20px; }
+            .logo-img { height: 32px; }
+            .logo-text-nav { font-size: 1.3rem; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
             .nav-links a { margin: 3px 6px; font-size: 0.8rem; }
             .article-container { padding: 25px 12px; }
             .post-content { padding: 25px 18px; }
@@ -305,10 +313,16 @@
 <div class="main-container">
     <nav class="top-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo-text">株式会社丸幸</a>
+            <a href="index.html" class="logo-wrap">
+                <img src="favicon.png.png" alt="株式会社丸幸 ロゴ" class="logo-img">
+                <span class="logo-text-nav">株式会社丸幸</span>
+            </a>
+            <!-- ★全ページ共通の統一ナビゲーション順 -->
             <div class="nav-links">
-                <a href="index.html">トップ</a>
-                <a href="blog.html">ブログ一覧</a>
+                <a href="service.html">事業内容</a>
+                <a href="company.html">会社概要</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
                 <a href="contact.html">お問い合わせ</a>
             </div>
         </div>

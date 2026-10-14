@@ -315,4 +315,804 @@
         .sim-result-sub {
             font-size: 0.9rem;
             color: #cbd5e1;
-            border-top: 1px
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 10px;
+            font-weight: 500;
+        }
+        .sim-note {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* 3大事業軸 */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(0,0,0,0.08);
+        }
+        .service-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .service-card-body {
+            padding: 25px 25px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin: 0 0 12px;
+            font-weight: 700;
+        }
+        .service-card-desc {
+            font-size: 0.95rem;
+            color: #475569;
+            flex: 1;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .service-link {
+            color: var(--navy);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.2s;
+        }
+        .service-link:hover { color: var(--gold); }
+
+        /* 特化型LP案内バナー */
+        .lp-banner-section {
+            background: #fdfbf7;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            padding: 40px 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 8px 25px rgba(184, 156, 106, 0.08);
+        }
+        .lp-banner-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .lp-banner-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.55rem;
+            color: var(--navy);
+            margin: 0 0 8px;
+            font-weight: 700;
+        }
+        .lp-banner-sub {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0;
+        }
+        .lp-banner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .lp-banner-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px 25px;
+            text-decoration: none;
+            color: var(--text);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .lp-banner-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 30px rgba(184, 156, 106, 0.2);
+        }
+        .lp-banner-badge {
+            display: inline-block;
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+        .lp-badge-construction { background: #e67e22; }
+        .lp-badge-medical { background: #27ae60; }
+        .lp-banner-card-h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin: 0 0 10px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .lp-banner-card-p {
+            font-size: 0.9rem;
+            color: #475569;
+            margin: 0 0 20px;
+            line-height: 1.7;
+        }
+        .lp-banner-btn {
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 8大専門業界 */
+        .industry-box {
+            background: var(--light-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px 25px;
+            margin-top: 40px;
+        }
+        .industry-title {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--navy);
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.35rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .industry-desc-sub {
+            font-size: 0.95rem;
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+        .industry-grid-8 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        .industry-card-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .industry-card-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        .industry-card-img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .industry-card-content {
+            padding: 15px 12px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(180deg, #ffffff 0%, #fcfbf9 100%);
+        }
+        .industry-card-content strong {
+            display: block;
+            font-size: 0.92rem;
+            margin-bottom: 4px;
+            color: var(--navy);
+            line-height: 1.35;
+            font-weight: 700;
+        }
+        .industry-card-content span {
+            font-size: 0.76rem;
+            color: #64748b;
+            font-weight: normal;
+            line-height: 1.35;
+        }
+
+        /* FAQ */
+        .faq-container {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px 30px;
+            margin-top: 60px;
+        }
+        .faq-item {
+            border-bottom: 1px solid #edf2f7;
+            padding: 22px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            line-height: 1.5;
+        }
+        .faq-q-badge {
+            background: var(--navy);
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            flex-shrink: 0;
+            font-family: sans-serif;
+        }
+        .faq-a {
+            margin-top: 12px;
+            padding-left: 38px;
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        /* お知らせ・ブログ */
+        .news-blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        .news-block, .blog-block {
+            background: #fff;
+            padding: 35px 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+        .block-header {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+        }
+        .block-more {
+            font-size: 0.85rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+        }
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .item-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .item-list li:last-child { border-bottom: none; }
+        .item-date {
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .item-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            line-height: 1.5;
+            display: block;
+        }
+        .item-link:hover { color: var(--gold); }
+
+        /* CTA */
+        .cta-footer {
+            padding: 65px 20px;
+            background: var(--navy);
+            color: #fff;
+            text-align: center;
+            border-top: 4px solid var(--gold);
+        }
+        .cta-buttons { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px; }
+        .btn-line { display: block; background: var(--line-green); color: #fff !important; padding: 18px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(6,199,85,0.25); transition: 0.3s; width: 100%; max-width: 500px; }
+        .btn-web { display: block; background: var(--gold); color: #fff !important; padding: 18px 30px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(184,156,106,0.25); transition: 0.3s; width: 100%; max-width: 500px; }
+
+        .tel-box { margin-top: 35px; border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 25px; }
+        .tel-num { font-size: 2.2rem; font-weight: bold; color: #fff; text-decoration: none; display: inline-block; margin-top: 5px; }
+
+        footer {
+            text-align: center; padding: 40px 0; font-size: 0.85rem; color: #888; background: #fff; border-top: 1px solid #eee;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 992px) {
+            .industry-grid-8 { grid-template-columns: repeat(2, 1fr); }
+            .about-person-section { padding: 30px 20px; }
+        }
+        @media (max-width: 768px) {
+            body { font-size: 17px; line-height: 1.9; }
+            .nav-container { flex-direction: column; padding: 10px 15px; }
+            .logo-img { height: 44px; }
+            .logo-text-title { font-size: 1.2rem; }
+            .logo-text-sub { font-size: 0.65rem; }
+            .nav-links { margin-top: 8px; display: flex; flex-wrap: wrap; justify-content: center; }
+            .nav-links a { margin: 3px 6px; font-size: 0.8rem; }
+            .hero { padding: 50px 15px; }
+            .section-wrap { padding: 40px 15px; }
+            .sim-container { padding: 25px 15px; }
+            .sim-grid { grid-template-columns: 1fr; }
+            .lp-banner-grid { grid-template-columns: 1fr; }
+            .news-blog-grid { grid-template-columns: 1fr; }
+            .faq-a { padding-left: 0; }
+            .btn-line, .btn-web { font-size: 1rem; padding: 16px 15px; width: 100%; }
+            .tel-num { font-size: 1.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="https://www.marukouinc.com/" class="logo-wrap">
+                <img src="favicon.png.png" alt="株式会社丸幸 ロゴ" class="logo-img">
+                <div class="logo-text-group">
+                    <span class="logo-text-title">株式会社丸幸</span>
+                    <span class="logo-text-sub">今日を支え、明日を育てる</span>
+                </div>
+            </a>
+
+            <div class="nav-links">
+                <a href="service.html">事業内容</a>
+                <a href="company.html">会社概要</a>
+                <a href="blog.html">ブログ</a>
+                <a href="news.html">お知らせ</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローエリア -->
+    <header class="hero">
+        <div class="hero-inner">
+            <span class="hero-sub">FINANCIAL & BUSINESS SOLUTIONS</span>
+            <h1 class="hero-title">「資金繰り・営業・経理」の課題を<br>ワンストップで解決する経営支援企業</h1>
+            <p class="hero-desc">
+                株式会社丸幸は、即日調達が可能なファクタリング事業をはじめ、売上を拡大する営業代行、バックオフィスを効率化する経理代行の3つの柱で、中小企業・個人事業主様の持続的な成長を支援いたします。
+            </p>
+            <div class="hero-badges">
+                <span class="badge-item">即日ファクタリング（2社間/登記なし）</span>
+                <span class="badge-item">営業代行・売上拡大支援</span>
+                <span class="badge-item">経理代行・記帳アウトソーシング</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツセクション -->
+    <section class="section-wrap">
+
+        <!-- 代表対話・理念セクション -->
+        <div class="about-person-section">
+            <span class="about-person-tag">PROMISE & SUPPORT</span>
+            <h3 class="about-person-title">ただお金を調達するだけでなく、経営者の「傘」になる対話を。</h3>
+            <p class="about-person-text">
+                私たちは機械的なWeb自動審査ではなく「人間同士の温かい対話」を何より重んじています。数字や決算書だけで判断するのではなく、経営者様の背景・事業のビジョンに耳を傾け、資金調達から売上拡大、バックオフィス効率化までワンストップでサポートいたします。
+            </p>
+        </div>
+
+        <!-- 業種対応型 ファクタリングシミュレーター -->
+        <div class="sim-container">
+            <div class="sim-header">
+                <h3 class="sim-title">業種別ファクタリング簡易調達シミュレーター</h3>
+                <p class="sim-desc">貴社の事業種別と請求書額面を選択することで、手元に入る概算資金をリアルタイム試算できます。</p>
+            </div>
+            
+            <div class="sim-grid">
+                <div style="display:flex; flex-direction:column; gap:18px;">
+                    <div class="sim-input-group">
+                        <label for="industrySelect">■ 該当する事業種別を選択</label>
+                        <select id="industrySelect" class="sim-input" onchange="calculateFactoring()">
+                            <option value="0.07">医療・クリニック・歯科</option>
+                            <option value="0.09">介護・訪問看護</option>
+                            <option value="0.08" selected>建設業・建築業・製造業</option>
+                            <option value="0.08">運送・物流・ドライバー業</option>
+                            <option value="0.08">人材派遣・職業紹介業</option>
+                            <option value="0.07">幼稚園・保育園・こども園</option>
+                            <option value="0.10">IT・Web・クリエイティブ業</option>
+                            <option value="0.14">個人事業主・フリーランス</option>
+                        </select>
+                    </div>
+
+                    <div class="sim-input-group">
+                        <label for="invoiceAmount">■ 売掛金（請求書）の額面金額（万円）</label>
+                        <input type="number" id="invoiceAmount" class="sim-input" value="100" min="10" step="10" oninput="calculateFactoring()">
+                    </div>
+                </div>
+
+                <div class="sim-result-box">
+                    <div class="sim-result-label">概算の即日調達可能金額（お受取額）</div>
+                    <div class="sim-result-val" id="resultAmount">920,000 円</div>
+                    <div class="sim-result-sub" id="resultFee">概算手数料：80,000円</div>
+                </div>
+            </div>
+
+            <p class="sim-note">
+                ※上記シミュレーション結果はあくまで目安（標準率による試算）となります。<br>
+                売掛先企業様の信用度、取引実績、乗り換えキャンペーン適用等により、実際の提示手数料および買取金額は前後する場合がございます。あらかじめご了承ください。
+            </p>
+        </div>
+
+        <h2 class="section-title">丸幸が提供する3つの経営支援ソリューション</h2>
+        <div class="section-subtitle">OUR CORE SERVICES</div>
+
+        <div class="services-grid">
+            <!-- 軸1：ファクタリング -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800" alt="資金調達・ファクタリング" class="service-card-img">
+                <div class="service-card-body">
+                    <h3 class="service-card-title">資金調達（ファクタリング）</h3>
+                    <p class="service-card-desc">
+                        確定した売掛金（請求書）を最短即日で現金化。銀行融資の審査待ちや、税金・社会保険料の猶予中、赤字・リスケ中でも、ノンリコース（償還請求権なし・返金義務なし）で安全に資金繰りを改善します。
+                    </p>
+                    <a href="factoring.html" class="service-link">ファクタリング詳細を見る &#8594;</a>
+                </div>
+            </div>
+
+            <!-- 軸2：営業代行 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800" alt="営業代行・販売支援" class="service-card-img">
+                <div class="service-card-body">
+                    <h3 class="service-card-title">営業代行・販売支援</h3>
+                    <p class="service-card-desc">
+                        「営業の人手が足りない」「新規開拓が進まない」お悩みを解決。ターゲット選定からアプローチ、商談設定までプロが代行。ファクタリングを組み合わせることで未回収リスクゼロの安全な取引拡大を実現します。
+                    </p>
+                    <a href="service.html#sales" class="service-link">営業代行詳細を見る &#8594;</a>
+                </div>
+            </div>
+
+            <!-- 軸3：経理代行 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="経理代行・記帳" class="service-card-img">
+                <div class="service-card-body">
+                    <h3 class="service-card-title">経理代行・記帳アウトソーシング</h3>
+                    <p class="service-card-desc">
+                        毎月の請求書発行、売掛・買掛管理、記帳代行、振込手続きなどを一括サポート。煩雑なバックオフィス業務から経営者を解放し、本業である診療・現場・営業活動に専念できる環境を整えます。
+                    </p>
+                    <a href="service.html#accounting" class="service-link">経理代行詳細を見る &#8594;</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 特化型LP案内バナー -->
+        <div class="lp-banner-section">
+            <div class="lp-banner-header">
+                <h3 class="lp-banner-title">業界別 特化型ファクタリングのご案内</h3>
+                <p class="lp-banner-sub">業界特有の入金ラグや課題に合わせた専用の資金調達ソリューションです。</p>
+            </div>
+
+            <div class="lp-banner-grid">
+                <!-- 建設・塗装・製造業向けLPバナー -->
+                <a href="construction-lp.html" class="lp-banner-card">
+                    <div>
+                        <span class="lp-banner-badge lp-badge-construction">建設・塗装・製造業の皆様へ</span>
+                        <h4 class="lp-banner-card-h3">🏗️ 建設・塗装・製造業特化 即日調達ページ</h4>
+                        <p class="lp-banner-card-p">
+                            材料費・資材費の先行支払い、職人さんへの人工代（人件費）立て替え、長サイト売掛金の悩みを即日解決！他社利用中や乗り換えのご相談も大歓迎。
+                        </p>
+                    </div>
+                    <span class="lp-banner-btn">建設・製造特化LPを見る &#8594;</span>
+                </a>
+
+                <!-- 医療・介護・保育向けLPバナー -->
+                <a href="medical-care-lp.html" class="lp-banner-card">
+                    <div>
+                        <span class="lp-banner-badge lp-badge-medical">医療・介護・保育施設の皆様へ</span>
+                        <h4 class="lp-banner-card-h3">🏥 医療・介護・保育特化 即日調達ページ</h4>
+                        <p class="lp-banner-card-p">
+                            国保連・社保連からの2ヶ月のレセプト入金ラグ、自治体の委託費・公的補助金待ちを優遇手数料（4%〜）で即日早期化。患者様・保護者様に完全秘密。
+                        </p>
+                    </div>
+                    <span class="lp-banner-btn">医療・介護特化LPを見る &#8594;</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- 8大専門対応業界 -->
+        <div class="industry-box">
+            <h3 class="industry-title">
+                専門的な対応が求められる業界の資金調達にも特化しております
+            </h3>
+            <p class="industry-desc-sub">
+                一般的な売掛金買い取りだけでなく、業界特有の入金サイクルや制度構造に合わせた最適プランをご案内します。
+            </p>
+            
+            <div class="industry-grid-8">
+                <!-- 1. 医療・歯科 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600" alt="医療・クリニック・歯科" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>医療・クリニック・歯科</strong>
+                        <span>診療報酬・調剤報酬ファクタリング</span>
+                    </div>
+                </div>
+                <!-- 2. 介護 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=600" alt="介護・訪問看護" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>介護・訪問看護</strong>
+                        <span>介護報酬ファクタリング（国保連）</span>
+                    </div>
+                </div>
+                <!-- 3. 建設・建築・製造 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600" alt="建設業・建築業・製造業" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>建設業・建築業・製造業</strong>
+                        <span>人件費/材料費先行・人工代立替え</span>
+                    </div>
+                </div>
+                <!-- 4. 運送・物流 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=600" alt="運送・物流・ドライバー業" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>運送・物流・ドライバー</strong>
+                        <span>燃料費高騰・長サイクルの即時短縮</span>
+                    </div>
+                </div>
+                <!-- 5. 人材派遣 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=600" alt="人材派遣・職業紹介業" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>人材派遣・職業紹介業</strong>
+                        <span>給与先行支払い・外注費の即時調達</span>
+                    </div>
+                </div>
+                <!-- 6. 保育・幼稚園 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=600" alt="幼稚園・保育園・こども園" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>幼稚園・保育園・こども園</strong>
+                        <span>公的補助金・委託費の入金ラグ解消</span>
+                    </div>
+                </div>
+                <!-- 7. IT・Web -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600" alt="IT・Web・クリエイティブ業" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>IT・Web・クリエイティブ</strong>
+                        <span>受託開発・納品後の長期サイト対応</span>
+                    </div>
+                </div>
+                <!-- 8. 個人事業主 -->
+                <div class="industry-card-item">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600" alt="個人事業主・フリーランス" class="industry-card-img">
+                    <div class="industry-card-content">
+                        <strong>個人事業主・フリーランス</strong>
+                        <span>小口請求書・取引先に知られない調達</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-container" id="faq">
+            <h2 class="section-title" style="margin-bottom:5px;">よくあるご質問</h2>
+            <div class="section-subtitle">FREQUENTLY ASKED QUESTIONS</div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q1</span>
+                    <span>2社間ファクタリングを利用した場合、取引先（売掛先）に知られることはありませんか？</span>
+                </div>
+                <div class="faq-a">
+                    はい、取引先に通知されることは一切ございません。2社間ファクタリングは「貴社と当社（丸幸）」の間のみで完結する契約スタイルですので、取引先の信用を損なうことなく即日で安全に資金化できます。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q2</span>
+                    <span>税金の未納（滞納）や、銀行融資のリスケ中・赤字決算でも利用可能ですか？</span>
+                </div>
+                <div class="faq-a">
+                    はい、問題なくご利用いただけます。ファクタリングは借入（融資）ではなく「既にある売掛債権の買い取り」であるため、審査で最も重視されるのは売掛先企業様の信用度です。貴社の決算状況に関わらず柔軟に対応可能です。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q3</span>
+                    <span>債権譲渡の登記は必要ですか？</span>
+                </div>
+                <div class="faq-a">
+                    丸幸では原則として「債権譲渡登記なし」でご利用いただけます。登記手続きの手間や費用を削減し、スピーディーかつ秘密厳守で買取を行います。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q4</span>
+                    <span>他社からの乗り換えを検討していますが、手数料は安くなりますか？</span>
+                </div>
+                <div class="faq-a">
+                    他社様でご提示された契約書や査定結果をお見せいただくことで、積極的な割引（手数料3%引きキャンペーン等）をさせていただきます。ただし、他社様の条件や売掛先の信用状況等によっては、ご希望に添えない（安くならない）場合もございますので、まずは無料査定にてお気軽にご相談ください。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q5</span>
+                    <span>現在、他社ファクタリングを利用中（債権譲渡登記の有無は不明）ですが、申し込みできますか？</span>
+                </div>
+                <div class="faq-a">
+                    はい、問題なくお申し込みいただけます。現在他社様でご利用中の契約書や取引明細（通帳コピーなど）がお手元にあると、審査や概算査定が非常にスムーズに進みます。登記の有無がご不明な場合でも当社でお調べできますので、安心してお気軽にご相談ください。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q6</span>
+                    <span>営業代行サービスの料金体系はどのように決まりますか？</span>
+                </div>
+                <div class="faq-a">
+                    営業代行の費用は、対象となる業界、ターゲット企業の規模、アプローチ手法（テレアポ、フォーム送信、商談獲得など）やご依頼範囲によって異なります。案件ごとに事前ヒアリングを行い、明確なお見積もりをご提示いたします。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q7</span>
+                    <span>経理代行ではどのような業務を頼めますか？特別な資格が必要ない範囲ですか？</span>
+                </div>
+                <div class="faq-a">
+                    はい、国家資格（税理士資格等）を必要としない日常のバックオフィス業務全般に対応しております。毎月の記帳代行、請求書の発行・送付管理、売掛金・買掛金の管理、資金繰り表（キャッシュフロー表）の作成など、経営者様の手を煩わせている実務作業をまるごとサポートいたします。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <span class="faq-q-badge">Q8</span>
+                    <span>資金調達・営業代行・経理代行をまとめて一括相談することは可能ですか？</span>
+                </div>
+                <div class="faq-a">
+                    もちろんです。「資金繰りを改善しつつ、売上を増やすための営業代行を頼みたい」「本業に集中するため経理と資金調達を一緒に任せたい」など、丸幸ならワンストップでスムーズに対応いたします。
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ★最新お知らせ＆ブログエリア -->
+    <section class="section-wrap" style="padding-top:0;">
+        <div class="news-blog-grid">
+            
+            <!-- 最新のお知らせ -->
+            <div class="news-block">
+                <div class="block-header">
+                    <span>最新のお知らせ</span>
+                    <a href="news.html" class="block-more">一覧を見る &#8594;</a>
+                </div>
+                <ul class="item-list">
+                    <li>
+                        <span class="item-date">2026.10.06</span>
+                        <a href="news.html" class="item-link" style="color:var(--alert-red); font-weight:bold;">【注意喚起】偽造書類・架空請求詐欺報道についてと当社のコンプライアンス体制</a>
+                    </li>
+                    <li>
+                        <span class="item-date">2026.09.14</span>
+                        <a href="news.html" class="item-link">2026年度 シルバーウィーク期間中の営業日のご案内（通常営業）</a>
+                    </li>
+                    <li>
+                        <span class="item-date">2026.09.10</span>
+                        <a href="news20260910.html" class="item-link">【先着100社】他社乗り換えで手数料3%OFFキャンペーン開催</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 最新の経営ブログ・コラム -->
+            <div class="blog-block">
+                <div class="block-header">
+                    <span>経営ブログ・コラム</span>
+                    <a href="blog.html" class="block-more">一覧を見る &#8594;</a>
+                </div>
+                <ul class="item-list">
+                    <!-- ★最新記事：blog22.html -->
+                    <li>
+                        <span class="item-date">2026.10.05</span>
+                        <a href="blog22.html" class="item-link" style="font-weight:bold; color:var(--navy);">【開業医・医療法人】レセプト2ヶ月ラグや赤字・社保分納中の即日現金化と経営再生</a>
+                    </li>
+                    <li>
+                        <span class="item-date">2026.10.06</span>
+                        <a href="blog21.html" class="item-link">今使っているファクタリング会社は大丈夫？5つのチェックリストと出口戦略</a>
+                    </li>
+                    <li>
+                        <span class="item-date">2026.09.14</span>
+                        <a href="blog20.html" class="item-link">2026年9月に「2割特例」終了！インボイス見直しと手元キャッシュ防衛術</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTAエリア -->
+    <section class="cta-footer">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p style="font-family: 'Noto Serif JP', serif; font-size: 1.45rem; color: #fff; font-weight: 700; margin: 0;">
+                資金調達・営業代行・経理代行のご相談は丸幸へ
+            </p>
+            <p style="font-size: 0.95rem; color: #f1f5f9; margin: 10px 0 25px;">
+                即日査定から経営課題のヒアリングまで、親身に誠心誠意対応いたします。
+            </p>
+
+            <div class="cta-buttons">
+                <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" class="btn-line">💬 公式LINEで無料相談・査定依頼</a>
+                <a href="contact.html" class="btn-web">✉ Webお問い合わせフォームはこちら</a>
+            </div>
+
+            <div class="tel-box">
+                <p style="margin: 0; font-size: 0.95rem; color: #f1f5f9;">お急ぎの方・直通電話でお話しされたい方はこちら</p>
+                <a href="tel:0353242561" class="tel-num">☎ 03-5324-2561</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Marukou Inc. All Rights Reserved.</p>
+    </footer>
+</div>
+
+<script>
+function calculateFactoring() {
+    const feeRate = parseFloat(document.getElementById('industrySelect').value) || 0.08;
+    const amountMan = parseFloat(document.getElementById('invoiceAmount').value) || 0;
+
+    if (amountMan <= 0) {
+        document.getElementById('resultAmount').innerText = "0 円";
+        document.getElementById('resultFee').innerText = "額面金額をご入力ください";
+        return;
+    }
+
+    const amountYen = amountMan * 10000;
+    const feeYen = Math.floor(amountYen * feeRate);
+    const receiveYen = amountYen - feeYen;
+
+    document.getElementById('resultAmount').innerText = receiveYen.toLocaleString() + " 円";
+    document.getElementById('resultFee').innerText = "概算手数料：" + feeYen.toLocaleString() + "円";
+}
+calculateFactoring();
+</script>
+
+</body>
+</html>

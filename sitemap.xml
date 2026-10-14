@@ -25,7 +25,15 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- 新規追加：ブログ記事21 -->
+  <!-- 新規追加：医療・介護向けブログ記事22 -->
+  <url>
+    <loc>https://www.marukouinc.com/blog22.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ブログ記事21 -->
   <url>
     <loc>https://www.marukouinc.com/blog21.html</loc>
     <lastmod>2026-10-06</lastmod>
@@ -33,7 +41,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- 新規追加：キャンペーンお知らせページ -->
+  <!-- キャンペーンお知らせページ -->
   <url>
     <loc>https://www.marukouinc.com/news20260910.html</loc>
     <lastmod>2026-09-10</lastmod>

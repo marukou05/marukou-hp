@@ -10,7 +10,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <title>株式会社丸幸｜ファクタリング・営業代行・経理代行の総合経営支援</title>
     
@@ -539,43 +539,69 @@
             line-height: 1.35;
         }
 
-        /* FAQ */
-        .faq-container {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 40px 30px;
-            margin-top: 60px;
+        /* ========================================================
+           よくあるご質問（FAQ：全28問・6カテゴリ切替・初期最小化）
+        ======================================================== */
+        .faq-open-trigger-wrap { text-align: center; margin: 30px 0 10px; }
+        .btn-faq-toggle-main {
+            background: var(--navy); color: #fff; font-weight: 700; font-size: 1.05rem;
+            padding: 15px 36px; border-radius: 50px; border: 2px solid var(--gold);
+            cursor: pointer; transition: 0.3s ease; display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,31,64,0.1);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
-        .faq-item {
-            border-bottom: 1px solid #edf2f7;
-            padding: 22px 0;
+        .btn-faq-toggle-main:hover { background: var(--navy-light); transform: translateY(-2px); }
+
+        #faqInteractiveArea {
+            display: none; margin-top: 35px; animation: fadeInFaq 0.35s ease;
         }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-q {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--navy);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            line-height: 1.5;
+        @keyframes fadeInFaq {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
+
+        .faq-cat-nav {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 28px;
+        }
+        .faq-cat-btn {
+            background: #ffffff; color: var(--navy); border: 1px solid var(--border-color);
+            padding: 10px 18px; border-radius: 6px; font-size: 0.88rem; font-weight: 700;
+            cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        .faq-cat-btn.active, .faq-cat-btn:hover {
+            background: var(--navy); color: #ffffff; border-color: var(--navy);
+        }
+
+        .faq-cat-content { display: none; }
+        .faq-cat-content.active { display: block; }
+        .faq-accordion-item {
+            background: #ffffff; border: 1px solid var(--border-color);
+            border-radius: 6px; margin-bottom: 10px; overflow: hidden;
+        }
+        .faq-accordion-header {
+            width: 100%; text-align: left; background: #ffffff; border: none;
+            padding: 16px 20px; font-size: 0.95rem; font-weight: 700; color: var(--navy);
+            display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+            gap: 12px; line-height: 1.5;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        .faq-accordion-header:hover { background: #faf8f5; }
+        .faq-q-text { display: flex; align-items: flex-start; gap: 10px; }
         .faq-q-badge {
-            background: var(--navy);
-            color: #fff;
-            font-size: 0.8rem;
-            padding: 2px 8px;
-            border-radius: 3px;
-            flex-shrink: 0;
-            font-family: sans-serif;
+            background: var(--gold); color: #ffffff; font-size: 0.72rem;
+            padding: 2px 7px; border-radius: 3px; font-weight: 700; flex-shrink: 0; margin-top: 2px;
         }
-        .faq-a {
-            margin-top: 12px;
-            padding-left: 38px;
-            font-size: 0.95rem;
-            color: #475569;
-            line-height: 1.8;
+        .faq-icon-arrow { font-size: 0.82rem; color: var(--gold); transition: transform 0.25s ease; flex-shrink: 0; }
+        .faq-accordion-header.active .faq-icon-arrow { transform: rotate(180deg); }
+        
+        .faq-accordion-body {
+            display: none; padding: 16px 20px 20px 48px; font-size: 0.92rem;
+            color: #475569; line-height: 1.85; border-top: 1px dashed var(--border-color);
+            background: #faf8f5;
         }
 
         /* お知らせ・ブログ */
@@ -653,7 +679,68 @@
         .tel-num { font-size: 2.2rem; font-weight: bold; color: #fff; text-decoration: none; display: inline-block; margin-top: 5px; }
 
         footer {
-            text-align: center; padding: 40px 0; font-size: 0.85rem; color: #888; background: #fff; border-top: 1px solid #eee;
+            text-align: center; padding: 40px 0 calc(40px + env(safe-area-inset-bottom, 0px)); font-size: 0.85rem; color: #888; background: #fff; border-top: 1px solid #eee;
+        }
+
+        /* ========================================================
+           チャット検索ウィジェット（marukouChatWidget）
+        ======================================================== */
+        #marukouChatWidget {
+            position: fixed;
+            right: 20px;
+            bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+            z-index: 9999;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        #chatToggleBtn {
+            background: var(--navy); color: #fff; border: 2px solid var(--gold);
+            padding: 12px 22px; border-radius: 50px; font-weight: bold; font-size: 0.95rem;
+            cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.25); display: flex; align-items: center; gap: 8px;
+            transition: 0.25s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        #chatToggleBtn:hover { transform: scale(1.04); background: #003366; }
+        .chat-window {
+            display: none; width: 360px; height: 500px; background: #fff; border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.25); border: 1px solid #cbd5e1;
+            flex-direction: column; overflow: hidden; position: absolute; right: 0; bottom: 65px;
+        }
+        .chat-header {
+            background: var(--navy); color: #fff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid var(--gold);
+        }
+        .chat-close-btn { background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        .chat-body {
+            flex: 1; padding: 14px; overflow-y: auto; background: #faf8f5; display: flex; flex-direction: column; gap: 12px; font-size: 0.88rem;
+            -webkit-overflow-scrolling: touch;
+        }
+        .chat-msg {
+            max-width: 90%; padding: 12px 14px; border-radius: 10px; line-height: 1.7; word-break: break-word;
+        }
+        .chat-msg.bot { background: #ffffff; color: #2c3e50; border: 1px solid #e2e8f0; align-self: flex-start; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+        .chat-msg.user { background: var(--navy); color: #ffffff; align-self: flex-end; }
+        .chat-quick-btns { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+        .chat-quick-btns button {
+            background: #ffffff; border: 1px solid #cbd5e1; color: var(--navy);
+            padding: 8px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: bold; cursor: pointer; text-align: left;
+            transition: 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        .chat-quick-btns button:hover { background: var(--gold-light); border-color: var(--gold); }
+        .chat-action-cta { margin-top: 10px; display: flex; flex-direction: column; gap: 6px; }
+        .chat-cta-btn-line { background: #06C755; color: #fff !important; text-decoration: none; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; font-size: 0.82rem; display: block; }
+        .chat-cta-btn-tel { background: var(--navy); color: #fff !important; text-decoration: none; padding: 8px 12px; border-radius: 4px; text-align: center; font-weight: bold; font-size: 0.82rem; display: block; }
+        .chat-footer {
+            display: flex; padding: 10px; background: #fff; border-top: 1px solid #e2e8f0; gap: 6px;
+        }
+        .chat-footer input {
+            flex: 1; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem; outline: none;
+        }
+        .chat-send-btn {
+            background: var(--navy); color: #fff; border: none; padding: 0 14px; border-radius: 6px; font-weight: bold; cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* レスポンシブ調整 */
@@ -675,9 +762,44 @@
             .sim-grid { grid-template-columns: 1fr; }
             .lp-banner-grid { grid-template-columns: 1fr; }
             .news-blog-grid { grid-template-columns: 1fr; }
-            .faq-a { padding-left: 0; }
             .btn-line, .btn-web { font-size: 1rem; padding: 16px 15px; width: 100%; }
             .tel-num { font-size: 1.7rem; }
+
+            /* FAQスマホ最適化 */
+            .faq-accordion-header { padding: 14px 15px; font-size: 0.92rem; }
+            .faq-accordion-body { padding: 12px 15px 16px 15px; font-size: 0.88rem; }
+            .faq-cat-btn {
+                flex: 1 1 calc(50% - 8px);
+                text-align: center;
+                padding: 9px 8px;
+                font-size: 0.82rem;
+            }
+
+            /* チャットスマホ最適化（セーフエリア・dvh） */
+            #marukouChatWidget {
+                right: 15px;
+                bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+            }
+            .chat-window {
+                position: fixed;
+                left: 12px;
+                right: 12px;
+                bottom: calc(75px + env(safe-area-inset-bottom, 0px));
+                width: auto !important;
+                max-width: 100%;
+                height: min(520px, 72dvh);
+                max-height: calc(100dvh - 120px - env(safe-area-inset-bottom, 0px));
+                border-radius: 12px;
+            }
+            .chat-footer input {
+                font-size: 16px !important;
+                -webkit-appearance: none;
+                border-radius: 6px;
+            }
+            .chat-quick-btns button {
+                min-height: 42px;
+                font-size: 0.84rem;
+            }
         }
     </style>
 </head>
@@ -697,6 +819,7 @@
             <div class="nav-links">
                 <a href="service.html">事業内容</a>
                 <a href="company.html">会社概要</a>
+                <a href="#faq">よくある質問</a>
                 <a href="blog.html">ブログ</a>
                 <a href="news.html">お知らせ</a>
                 <a href="contact.html">お問い合わせ</a>
@@ -926,95 +1049,314 @@
             </div>
         </div>
 
-        <!-- FAQ -->
+        <!-- よくあるご質問（コンパクト展開・カテゴリ別切り替え・全28問） -->
         <div class="faq-container" id="faq">
             <h2 class="section-title" style="margin-bottom:5px;">よくあるご質問</h2>
             <div class="section-subtitle">FREQUENTLY ASKED QUESTIONS</div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q1</span>
-                    <span>2社間ファクタリングを利用した場合、取引先（売掛先）に知られることはありませんか？</span>
-                </div>
-                <div class="faq-a">
-                    はい、取引先に通知されることは一切ございません。2社間ファクタリングは「貴社と当社（丸幸）」の間のみで完結する契約スタイルですので、取引先の信用を損なうことなく即日で安全に資金化できます。
-                </div>
+            <!-- 初期表示：最小化ボタン -->
+            <div class="faq-open-trigger-wrap">
+                <button type="button" class="btn-faq-toggle-main" id="faqMainToggleBtn" onclick="toggleFaqMainArea()">
+                    <span>💬 よくあるご質問（全28問）を見る</span>
+                    <span id="faqMainBtnIcon">▼</span>
+                </button>
             </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q2</span>
-                    <span>税金の未納（滞納）や、銀行融資のリスケ中・赤字決算でも利用可能ですか？</span>
+            <!-- ボタン押下で表示される領域 -->
+            <div id="faqInteractiveArea">
+                
+                <!-- 6つのカテゴリボタン -->
+                <div class="faq-cat-nav">
+                    <button type="button" class="faq-cat-btn active" onclick="switchFaqCat('cat1', this)">1. 仕組み・秘密厳守</button>
+                    <button type="button" class="faq-cat-btn" onclick="switchFaqCat('cat2', this)">2. ご利用条件・審査</button>
+                    <button type="button" class="faq-cat-btn" onclick="switchFaqCat('cat3', this)">3. 請求書・買取範囲</button>
+                    <button type="button" class="faq-cat-btn" onclick="switchFaqCat('cat4', this)">4. 手続き・必要書類</button>
+                    <button type="button" class="faq-cat-btn" onclick="switchFaqCat('cat5', this)">5. 手数料・支払い</button>
+                    <button type="button" class="faq-cat-btn" onclick="switchFaqCat('cat6', this)">6. 営業・経理・総合支援</button>
                 </div>
-                <div class="faq-a">
-                    はい、問題なくご利用いただけます。ファクタリングは借入（融資）ではなく「既にある売掛債権の買い取り」であるため、審査で最も重視されるのは売掛先企業様の信用度です。貴社の決算状況に関わらず柔軟に対応可能です。
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q3</span>
-                    <span>債権譲渡の登記は必要ですか？</span>
+                <!-- カテゴリ1：仕組み・秘密厳守 -->
+                <div class="faq-cat-content active" id="cat1">
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q1</span>そもそもファクタリングとは何ですか？ 借金（融資）とはどう違うのですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            ファクタリングはお金を「借りる」のではなく、入金待ちの請求書（売掛金）を期日前に「売却して現金化する」サービスです。借入金ではないため負債（借金）が増えず、信用情報（ブラックリスト等）にも影響しません。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q2</span>取引先（売掛先）に利用がバレることはありませんか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            一切バレません。丸幸の「2社間ファクタリング」は貴社と丸幸の間だけで契約を結びます。取引先へ通知や連絡が入ることは一切ありませんので、信用を損ねることなく安心してご利用いただけます。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q3</span>従業員や銀行に知られずに資金調達できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい、完全に秘密厳守で進められます。登記手続きを原則行わず、不要な郵送物が届くこともありません。銀行の融資枠や今後の融資審査にも悪影響を与えずに手元資金を確保できます。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q4</span>もし売掛先（取引先）が倒産したら、代わりに自分が支払わないといけませんか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            支払う必要はありません。丸幸のファクタリングは「ノンリコース（償還請求権なし）」契約です。万が一売掛先が倒産して代金が回収不能になった場合でも、お客様に返還や補填を請求することは一切ありません。
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-a">
-                    丸幸では原則として「債権譲渡登記なし」でご利用いただけます。登記手続きの手間や費用を削減し、スピーディーかつ秘密厳守で買取を行います。
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q4</span>
-                    <span>他社からの乗り換えを検討していますが、手数料は安くなりますか？</span>
+                <!-- カテゴリ2：ご利用条件・審査について -->
+                <div class="faq-cat-content" id="cat2">
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q5</span>赤字決算や債務超過、銀行融資のリスケ（返済猶予）中でも利用できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい、問題なくご利用いただけます。審査で最も重視するのは「請求先（取引先）が期日通りにお金を支払ってくれるか」という点です。貴社の決算状況や過去の業績だけでお断りすることはありません。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q6</span>税金や社会保険料を滞納（分納中）しているのですが大丈夫ですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい、大丈夫です。税務署や年金事務所と分納の相談中であっても、実体のある請求書があれば即日買取が可能です。まずは現状をありのままご相談ください。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q7</span>個人事業主やフリーランスでも申し込めますか？（給与ファクタリングとの違い）</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            個人事業主・フリーランスの方で、法人向けの事業用請求書（売掛金）をお持ちであれば大歓迎です。ただし、<strong>会社にお勤めの方（会社員・パート・アルバイト）の給与を対象とした資金化（給与ファクタリング）は、法律上お取り扱いできません（NGとなります）。</strong> あくまで事業者間取引（BtoB）の売掛債権が対象です。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q8</span>他社で「債権譲渡登記付き」で利用中ですが、他社や取引先にバレずに買取できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい、秘密厳守で対応可能です。他社様で登記がついている売掛先とは別の取引先の請求書を買い取る形を取るなど、状況を丁寧にお伺いした上で、他社様にも売掛先にも知られない安全なスキームをご提案いたします。登記があるからと諦めず、まずはご相談ください。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q9</span>創業したばかり（1期目）や、個人から法人成りした直後でも使えますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい、ご利用いただけます。業歴の長さではなく、買い取らせていただく売掛金自体の信用度を基準に審査いたしますので、設立間もない企業様でも即日調達が可能です。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q10</span>いくらから買い取ってもらえますか？（下限・上限の金額）</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            少額の数十万円から、数千万円規模の大口まで柔軟に対応しております。事業規模や今必要な資金に合わせて無理のない金額でご相談いただけます。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q11</span>他社のファクタリングを利用中ですが、乗り換えの手続きは面倒ですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            とても簡単です。現在利用中の他社様の契約書や通帳コピーをお手元にご用意いただければ、丸幸の担当者が条件（手数料の引き下げ等）を査定し、スムーズな乗り換え手順をご案内いたします。
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-a">
-                    他社様でご提示された契約書や査定結果をお見せいただくことで、積極的な割引（手数料3%引きキャンペーン等）をさせていただきます。ただし、他社様の条件や売掛先の信用状況等によっては、ご希望に添えない（安くならない）場合もございますので、まずは無料査定にてお気軽にご相談ください。
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q5</span>
-                    <span>現在、他社ファクタリングを利用中（債権譲渡登記の有無は不明）ですが、申し込みできますか？</span>
+                <!-- カテゴリ3：請求書・買取範囲について -->
+                <div class="faq-cat-content" id="cat3">
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q12</span>まだ請求書を発行していない段階や、発注書（注文書）だけの状態で買取できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            申し訳ございません。丸幸ではトラブルを防ぎ確実な資金化を行うため、「納品・業務が完了し、請求金額が確定した請求書」を対象としております。発注書や注文書段階での買い取りは対応しておりませんが、請求書が発行できたタイミングですぐに即日査定・買取が可能です。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q13</span>入金期日が2〜3ヶ月先（支払いサイトが長い）の請求書でも買い取ってもらえますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい、問題なく買い取り可能です。建設業や製造業、IT業などで一般的な入金サイト（60日〜90日先、あるいはそれ以上）の売掛債権でも、確定した請求書があれば即日で資金化いただけます。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q14</span>一般消費者（個人顧客）に対する売掛金やツケ払いは買い取ってもらえますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            誠に恐れ入りますが、一般消費者（個人客）向けの売掛金は買い取り対象外となります。売掛先が「法人」または「公的機関（国保連・自治体等）」である事業者間取引（BtoB）の請求書のみが対象となります。
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-a">
-                    はい、問題なくお申し込みいただけます。現在他社様でご利用中の契約書や取引明細（通帳コピーなど）がお手元にあると、審査や概算査定が非常にスムーズに進みます。登記の有無がご不明な場合でも当社でお調べできますので、安心してお気軽にご相談ください。
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q6</span>
-                    <span>営業代行サービスの料金体系はどのように決まりますか？</span>
+                <!-- カテゴリ4：手続き・必要書類について -->
+                <div class="faq-cat-content" id="cat4">
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q15</span>本当に最短即日で振り込んでもらえますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            はい。必要書類が午前中〜日中に揃っていれば、最短即日でお客様の口座へお振り込みが可能です。お急ぎの場合はLINEまたはお電話（03-5324-2561）よりご連絡ください。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q16</span>相談や審査に必要な書類は何ですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            主に「① 資金化したい請求書（確定した売掛金が確認できる書類）」「② 過去の入出金履歴がわかる銀行通帳のコピー（直近数ヶ月分）」「③ ご本人様確認書類」の3点です。お手元にある書類ですぐに概算査定が可能です。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q17</span>契約の際に面談は必須ですか？ 対面なし（非対面）でも完了できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            対面なし（非対面・オンライン完結）でのお手続きが可能です。電話やLINE、メールのみで契約からお振り込みまで完結します。「直接担当者の顔を見て相談したい」という場合は、日本橋兜町の事務所での対面面談も歓迎しております。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q18</span>日本橋の事務所まで行く必要がありますか？（全国対応について）</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            ご来社の必要はありません。オンライン対応により、北海道から沖縄まで全国どこからでも即日でお申し込み・ご契約いただけます。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q19</span>債権譲渡登記はつけないといけませんか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            丸幸では原則として「債権譲渡登記なし」でご利用いただけます。登記費用や面倒な手続きを省き、素早く、秘密厳守で進めることができます。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q20</span>担保や保証人は必要ですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            一切不要です。不動産や保証小切手などの担保も、連帯保証人を立てていただく必要もございません。
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-a">
-                    営業代行の費用は、対象となる業界、ターゲット企業の規模、アプローチ手法（テレアポ、フォーム送信、商談獲得など）やご依頼範囲によって異なります。案件ごとに事前ヒアリングを行い、明確なお見積もりをご提示いたします。
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q7</span>
-                    <span>経理代行ではどのような業務を頼めますか？特別な資格が必要ない範囲ですか？</span>
+                <!-- カテゴリ5：手数料・支払いについて -->
+                <div class="faq-cat-content" id="cat5">
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q21</span>手数料はどのように決まりますか？ 後から余計な費用を取られませんか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            手数料は、売掛先の規模（上場企業・一般企業・公的機関など）や、入金期日までの期間を考慮して個別に決定いたします。悪質な業者のように「新規手数料」や「印紙代」などの名目で現金の受渡しを求めたり、後から不明瞭な費用を引いたりすることは一切ございません。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q22</span>査定や相談だけでもお金はかかりますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            完全無料です。査定金額や手数料のご案内に納得いただけない場合は、その場でお断りいただいても費用は一切発生いたしません。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q23</span>取引先から入金があった後は、どのように支払えばいいですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            取引先からお客様の銀行口座に売掛金が振り込まれた後、期日通りにその代金をそのまま丸幸の指定口座へお振り込みいただくだけで完了となります。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q24</span>万が一、取引先からの入金が期日より遅れそうな時はどうすればいいですか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            取引先の都合で入金が数日遅れるなどのトラブルが発生した場合は、分かった時点ですぐにご連絡ください。状況をお伺いし、担当者が柔軟に対応・ご相談に乗らせていただきます。
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-a">
-                    はい、国家資格（税理士資格等）を必要としない日常のバックオフィス業務全般に対応しております。毎月の記帳代行、請求書の発行・送付管理、売掛金・買掛金の管理、資金繰り表（キャッシュフロー表）の作成など、経営者様の手を煩わせている実務作業をまるごとサポートいたします。
-                </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-q">
-                    <span class="faq-q-badge">Q8</span>
-                    <span>資金調達・営業代行・経理代行をまとめて一括相談することは可能ですか？</span>
+                <!-- カテゴリ6：営業・経理・総合支援について -->
+                <div class="faq-cat-content" id="cat6">
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q25</span>ファクタリングをずっと使い続けるのが不安です。依存から抜け出せますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            ご安心ください。丸幸は「ファクタリングを使い続けてもらうこと」ではなく「お客様が自立した強い経営体質に戻ること」を目指しています。資金調達で急場をしのぎながら、営業代行で売上を伸ばし、経理代行で資金の無駄をなくすことで、ファクタリングを使わずに済むゴールを一緒に目指します。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q26</span>経理代行ではどのような実務を任せられますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            請求書の発行・発送、通帳記帳のデータ入力、売掛金・買掛金の入出金管理、月々の資金繰り表の作成など、日常のバックオフィス業務をまるごと代行します。税理士の先生と連携しやすい書類整理も行います。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q27</span>営業代行はどのような業界・業種でも依頼できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            BtoB（企業間取引）を中心とした製造業、建設業、IT・クリエイティブ、物流、人材業界など幅広く対応しております。「営業の人手が足りない」「新規顧客を増やして入金サイクルを安定させたい」という課題に合わせて最適なアプローチを構築します。
+                        </div>
+                    </div>
+                    <div class="faq-accordion-item">
+                        <button type="button" class="faq-accordion-header" onclick="toggleFaqItem(this)">
+                            <span class="faq-q-text"><span class="faq-q-badge">Q28</span>資金調達、営業、経理のどれか1つだけでも依頼できますか？</span>
+                            <span class="faq-icon-arrow">▼</span>
+                        </button>
+                        <div class="faq-accordion-body">
+                            もちろん可能です。「今月だけファクタリングを使いたい」「人手不足なので経理だけお願いしたい」など、貴社のニーズに合わせて必要なサービスだけを選んでご利用いただけます。
+                        </div>
+                    </div>
                 </div>
-                <div class="faq-a">
-                    もちろんです。「資金繰りを改善しつつ、売上を増やすための営業代行を頼みたい」「本業に集中するため経理と資金調達を一緒に任せたい」など、丸幸ならワンストップでスムーズに対応いたします。
-                </div>
+
             </div>
         </div>
 
     </section>
 
-    <!-- ★最新お知らせ＆ブログエリア -->
+    <!-- 最新お知らせ＆ブログエリア -->
     <section class="section-wrap" style="padding-top:0;">
         <div class="news-blog-grid">
             
@@ -1040,25 +1382,25 @@
                 </ul>
             </div>
 
-            <!-- 最新の経営ブログ・コラム -->
+            <!-- 最新の経営ブログ・コラム（直近3件） -->
             <div class="blog-block">
                 <div class="block-header">
                     <span>経営ブログ・コラム</span>
                     <a href="blog.html" class="block-more">一覧を見る &#8594;</a>
                 </div>
                 <ul class="item-list">
-                    <!-- ★最新記事：blog22.html -->
+                    <!-- ★最新記事：blog23.html（2026.11.02追加） -->
+                    <li>
+                        <span class="item-date">2026.11.02</span>
+                        <a href="blog23.html" class="item-link" style="font-weight:bold; color:var(--navy);">【チェックリスト付】こんなファクタリング会社は危険！悪質業者の見分け方と信頼できる会社の選び方</a>
+                    </li>
                     <li>
                         <span class="item-date">2026.10.05</span>
-                        <a href="blog22.html" class="item-link" style="font-weight:bold; color:var(--navy);">【開業医・医療法人】レセプト2ヶ月ラグや赤字・社保分納中の即日現金化と経営再生</a>
+                        <a href="blog22.html" class="item-link">【開業医・医療法人】レセプト2ヶ月ラグや赤字・社保分納中の即日現金化と経営再生</a>
                     </li>
                     <li>
                         <span class="item-date">2026.10.06</span>
                         <a href="blog21.html" class="item-link">今使っているファクタリング会社は大丈夫？5つのチェックリストと出口戦略</a>
-                    </li>
-                    <li>
-                        <span class="item-date">2026.09.14</span>
-                        <a href="blog20.html" class="item-link">2026年9月に「2割特例」終了！インボイス見直しと手元キャッシュ防衛術</a>
                     </li>
                 </ul>
             </div>
@@ -1093,7 +1435,50 @@
     </footer>
 </div>
 
+<!-- ========================================================
+     チャット検索ウィジェット（marukouChatWidget）
+======================================================== -->
+<div id="marukouChatWidget">
+    <button id="chatToggleBtn" onclick="toggleMarukouChat()" title="チャットで質問・検索">
+        💬 <span class="chat-btn-label">24h 質問・スピード案内</span>
+    </button>
+
+    <div id="chatWindow" class="chat-window">
+        <div class="chat-header">
+            <div>
+                <strong>株式会社丸幸 自動案内窓口</strong>
+                <div style="font-size:0.75rem; opacity:0.85;">日本橋兜町｜秘密厳守・24時間対応</div>
+            </div>
+            <button onclick="toggleMarukouChat()" class="chat-close-btn" aria-label="閉じる">×</button>
+        </div>
+
+        <div class="chat-body" id="chatMessageList">
+            <div class="chat-msg bot">
+                お問合せありがとうございます。株式会社丸幸の自動案内です。<br><br>
+                気になる項目をタップいただくか、下の入力欄に知りたいキーワード（例：「税金」「登記」「乗り換え」等）をご入力ください。
+            </div>
+            
+            <div class="chat-quick-btns" id="chatDefaultMenu">
+                <button onclick="handleBotResponse('審査')">🔍 審査について（赤字・税金・個人）</button>
+                <button onclick="handleBotResponse('秘密')">🤫 周囲への秘密（取引先・登記なし）</button>
+                <button onclick="handleBotResponse('手数料')">💰 手数料・悪質業者の見分け</button>
+                <button onclick="handleBotResponse('他社')">🔄 他社利用中・登記付きの切替</button>
+                <button onclick="handleBotResponse('必要書類')">⚡ 即日調達の流れ・必要書類</button>
+                <button onclick="handleBotResponse('代行')">👨‍💼 営業代行・経理代行の支援</button>
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="キーワード入力（例: 登記、税金）" onkeypress="if(event.key === 'Enter') handleChatInputSend()">
+            <button onclick="handleChatInputSend()" class="chat-send-btn">送信</button>
+        </div>
+    </div>
+</div>
+
 <script>
+/* ========================================================
+   シミュレーター計算
+======================================================== */
 function calculateFactoring() {
     const feeRate = parseFloat(document.getElementById('industrySelect').value) || 0.08;
     const amountMan = parseFloat(document.getElementById('invoiceAmount').value) || 0;
@@ -1112,6 +1497,167 @@ function calculateFactoring() {
     document.getElementById('resultFee').innerText = "概算手数料：" + feeYen.toLocaleString() + "円";
 }
 calculateFactoring();
+
+/* ========================================================
+   FAQ アコーディオン＆カテゴリ切り替え
+======================================================== */
+function toggleFaqMainArea() {
+    const area = document.getElementById('faqInteractiveArea');
+    const icon = document.getElementById('faqMainBtnIcon');
+    if (area.style.display === 'block') {
+        area.style.display = 'none';
+        icon.innerText = '▼';
+    } else {
+        area.style.display = 'block';
+        icon.innerText = '▲';
+    }
+}
+
+function switchFaqCat(catId, btnElement) {
+    document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.faq-cat-content').forEach(c => c.classList.remove('active'));
+    btnElement.classList.add('active');
+    document.getElementById(catId).classList.add('active');
+}
+
+function toggleFaqItem(headerElement) {
+    const body = headerElement.nextElementSibling;
+    const isOpen = headerElement.classList.contains('active');
+
+    if (isOpen) {
+        headerElement.classList.remove('active');
+        body.style.display = 'none';
+    } else {
+        headerElement.classList.add('active');
+        body.style.display = 'block';
+    }
+}
+
+/* ========================================================
+   チャットウィジェット スクリプト
+======================================================== */
+const chatResponses = {
+    "審査": {
+        title: "審査について（赤字・税金・個人事業主）",
+        text: "<strong>【審査基準について】</strong><br>・<strong>赤字決算・債務超過・リスケ中：</strong>問題なく利用可能です。<br>・<strong>税金・社会保険の滞納や分納中：</strong>実体のある請求書があれば即日買取可能です。<br>・<strong>個人事業主・フリーランス：</strong>法人宛の請求書があれば大歓迎です。<br><span style='color:#c53030;'>※会社員・アルバイトの給与ファクタリングは法律上お取り扱いできません（NG）。</span>"
+    },
+    "秘密": {
+        title: "周囲への秘密厳守について",
+        text: "<strong>【完全秘密厳守の体制】</strong><br>丸幸の2社間ファクタリングは貴社と丸幸の間だけで完結します。<br>・取引先への通知・連絡は一切ありません。<br>・原則「債権譲渡登記なし」で登記簿にも残りません。<br>・万一売掛先が倒産しても返金責任のない「ノンリコース契約」です。"
+    },
+    "手数料": {
+        title: "手数料・費用について",
+        text: "<strong>【明確な手数料とお約束】</strong><br>手数料は売掛先の規模や入金サイトに応じて個別に明瞭提示いたします。<br>・「新規手数料」「印紙代」等の名目で現金を要求することは一切ありません。<br>・登記なしを口実に法外な高額手数料を迫る悪質業者とは一切無縁のクリーンな契約をお約束します。<br>※査定後のキャンセルも無料です。"
+    },
+    "他社": {
+        title: "他社利用中・登記付きの切替について",
+        text: "<strong>【他社からの乗り換え・登記付き対応】</strong><br>・他社様で「債権譲渡登記」が付いている場合でも、他社や売掛先に知られない安全なスキームをご提案可能です。<br>・他社様の見積書や契約書をご提示いただくことで、手数料引き下げの乗り換え相談を承っております。"
+    },
+    "必要書類": {
+        title: "即日調達の流れ・必要書類",
+        text: "<strong>【最短即日調達の必要書類】</strong><br>1. 確定した売掛金の請求書<br>2. 直近数ヶ月分の銀行通帳コピー<br>3. 代表者様のご本人確認書類<br><span style='color:#c53030;'>※発注書・注文書のみ（納品前）の段階は買い取り対象外となります。確定した請求書をご用意ください。</span>"
+    },
+    "代行": {
+        title: "営業代行・経理代行（伴走支援）",
+        text: "<strong>【ファクタリング卒業への伴走支援】</strong><br>・<strong>営業代行：</strong>新規開拓により粗利の高い優良顧客を増やします。<br>・<strong>経理代行：</strong>記帳や入金管理、資金繰り表作成で無駄なコストを根絶します。<br>単なる資金化にとどまらず、キャッシュリッチな経営体質への自立を支援します。"
+    }
+};
+
+function toggleMarukouChat() {
+    const win = document.getElementById("chatWindow");
+    win.style.display = (win.style.display === "flex") ? "none" : "flex";
+}
+
+function handleBotResponse(key) {
+    const list = document.getElementById("chatMessageList");
+    
+    const userDiv = document.createElement("div");
+    userDiv.className = "chat-msg user";
+    userDiv.innerText = chatResponses[key] ? chatResponses[key].title : key;
+    list.appendChild(userDiv);
+
+    setTimeout(() => {
+        const botDiv = document.createElement("div");
+        botDiv.className = "chat-msg bot";
+        const data = chatResponses[key];
+
+        let html = data.text;
+        html += `
+            <div class="chat-action-cta">
+                <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" target="_blank" class="chat-cta-btn-line">💬 LINEで無料相談・書類査定</a>
+                <a href="tel:0353242561" class="chat-cta-btn-tel">☎ 直通電話：03-5324-2561</a>
+            </div>
+        `;
+        botDiv.innerHTML = html;
+        list.appendChild(botDiv);
+        list.scrollTop = list.scrollHeight;
+    }, 250);
+
+    list.scrollTop = list.scrollHeight;
+}
+
+function handleChatInputSend() {
+    const input = document.getElementById("chatInput");
+    const text = input.value.trim();
+    if (!text) return;
+
+    const list = document.getElementById("chatMessageList");
+    
+    const userDiv = document.createElement("div");
+    userDiv.className = "chat-msg user";
+    userDiv.innerText = text;
+    list.appendChild(userDiv);
+    input.value = "";
+
+    let matchedKey = null;
+    if (/審査|赤字|税金|社保|滞納|分納|個人|サラリーマン|給与/.test(text)) matchedKey = "審査";
+    else if (/秘密|ばれ|バレ|通知|倒産|リコース/.test(text)) matchedKey = "秘密";
+    else if (/手数料|費用|いくら|悪質|現金|印紙/.test(text)) matchedKey = "手数料";
+    else if (/他社|乗換|乗り換え|登記|二重/.test(text)) matchedKey = "他社";
+    else if (/即日|書類|スピード|何時|注文書|発注書/.test(text)) matchedKey = "必要書類";
+    else if (/営業|経理|代行|記帳|伴走/.test(text)) matchedKey = "代行";
+
+    setTimeout(() => {
+        const botDiv = document.createElement("div");
+        botDiv.className = "chat-msg bot";
+
+        if (matchedKey && chatResponses[matchedKey]) {
+            botDiv.innerHTML = chatResponses[matchedKey].text + `
+                <div class="chat-action-cta">
+                    <a href="https://lin.ee/VIslcJF?openExternalBrowser=1" target="_blank" class="chat-cta-btn-line">💬 LINEで詳しく聞く</a>
+                    <a href="tel:0353242561" class="chat-cta-btn-tel">☎ お電話で直接相談</a>
+                </div>
+            `;
+        } else {
+            botDiv.innerHTML = `
+                ご質問ありがとうございます。<br>
+                お客様の個別のご事情（売掛先や必要書類、現在の資金繰り状況など）に合わせて、専任の担当者が丁寧にご案内いたします。<br><br>
+                お急ぎの方はお電話、またはお問い合わせフォームよりお気軽にご連絡ください。
+                <div class="chat-action-cta" style="margin-top:12px;">
+                    <a href="tel:0353242561" class="chat-cta-btn-tel" style="font-size:0.9rem; padding:10px;">
+                        📞 お電話ですぐ相談（03-5324-2561）
+                    </a>
+                    <a href="contact.html" style="background:var(--gold); color:#fff !important; text-decoration:none; padding:10px; border-radius:4px; text-align:center; font-weight:bold; font-size:0.85rem; display:block; margin-top:4px;">
+                        ✉️ Webお問い合わせフォームへ進む
+                    </a>
+                </div>
+            `;
+        }
+        list.appendChild(botDiv);
+        list.scrollTop = list.scrollHeight;
+    }, 250);
+
+    list.scrollTop = list.scrollHeight;
+}
+
+const chatInputElem = document.getElementById("chatInput");
+if (chatInputElem) {
+    chatInputElem.addEventListener("focus", () => {
+        setTimeout(() => {
+            chatInputElem.scrollIntoView({ behavior: "smooth", block: "center" });
+        }, 300);
+    });
+}
 </script>
 
 </body>

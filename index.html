@@ -347,5 +347,68 @@ function selectFaqCat(catId, btn){
   }
 }
 </script>
+
+<!-- ==========================================================
+     丸幸 チャット（申込直結型）
+========================================================== -->
+<style>
+.mkc{--c-brand:#0e6f9c;--c-brand-d:#085379;--c-ink:#0a1620;--c-surf:rgba(255,255,255,.96);--c-btn-ink:#fff;--c-bubble:rgba(14,111,156,.1);font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif}
+@media (prefers-color-scheme:dark){.mkc{--c-brand:#6cc4ea;--c-brand-d:#9bdaf5;--c-ink:#e4f2f8;--c-surf:rgba(16,44,58,.96);--c-btn-ink:#062635}}
+.mkc *{box-sizing:border-box}
+.mkc-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9998;display:flex;align-items:center;gap:8px;padding:13px 20px;border:0;border-radius:999px;background:var(--c-brand);color:var(--c-btn-ink);font:700 .95rem "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(14,111,156,.35);white-space:nowrap}
+.mkc-fab:hover{background:var(--c-brand-d)}
+.mkc-fab:focus-visible,.mkc a:focus-visible,.mkc-x:focus-visible{outline:3px solid var(--c-brand);outline-offset:3px}
+.mkc-box{position:fixed;right:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:9999;width:min(370px,calc(100vw - 32px));max-height:calc(100dvh - 110px);overflow:auto;display:none;background:var(--c-surf);backdrop-filter:blur(10px);border:2px solid var(--c-brand);border-radius:16px;box-shadow:0 16px 40px rgba(14,60,90,.28);color:var(--c-ink)}
+.mkc-box.open{display:block}
+.mkc-hd{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:14px 16px;background:var(--c-brand);color:var(--c-btn-ink)}
+.mkc-hd b{display:block;font-size:1rem}
+.mkc-hd small{font-size:.8rem;opacity:.92}
+.mkc-x{border:0;background:transparent;color:inherit;font-size:1.5rem;line-height:1;cursor:pointer;padding:0 4px}
+.mkc-bd{padding:16px}
+.mkc-msg{margin:0 0 10px;padding:12px 14px;border-radius:4px 14px 14px 14px;background:var(--c-bubble);font-size:.98rem;line-height:1.7}
+.mkc-msg strong{color:var(--c-brand-d)}
+.mkc-btn{display:block;margin:10px 0 0;padding:15px 16px;border-radius:999px;text-align:center;font-size:1.02rem;font-weight:700;text-decoration:none;background:var(--c-brand);color:var(--c-btn-ink);border:2px solid var(--c-brand)}
+.mkc-btn:hover{background:var(--c-brand-d);border-color:var(--c-brand-d)}
+.mkc-btn.alt{background:transparent;color:var(--c-brand-d)}
+.mkc-btn.alt:hover{background:var(--c-bubble)}
+.mkc-faq{display:block;margin-top:14px;text-align:center;font-size:.9rem;font-weight:700;color:var(--c-brand-d)}
+/* スマホ：画面下の固定バーと重ならないよう配置 */
+@media (max-width:820px){.mkc-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));padding:11px 16px;font-size:.9rem}.mkc-box{bottom:calc(132px + env(safe-area-inset-bottom,0px));max-height:calc(100dvh - 160px)}}
+</style>
+
+<div class="mkc">
+  <button class="mkc-fab" id="mkcFab" type="button" aria-expanded="false" aria-controls="mkcBox">💬 最短即日・申込相談</button>
+  <div class="mkc-box" id="mkcBox" role="dialog" aria-label="株式会社丸幸 自動案内窓口">
+    <div class="mkc-hd">
+      <div><b>株式会社丸幸 自動案内窓口</b><small>日本橋兜町｜秘密厳守・24時間対応</small></div>
+      <button class="mkc-x" id="mkcX" type="button" aria-label="閉じる">×</button>
+    </div>
+    <div class="mkc-bd">
+      <p class="mkc-msg">お問合せありがとうございます。株式会社丸幸です。<br><strong>請求書（売掛金）を買取し、最短即日でお振り込み</strong>します。</p>
+      <p class="mkc-msg">必要書類は、請求書・通帳コピー・ご本人確認書類の3点です。査定は無料です。</p>
+      <a class="mkc-btn" href="contact.html">✉ 無料査定を申し込む</a>
+      <a class="mkc-btn alt" href="https://lin.ee/VIslcJF?openExternalBrowser=1">💬 公式LINEで相談する</a>
+      <a class="mkc-btn alt" href="tel:0353242561">☎ 03-5324-2561 に電話する</a>
+      <a class="mkc-faq" href="#faq" id="mkcFaq">よくあるご質問を見る ↓</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var fab=document.getElementById('mkcFab'),box=document.getElementById('mkcBox');
+  function toggle(open){
+    box.classList.toggle('open',open);
+    fab.setAttribute('aria-expanded',open);
+    fab.textContent=open?'× 閉じる':'💬 最短即日・申込相談';
+  }
+  fab.addEventListener('click',function(){toggle(!box.classList.contains('open'))});
+  document.getElementById('mkcX').addEventListener('click',function(){toggle(false);fab.focus()});
+  document.getElementById('mkcFaq').addEventListener('click',function(){toggle(false)});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&box.classList.contains('open')){toggle(false);fab.focus()}
+  });
+})();
+</script>
 </body>
 </html>

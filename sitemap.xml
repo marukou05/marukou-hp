@@ -3,7 +3,7 @@
   <!-- トップページ（最重要） -->
   <url>
     <loc>https://www.marukouinc.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>1.0</priority>
   </url>
 
@@ -38,8 +38,6 @@
     <lastmod>2026-11-17</lastmod>
     <priority>0.8</priority>
   </url>
-  
-  <!-- 追加したプライバシーポリシー -->
   <url>
     <loc>https://www.marukouinc.com/privacy.html</loc>
     <lastmod>2026-11-17</lastmod>
@@ -49,16 +47,21 @@
   <!-- 一覧ページ -->
   <url>
     <loc>https://www.marukouinc.com/blog.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.marukouinc.com/news.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-26</lastmod>
     <priority>0.7</priority>
   </url>
 
-  <!-- 今回追加・修正したブログ記事 -->
+  <!-- ブログ記事 -->
+  <url>
+    <loc>https://www.marukouinc.com/blog24.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.marukouinc.com/blog23.html</loc>
     <lastmod>2026-11-17</lastmod>
@@ -75,7 +78,12 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- キャンペーンなど -->
+  <!-- お知らせ・キャンペーン -->
+  <url>
+    <loc>https://www.marukouinc.com/news20261126.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.marukouinc.com/news20260910.html</loc>
     <lastmod>2026-09-10</lastmod>
